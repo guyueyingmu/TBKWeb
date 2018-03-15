@@ -1,0 +1,11 @@
+.part { background: #fff; margin-top: 30px }
+.part::before { content: ''; display: block; height: 1px; width: 100%; background: #ccc; -webkit-transform: scaleY(0.5); -webkit-transform-origin: 0 0; float: left }
+.part:after { content: ''; display: block; height: 1px; width: 100%; background: #ccc; -webkit-transform: scaleY(0.5); -webkit-transform-origin: 0 0; float: left }
+.part .item:first-child:after { content: ''; display: block; height: 1px; width: 100%; background: #ccc; -webkit-transform: scaleY(0.5); -webkit-transform-origin: 0 0; float: left }
+.item { line-height: 24px; position: relative; height: 44px; width: 100%; padding-left: 15px; box-sizing: border-box }
+.item .icon { color: #8e8e93; width: 19px; height: 19px; display: inline-block; position: absolute; top: 11px }
+.item .icon-q { background: url(q@3x_ea623a1.png); background-size: 100% }
+.item .icon-a { background: url(a@3x_851c24c.png); background-size: 100% }
+.item p { margin: 10px 0; margin-right: 15px; box-sizing: border-box; display: inline-block; margin-left: 40px; width: 400px }
+.multiline { line-height: 24px; position: relative; padding-top: 10px; padding-bottom: 5px; padding-left: 15px; box-sizing: border-box }
+.multiline p { position: relative; left: 0; margin: 3px 15px 3px 0 }

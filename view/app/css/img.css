@@ -1,0 +1,99 @@
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_1460861201_925595.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_1460861201_925595.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_1460861201_925595.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/font_1460861201_925595.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_1460861201_925595.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont{font-family:"iconfont";font-size:16px;font-style:normal;}
+
+
+.top_img img{width:100%;}
+.title{text-align:center;font-size:20px;color:#666;}
+.content_box{font-size: 14px;
+    padding: 10px;
+    line-height: 24px;
+    color: #666;}
+.content_top{font-size:12px;color:#666;width:100%;line-height:30px;border-bottom:1px solid #eee;margin:5px 0 15px 0;}
+.content_top .dingcai{float:right;}
+.content_top span{margin:0 5px;}
+.content_top i{ font-style:normal}
+
+
+
+/* 内容中的商品 */
+.item_box{margin:10px 0;}
+.item_box .item{margin:10px 0;padding:10px;background:#f7f7f7;text-decoration:none;*cursor:pointer;clear:none!important;*zoom:1}
+.item_box .item:after{content:"";clear:both;display:block!important;height:0}
+.item_box .item:visited .item_title{color:#818181}
+.item_box .item:hover{background:#eee}
+.item_box .item_pic{float:left;height:140px;width:140px;margin-right:20px;overflow:hidden}
+.item_box .item_pic img{width:140px;height:140px;}
+.item_box .item_info{height:140px;overflow:hidden;}
+.item_box .item_title{line-height:30px;color:#333;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:16px;height:30px;overflow:hidden;}
+.item_box .item_price{height:28px;line-height:28px;overflow:hidden;}
+.item_box .price_new{color:#f50;float:left;font-size:16px;margin-right:10px;}
+.item_box .price_new strong{font-size:24px;font-weight:400}
+.item_box .item_kw{width:100%;height:45px;line-height:20px;text-align:left;font-size:14px;overflow:hidden;}
+.item_box .item_kw a.item_kw_first{margin-right:10px;background: #666;display:none;}
+.item_box .item_kw a{background: #64AAED;  padding: 0 5px;  color: #fff;  border-radius: 4px;  font-size: 10px;margin-right: 6px;    margin-bottom: 3px;
+  height: 20px;  float: left;  line-height: 20px;}
+.item_box .item_kw a:hover{background:#337ABD;}
+.item_box .item_kw a.item_kw_first:hover{background: #666; }
+.item_box .price_old{margin-left:10px;color:#999;float:left; text-decoration: line-through;font-size:16px;}
+.item_box .item_btn{height:26px;width:100px;line-height:26px;margin-top:5px;border:1px solid #64AAED;border-radius:4px;color:#64AAED;text-align:center;font-size:16px;  background-color: #fff;}
+.item_box .item_btn a{display:block;width:100%;height:100%;}
+.item_box .item_btn a:hover{background:#64AAED;color:#FFF;border-color:#FFF;}
+.item_box .item_shop{margin-left:20px;font-size:16px;float:left;display:none;}
+.item_box .item_shop span{color:#999;}
+.item_box .item_shop a{color:#F00;}
+.content_box img{width:100%;margin:0 auto;display:block;}
+.tag_list a{color:#09F;margin:5px ;display:block;padding:2px 7px;float:left;border:1px solid #eee;border-radius:8px;}
+.tag_list .tag_title{font-size:16px;padding:0 5px;margin:5px 0;}
+
+.content .album-block{text-align:center; font-size:14px;}
+.content .album-block a{color:#666}
+.content .info .price{display:none;}
+
+.content .info .tilte{height:30px;line-height:30px;}
+.content .album-block-imgBox{display:block;margin:15px auto;}
+.content .album-block-title{font-size:16px;}
+.content .album-block .dot{display:none;}
+.content .icontip .iconfont{display:none;}
+.content .album-block-imglink{margin:10px 0; position:relative;}
+.icontip{ position:absolute;left:0;top:0;background: url(http://img.alicdn.com/tps/i3/T1LiJtFcddXXa9hgfr-5-5.png);; opacity:0.5;color:#fff;font-size:12px;padding:5px;}
+
+
+
+.content .item{position:relative;display:block;margin:10px 0;padding:5px;background:#f7f7f7;text-decoration:none;font-size: 14px;}
+.content .item:after{content:"";clear:both;display:block!important;height:0}
+.content .item:visited .item-title{color:#818181}
+.content .item:hover{background:#eee}
+.content .item .item-pic{float:left;height:140px;width:140px;margin-right:20px;overflow:hidden}
+.content .item .item-info{position:relative;height:140px;overflow:hidden;*zoom:1}
+.content .item .item-title{line-height:1.5;color:#333;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.content .item .item-price{    margin: 5px;}
+.content .item .price-new{color:#f50;    text-decoration: none;}
+.content .item .price-new strong{font-size:24px;}
+.content .item .price-old{margin-left:10px;color:#999}
+.content .item .item-btn{height: 30px;
+    width: 100px;
+    line-height: 30px;
+
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+    float: left;
+    margin: 10px auto;
+    display: block;
+    background: #ff5b88;}
+
+
+
+
+
+

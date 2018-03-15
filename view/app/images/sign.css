@@ -1,0 +1,64 @@
+
+.part { display: block; margin: 0 auto; overflow: hidden; position: relative }
+.inline { display: inline-block; vertical-align: middle }
+.user { text-align: center; margin: 1.1rem auto }
+.user:after { content: ''; width:.75rem;
+height: 1.25rem; background: url(arrow_orange_8f68d02.png); background-size: 100% 100%; margin-left: 1rem; display: inline-block; vertical-align: middle }
+.u-avatar { width: 3.4rem; height: 3.4rem; border-radius: 50% ;}
+.u-name { color: #8a4029; font-size: 1.4rem }
+.u-score { color: #fa5367; font-weight: 700; font-size: 1.7rem; width: 8rem }
+.u-score span { font-weight: 400; font-size: 1.4rem!important }
+.calendar { top: 0; width: 97%; margin: 0 auto; background: #f8285c; border-radius:.5rem
+}
+.date-box { position: relative; left: 0; top:.6rem;
+color: #fff; font-size: 1.2rem; width: 94%; margin: 0 3% }
+.icon-cal { position: absolute; left: 1%; margin-top: 1%; width: 1.75rem; padding-top: 2rem; background: url(icon_date_d1781fb.png) no-repeat; background-size: 100% }
+.month { position: absolute; left: 11%; top:.55rem;
+width: 30%; color: #8a4029 }
+.sign-info { position: absolute; right: 0; top:.5rem
+}
+.sign-info span { color: #ffff79; padding-left:.25rem;
+padding-right:.25rem
+}
+.calendar-main { position: relative; width: 97%; padding-top: 3.5rem; padding-left: 3%; padding-bottom: 1.3rem; overflow: hidden }
+.calendar-main .h { text-align: center; line-height: 200%; color: #c65a00; background: #ffec78; font-size: 1.4rem; border-right: 1px solid transparent; margin-bottom: 1px }
+.calendar-main .h2 {height: 32px; text-align: center;line-height: 32px; padding-top: 0; color: #a38e8e; font-size: 1.2rem; border-right: 1px solid #e5e5e5; border-bottom: 1px solid #e5e5e5; background: #fffef2; margin-bottom: 0 }
+/*.calendar-main .h2 .day { position: absolute; top: 5px; left: 8px }*/
+.calendar-main>div { position: relative; float: left; width: 13.7% }
+.calendar-main .today { color: #fa5367 }
+.calendar-main .signed:after { display: block; content: ''; background: url(icon_tag_6275793.png); background-size: 100% 100%; width: 1.35rem; height: 1.35rem; position: absolute; right:.25rem;
+bottom:.25rem
+}
+#sign-tip { color: #c65a00; text-align: center; margin:.75rem auto .65rem
+}
+#sign-tip a { color: #fa5367; text-decoration: underline; cursor: pointer }
+#sign-tip a:hover { text-decoration: underline }
+.btn-sign { width: 18.1rem; height: 4.2rem; display: block; margin: 0 auto }
+.makeup { background: #000; background: url(btn_makeup_e6cb1f5.png); background-size: 100% 100% }
+.sign { background: url(btn_sign_1eba670.png); background-size: 100% 100% }
+.signed { background: url(btn_signed_9225e97.png); background-size: 100% 100% }
+.option { width: 100%; padding: 0 1.5rem; padding-top: 44.175%; background: url(bg_bottom_c91f38f.png); background-size: 100%; margin-top: 0; box-sizing: border-box }
+.invite { width: 90.625%; color: #fff8bd; border-bottom: thin dashed #fff; position: absolute; bottom: 4.4rem; line-height: 4.4rem; cursor: pointer }
+.invite .icon-diamond { width: 1.7rem; height: 1.9rem; float: left; background: url(icon_share_74daed5.png); background-size: 100% 100%; margin-top: 1.15rem; margin-right:.9rem
+}
+.invite .tixmsg{font-size:1.8rem;}
+.invite .icon-arrow {
+width:.75rem; height: 1.25rem; float: right; background: url(arrow_orange_8f68d02.png); background-size: 100% 100%; margin-top: 1.6rem; margin-right:.9rem
+}
+.remind { width: 90.625%; color: #fff8bd; position: absolute; bottom: 0; line-height: 4.4rem; display: none }
+.remind .icon-clock { width: 1.9rem; height: 1.9rem; float: left; background: url(icon_remind_3586020.png); background-size: 100% 100%; margin-top: 1.15rem; margin-right:.9rem
+}
+.remind .remind-switch { position: absolute; display: block; right: 0; top: 1rem }
+.switch input { display: none }
+.switch i { display: inline-block; cursor: pointer; transition: all ease .2s; -webkit-transition: all ease .2s; border-radius: 1.5rem; padding-left: 0; padding-right: 2.5rem; background: url(bg_switch_off_b0d6f4d.png) no-repeat; background-size: 100% 100% }
+.switch :checked+i { padding-right: 0; padding-left: 2.5rem; background: url(bg_switch_on_b5675a7.png) no-repeat; background-size: 100% 100% }
+.switch i:before { display: block; content: ''; width: 2.2rem; height: 2.3rem; border-radius: 50%; margin:.075rem;
+background: #ffec78; box-shadow: 0 1px 2px rgba(0,0,0,.5) }
+.pop { position: fixed; width: 100%; height: 100%; background-color: rgba(0,0,0,.8); left: 0; top: 0; display: none; z-index: 11111 }
+.pop-body { position: absolute; background: #fff; background-size: 484px; width: 27.5rem; height: 25.7rem; top: 50%; left: 50%; margin-left: -13.75rem; margin-top: -12.85rem; border-radius:.4rem
+}
+.pop-title { position: absolute; left: 0; top: 0; background: #fce480; line-height: 4rem; color: #c65a00; font-size: 1.6rem; width: 100%; text-align: center; border-radius:.4rem .4rem 0 0
+}
+.pop-bg { margin: 0 auto; margin-top: 4rem; width: 16.65rem; height: 10.95rem; background: url(bg_success_6c39d3c.png); background-size: 100% 100% }
+.pop-info { padding: 1rem 2.4rem; width: 100%; box-sizing: border-box; text-align: left; font-size: 1.4rem; color: #333 }
+.pop-btn-confirm { display: block; margin: 0 auto; width: 11rem; height: 3.5rem; text-align: center; background: #fa5367; line-height: 3.5rem; border-radius: 1.75rem; color: #fff; font-size: 1.6rem; cursor: pointer }

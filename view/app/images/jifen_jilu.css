@@ -1,0 +1,10 @@
+
+.record-item { overflow: hidden }
+.record-item:after { content: ''; display: block; height: 1px; width: 100%; background: #ccc; -webkit-transform: scaleY(0.5); -webkit-transform-origin: 0 0; float: left }
+.record-item .ri-info { float: left }
+.record-item .ri-info h3 { font-size: 1.5rem; margin: 1rem 0 0; font-weight: 400 }
+.record-item .ri-info p { font-size: 1.1rem; margin: 5px 0; color: #8e8e93 }
+.record-item .ri-count { float: right; margin-right: 15px; line-height: 68px; font-size: 1.4rem }
+.record-item .add { color: #048bfe }
+.record-item .minus { color: #f83a7a }
+#next { clear: both }

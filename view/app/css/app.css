@@ -1,0 +1,70 @@
+@charset "UTF-8";
+body, div, span, form, input, h1, h2, h3, h4, h6, p, a, em, img, b, dl, dt, dd, ul, li, label { margin: 0; padding: 0 }
+body { font-family: FZLanTingHei-EL-GBK, "Open Sans", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", STHeiti, "WenQuanYi Micro Hei", Dengxian, Arial, SimSun, sans-serif; background-color: #fff; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; line-height: 1.5; word-wrap: break-word; font-size: 16px; color: #333 ; }
+html { -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100% }
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block }
+audio, canvas, progress, video { display: inline-block; vertical-align: baseline }
+audio:not([controls]) { display: none; height: 0 }
+[hidden], template {
+display:none
+}
+
+a { background: transparent; text-decoration: none; -webkit-tap-highlight-color: transparent; -webkit-touch-callout: none; -webkit-user-select: none; outline: 0 }
+a:visited, a:hover, a:active { outline: 0; text-decoration: none }
+abbr[title] { border-bottom: 1px dotted }
+b, strong { font-weight: 700 }
+dfn { font-style: italic }
+mark { background: #ff0; color: #000 }
+small { font-size: 80% }
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline }
+sup { top: -.5em }
+sub { bottom: -.25em }
+img { border: 0 }
+svg:not(:root) { overflow: hidden }
+figure { margin: 1em 40px }
+hr { -moz-box-sizing: content-box; box-sizing: content-box; height: 0 }
+pre { overflow: auto }
+code, kbd, pre, samp { font-family: monospace, monospace; font-size: 1em; word-wrap: break-word }
+button, input, optgroup, select, textarea { color: inherit; font: inherit; margin: 0; padding: 0 }
+input, input:focus, button, button:focus, textarea, textarea:focus { outline: 0; outline: 1px!important; resize: none }
+button { overflow: visible }
+button, select { text-transform: none }
+button, html input[type=button], input[type=reset], input[type=submit] { -webkit-appearance: button; cursor: pointer }
+button[disabled], html input[disabled] { cursor: default }
+button::-moz-focus-inner, input::-moz-focus-inner {
+border:0;
+padding:0
+}
+input { line-height: normal }
+input[type=checkbox], input[type=radio] { box-sizing: border-box; padding: 0 }
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+height:auto
+}
+input[type=search] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box }
+input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
+-webkit-appearance:none
+}
+fieldset { border: 1px solid silver; margin: 0 2px; padding: .35em .625em .75em }
+legend { border: 0; padding: 0 }
+textarea { overflow: auto }
+optgroup { font-weight: 700 }
+table { border-collapse: collapse; border-spacing: 0 }
+td, th { padding: 0 }
+li { list-style: none }
+html { text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-size: 62.5%; -webkit-tap-highlight-color: transparent; -webkit-overflow-scrolling: touch; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; -ms-overflow-style: -ms-autohiding-scrollbar }
+body { vertical-align: baseline; font-size: 16px; font-size: 1.6rem; -webkit-hyphens: auto; -moz-hyphens: auto; -ms-hyphens: auto; -o-hyphens: auto; hyphens: auto; -ms-word-break: break-all; word-break: break-all; word-break: break-word; word-wrap: break-word; overflow-wrap: break-word; color: #333; background: #FFF }
+@media all and (max-width:320px) {
+html { font-size: 62.5% }
+}
+@media all and (min-width:321px) {
+html { font-size: 70.3% }
+}
+.wrapper { width: 100%; max-width: 640px; overflow: hidden; margin: 0 auto; position: relative; box-sizing: border-box }
+
+body.black_mode,.black_mode .calendar-main .h2{background: #2A2A2A}
+.black_mode .content h3,.black_mode .content h2 ,.black_mode .content, .black_mode .post .title,.black_mode .post{color: #A09F9F}
+.black_mode .calendar-main .h{background: #52524E;}
+
+.black_mode .calendar,.black_mode .pop-body, .black_mode .post-content,.black_mode .post,.black_mode .pop-title{background: #3F3D3D;}
+
+
