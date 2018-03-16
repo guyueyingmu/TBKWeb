@@ -8,8 +8,6 @@
 <link rel="stylesheet" type="text/css" href="{$CSSDIR}/main.css" media="all" />
 <link rel="stylesheet" type="text/css" href="{$CSSDIR}/duoshuo.css" media="all" />
 <link rel="stylesheet" type="text/css" href="/assets/global/css/animator.min.css" media="all" />
-
-<script src="{$JSDIR}/materialize.js"></script>
 <style>
 .wp{
     width:{$width}px;
@@ -17,8 +15,9 @@
 </style>
 
 
-
+-------------------------
 <header class="cl">
+    echo "=============>".{$JSDIR};
     <div class="container wp" style="margin-top: 0;">
 
 
