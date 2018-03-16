@@ -57,10 +57,6 @@
                     <!--{/if}-->
  <!--{/foreach}-->
 
-<!--锦尚中国程序免费使用,请自觉保留以下友情链接-->
-<a href="http://idc.52jscn.com/" target="_blank" title="淘宝客专用主机" >淘宝客专用主机</a>
-<a href="http://www.uz-system.com/" target="_blank" title="淘宝客APP" >淘宝客APP</a>
-<a href="http://www.hbkfz.cn/" target="_blank" title="开发者">湖北开发者网络</a>
 <a href="http://www.ddapei.com/" target="_blank" title="搭配网">搭配网</a>
 
          </li>

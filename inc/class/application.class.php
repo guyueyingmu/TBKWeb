@@ -599,7 +599,7 @@ class application {
 							}
 
 							$_G['menu'] = $menu;
-							seo('锦尚中国淘客系统后台管理          power by bbs.52jscn.com');
+							seo('后台管理          www.baidu.com');
 							include_once (ROOT_PATH."inc/admin_action/".$m.".action.php");
 
 					}else{

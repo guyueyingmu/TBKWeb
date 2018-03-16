@@ -148,7 +148,7 @@
         <div class="ft cl ac">
         <p>当前版本{$version},更新时间:{$updatetime}</p>
         <p>
-        Copyright © 2014 <a href="http://www.52jscn.com/taoke" target="_blank">锦尚中国淘客系统</a> 
+        Copyright © 2014
         版权所有
         </p>
         </div>

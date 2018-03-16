@@ -28,7 +28,7 @@
 <br />
 <br />
 
-	Copyright &copy; 2014.Company <a href="http://bbs.52jscn.com" target="_blank" >锦尚中国</a> All rights reserved 
+	Copyright &copy; 2014.Company All rights reserved
     </div>
 </div>
 {include file="../../common/footer.php"}

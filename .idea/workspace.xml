@@ -1,30 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="905f6095-8b65-4e4e-8b2b-56aec9cc5e41" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/templates_c/16ab47a2e3e3555cf953cd32545bf41203baf27d.file.main.php.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/templates_c/2c88f667af69061ded134fc004d4640267e44175.file.header.php.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/templates_c/334f4a6a9a42d0b791c7dc4379c44e085b9afa0b.file.cpmsg.php.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/templates_c/5f398ae9ca718a2fa99ecefd53a7ccada7b0659b.file.header.php.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/templates_c/77883eb981b091d2200deaf835cedc7e3154d697.file.footer.php.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/templates_c/8d97aacc4ad97410c8a83aba312645328f705009.file.goods_list.php.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/templates_c/9f542cabaeb487739326e9f1ce3af3fce7585cda.file.main.php.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/templates_c/ca3a07c76351fa8db6ba631695c2558c7780ca44.file.main.php.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/templates_c/d8dd5f9b5806c51defc4165485a9f0913732e8e3.file.left_bar.php.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/templates_c/df59597c557865b51ab0ed938c83136d7d922d7e.file.footer.php.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/templates_c/e6116be7c57094e78062be172feaa4a50115cbd7.file.right_bar.php.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="905f6095-8b65-4e4e-8b2b-56aec9cc5e41" name="Default" comment="init2">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/cache/430a6d46edc080a40908676caa863ac1.cache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/cache/4e51b0b80c646ed4d6b1f7dd27cac678.cache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/cache/4f2747b26d6880f944ba288856ef2028.cache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/cache/523af537946b79c4f8369ed39ba78605.cache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/cache/5c540d17b1332e5c213263822032a8b5.cache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/cache/731f28b1b5fe2f02ec6ac1dd7cea4865.cache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/cache/7dc22b2c6a992f0232345df41303f5ea.cache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/cache/9e976c4c9ef93838ade29d7ce7389abf.cache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/cache/a5b4406e2b72efeaa8561ead94c9cc7e.cache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/cache/aab9e1de16f38176f86d7a92ba337a8d.cache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/cache/ad83038aadfba8bb865a03fad0e97114.cache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/cache/b582cbb2f8294afa8bbe26c4c360a01d.cache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/cache/c7d76b7c112b826184db701cfd343186.cache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/cache/cache_table.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/cache/cd297a30a27ca8b0946409efb977a584.cache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/cache/cd8a5c9448646f9ea7fc6ca6baf042da.cache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/cache/d5ec87def338792d96072251c6ab430b.cache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/cache/d72e5ee9b367833956ed9f88a960c686.cache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/web/cache/db0f6f37ebeb6ea09489124345af2a45.cache" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TBKWeb.iml" afterPath="$PROJECT_DIR$/TBKWeb.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/action/index.action.php" afterPath="$PROJECT_DIR$/inc/action/index.action.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/class/error.class.php" afterPath="$PROJECT_DIR$/inc/class/error.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/config/authorize.php" afterPath="$PROJECT_DIR$/inc/config/authorize.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/admin_action/login.action.php" afterPath="$PROJECT_DIR$/inc/admin_action/login.action.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/inc/class/application.class.php" afterPath="$PROJECT_DIR$/inc/class/application.class.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install.php" afterPath="$PROJECT_DIR$/install.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/main.php" afterPath="$PROJECT_DIR$/install/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/install/sql/data.sql" afterPath="$PROJECT_DIR$/install/sql/data.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/admin/common_admin/left_bar.php" afterPath="$PROJECT_DIR$/view/admin/common_admin/left_bar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/admin/login/main.php" afterPath="$PROJECT_DIR$/view/admin/login/main.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/common/header.php" afterPath="$PROJECT_DIR$/view/common/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/ttae/index/yaoqing.php" afterPath="$PROJECT_DIR$/view/ttae/index/yaoqing.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/view/ttae/index/main.php" afterPath="$PROJECT_DIR$/view/ttae/index/main.php" />
     </list>
     <ignored path="TBKWeb.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,25 +52,63 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="error.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/class/error.class.php">
+      <file leaf-file-name="yaoqing.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/view/ttae/index/yaoqing.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="148" column="29" lean-forward="true" selection-start-line="148" selection-start-column="29" selection-end-line="148" selection-end-column="29" />
+            <state relative-caret-position="108">
+              <caret line="40" column="19" lean-forward="true" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/common/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="4" column="62" lean-forward="false" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.class.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/class/application.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="600" column="48" lean-forward="true" selection-start-line="600" selection-start-column="48" selection-end-line="600" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/admin/login/main.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="30" column="33" lean-forward="false" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
               <folding>
-                <marker date="1521166968252" expanded="true" signature="2302:2519" ph="..." />
-                <marker date="1521166968252" expanded="true" signature="2309:2460" ph="..." />
-                <marker date="1521166968252" expanded="true" signature="2495:2512" ph="..." />
+                <element signature="e#972#978#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="yaoqing.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/ttae/index/yaoqing.php">
+      <file leaf-file-name="login.action.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/inc/admin_action/login.action.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="50" column="82" lean-forward="false" selection-start-line="50" selection-start-column="82" selection-end-line="50" selection-end-column="82" />
+            <state relative-caret-position="197">
+              <caret line="80" column="38" lean-forward="false" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/ttae/index/main.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="116">
+              <caret line="47" column="18" lean-forward="true" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -73,36 +117,41 @@
       <file leaf-file-name="install.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/install.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2294">
-              <caret line="199" column="39" lean-forward="false" selection-start-line="199" selection-start-column="39" selection-end-line="199" selection-end-column="39" />
+            <state relative-caret-position="185">
+              <caret line="179" column="62" lean-forward="false" selection-start-line="179" selection-start-column="62" selection-end-line="179" selection-end-column="62" />
               <folding>
-                <marker date="1521167101481" expanded="true" signature="4235:4246" ph="DROP TABLE $... " />
+                <marker date="1521168076970" expanded="true" signature="4235:4246" ph="DROP TABLE $... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="authorize.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/inc/config/authorize.php">
+      <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/install/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2376">
-              <caret line="88" column="2" lean-forward="false" selection-start-line="88" selection-start-column="2" selection-end-line="88" selection-end-column="2" />
+            <state relative-caret-position="197">
+              <caret line="150" column="24" lean-forward="false" selection-start-line="150" selection-start-column="24" selection-end-line="150" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="extends.function.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/inc/function/extends.function.php">
+      <file leaf-file-name="left_bar.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/admin/common_admin/left_bar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="308" column="9" lean-forward="true" selection-start-line="308" selection-start-column="9" selection-end-line="308" selection-end-column="9" />
-              <folding>
-                <marker date="1521163284857" expanded="true" signature="5603:5659" ph="SELECT max_j... ${DB::table('member')}" />
-                <marker date="1521163284857" expanded="true" signature="12274:12335" ph="SELECT * FRO... ${DB::table('member')}" />
-                <marker date="1521163284857" expanded="true" signature="13439:13493" ph="SELECT sum(j... ${DB::table('sign')}" />
-                <marker date="1521163284857" expanded="true" signature="18223:18303" ph="SELECT id FR... ${DB::table('black')}" />
-              </folding>
+            <state relative-caret-position="251">
+              <caret line="27" column="46" lean-forward="false" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/install/sql/data.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="478">
+              <caret line="387" column="22" lean-forward="false" selection-start-line="387" selection-start-column="22" selection-end-line="387" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -113,7 +162,11 @@
     <findStrings>
       <find>&lt;meta</find>
       <find>锦尚中国淘宝客系</find>
+      <find>锦尚中国TAE</find>
     </findStrings>
+    <replaceStrings>
+      <replace>xx</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -134,14 +187,20 @@
         <option value="$PROJECT_DIR$/inc/class/authorize.class.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/web/templates_c/2c88f667af69061ded134fc004d4640267e44175.file.header.php.php" />
-        <option value="$PROJECT_DIR$/view/common/header.php" />
         <option value="$PROJECT_DIR$/inc/action/index.action.php" />
-        <option value="$PROJECT_DIR$/install/main.php" />
         <option value="$PROJECT_DIR$/inc/class/error.class.php" />
         <option value="$PROJECT_DIR$/web/templates_c/ca3a07c76351fa8db6ba631695c2558c7780ca44.file.main.php.php" />
         <option value="$PROJECT_DIR$/view/ttae/index/yaoqing.php" />
-        <option value="$PROJECT_DIR$/install.php" />
         <option value="$PROJECT_DIR$/inc/config/authorize.php" />
+        <option value="$PROJECT_DIR$/view/common/header.php" />
+        <option value="$PROJECT_DIR$/inc/class/application.class.php" />
+        <option value="$PROJECT_DIR$/view/admin/login/main.php" />
+        <option value="$PROJECT_DIR$/inc/admin_action/login.action.php" />
+        <option value="$PROJECT_DIR$/view/ttae/index/main.php" />
+        <option value="$PROJECT_DIR$/install.php" />
+        <option value="$PROJECT_DIR$/install/main.php" />
+        <option value="$PROJECT_DIR$/view/admin/common_admin/left_bar.php" />
+        <option value="$PROJECT_DIR$/install/sql/data.sql" />
       </list>
     </option>
   </component>
@@ -214,7 +273,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="inc" />
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -228,11 +287,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="inc" />
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -246,11 +305,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="inc" />
+              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="class" />
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="login" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -714,12 +777,20 @@
       <updated>1521125307830</updated>
       <workItem from="1521125310438" duration="2023000" />
       <workItem from="1521128740545" duration="22000" />
-      <workItem from="1521163295686" duration="1509000" />
+      <workItem from="1521163295686" duration="2410000" />
     </task>
+    <task id="LOCAL-00001" summary="init2">
+      <created>1521167349996</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1521167349996</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3554000" />
+    <option name="totallyTimeSpent" value="4455000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -733,7 +804,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -802,6 +873,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="init2" />
+    <option name="LAST_COMMIT_MESSAGE" value="init2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -909,14 +984,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/common/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="48" lean-forward="true" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/inc/action/index.action.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8">
@@ -929,14 +996,6 @@
             <marker date="1521166848232" expanded="true" signature="10054:10465" ph="..." />
             <marker date="1521166848232" expanded="true" signature="10517:10881" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/install/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="4" column="7" lean-forward="false" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -973,28 +1032,102 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/ttae/index/yaoqing.php">
+    <entry file="file://$PROJECT_DIR$/inc/config/authorize.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="50" column="82" lean-forward="false" selection-start-line="50" selection-start-column="82" selection-end-line="50" selection-end-column="82" />
+        <state relative-caret-position="2376">
+          <caret line="88" column="2" lean-forward="false" selection-start-line="88" selection-start-column="2" selection-end-line="88" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/common/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="62" lean-forward="false" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/class/application.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="600" column="48" lean-forward="true" selection-start-line="600" selection-start-column="48" selection-end-line="600" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin/login/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="30" column="33" lean-forward="false" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
+          <folding>
+            <element signature="e#972#978#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/inc/admin_action/login.action.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="80" column="38" lean-forward="false" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/cache/7dc22b2c6a992f0232345df41303f5ea.cache">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="27">
+          <caret line="1" column="1571" lean-forward="false" selection-start-line="1" selection-start-column="1571" selection-end-line="1" selection-end-column="1571" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/ttae/index/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="116">
+          <caret line="47" column="18" lean-forward="true" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/install.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2294">
-          <caret line="199" column="39" lean-forward="false" selection-start-line="199" selection-start-column="39" selection-end-line="199" selection-end-column="39" />
+        <state relative-caret-position="185">
+          <caret line="179" column="62" lean-forward="false" selection-start-line="179" selection-start-column="62" selection-end-line="179" selection-end-column="62" />
           <folding>
-            <marker date="1521167101481" expanded="true" signature="4235:4246" ph="DROP TABLE $... " />
+            <marker date="1521168076970" expanded="true" signature="4235:4246" ph="DROP TABLE $... " />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inc/config/authorize.php">
+    <entry file="file://$PROJECT_DIR$/install/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2376">
-          <caret line="88" column="2" lean-forward="false" selection-start-line="88" selection-start-column="2" selection-end-line="88" selection-end-column="2" />
+        <state relative-caret-position="197">
+          <caret line="150" column="24" lean-forward="false" selection-start-line="150" selection-start-column="24" selection-end-line="150" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/admin/common_admin/left_bar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="27" column="46" lean-forward="false" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/install/sql/data.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="478">
+          <caret line="387" column="22" lean-forward="false" selection-start-line="387" selection-start-column="22" selection-end-line="387" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/ttae/index/yaoqing.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="40" column="19" lean-forward="true" selection-start-line="40" selection-start-column="19" selection-end-line="40" selection-end-column="19" />
           <folding />
         </state>
       </provider>

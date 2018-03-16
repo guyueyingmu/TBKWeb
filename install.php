@@ -177,7 +177,7 @@ private		function run($type){
 			}
 			
 			if($count == 0){				
-				json(array('status'=>'success','msg'=>'数据库连接成功,您现在可以正常安装锦尚中国淘宝系统'));
+				json(array('status'=>'success','msg'=>'数据库连接成功！'));
 			}else{
 				json('当前数据库中已存在相同的系统表共'.$count.'张');
 			}

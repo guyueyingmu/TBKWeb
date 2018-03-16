@@ -78,7 +78,7 @@ class login extends app{
 									 $message ="您还有".(5-$_SESSION[$ip]).'次机会,否则您将会在30分钟禁止登录';
 								}
 				}
-				$_G['title'] = '欢迎登录锦尚中国淘宝客后台';
+				$_G['title'] = '欢迎登录管理后台';
 				$this->add(array('message'=>$message));
 				$this->show();
 			
