@@ -197,7 +197,7 @@ private		function run($type){
 				return ;
 			}
 			
-			json(array('msg'=>'数据库创建成功,您现在可以正常安装锦尚中国淘宝客系统','status'=>'success'));
+			json(array('msg'=>'数据库创建成功！','status'=>'success'));
 		}
 
 	}

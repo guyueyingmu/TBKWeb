@@ -2,10 +2,8 @@
 <html  class="taeapp {if $TAE==1}tae{else}web{/if} _{$CM}_{$CA}">
 <head>
 <meta charset="utf-8">
-<title>锦尚中国淘宝客系统安装</title>
+<title>系统安装</title>
 <link href="/favicon.ico" type="image/x-icon" rel=icon />
-<meta name="author" content="uz-system.com 7x24 service d_cms@qq.om"/>
-<meta name="system_info" content="by uz-system version {$version}"/>
 <meta name="keywords" content="{$_G.keywords}"/>
 <meta name="description" content="{$_G.description}"/>
 <meta name="tk" content="{$_G.setting.pid}|{$_G.setting.taodianjing_url}|1"/>

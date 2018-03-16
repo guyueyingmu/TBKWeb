@@ -48,7 +48,7 @@
                     <b class="inventspan">一键邀请</b>
                     <div class="index_fxshared">
 
- <div class="_share" data-style="2" data-count="0" data-more="0" data-content="锦尚中国淘宝客系统专注于淘宝客网站和淘宝客APP开发订制,为淘客站长提供最好的淘客程序,以及免费的淘客源码下载,程序完全开源,兼容淘宝百川TAE1.0和2.0,可完美拖管至百川" data-picurl="{$_G.siteurl}/assets/ttae/images/inventimg1.png"></div>
+ <div class="_share" data-style="2" data-count="0" data-more="0" data-content="xxx" data-picurl="{$_G.siteurl}/assets/ttae/images/inventimg1.png"></div>
 
                         
                         

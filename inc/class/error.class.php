@@ -59,7 +59,7 @@ class error
 			msg($errormsg,'error');
 		}
 		
-		seo('Error  by锦尚中国淘宝客系统');
+		seo('Error  by 系统警告');
 		$title = $type == 'db' ? 'Database Error' : 'System Error';
 		$str='<link rel="stylesheet" type="text/css" href="/assets/global/css/global.css" media="all" />';
 		$str .= '<div class="system_error"><div class="error_main"><a class="y go_home" href="'.$_G[siteurl].'">返回首页</a><h1>'. $title
@@ -73,7 +73,7 @@ ob_clean();
 $str='<!doctype html>
 <html>
 <head>
-<title>Error  by锦尚中国淘宝客系统</title>
+<title>404</title>
 <meta name="robots" content="noindex,nofollow">
 <meta http-equiv="Content-Type" content="text/html; charset='.CHARSET.'" />
 </head>

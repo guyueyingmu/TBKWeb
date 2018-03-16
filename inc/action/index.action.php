@@ -386,9 +386,8 @@ $rs ='<?xml version="1.0" ?>
 	<language>zh-cn</language>
 	<copyright>'.trim_html($_G[setting][copyright],1).'</copyright>
 	<lastBuildDate>'.gmstrftime(TIMESTAMP).'</lastBuildDate>
-	<generator>锦尚中国淘宝客系统'.TTAE_VERSION.' by d_cms@qq.com</generator>
 	<managingEditor>'.$_G[setting][admin_email].'</managingEditor>
-	<webMaster>85914984@qq.com</webMaster>
+	<webMaster>xxx@qq.com</webMaster>
 	<ttl>40</ttl>';
 
 foreach ($goods as $k=>$v){

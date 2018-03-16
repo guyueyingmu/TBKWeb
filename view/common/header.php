@@ -4,8 +4,6 @@
 <meta charset="utf-8">
 <title>{if $_G.title}{$_G.title}{else}{$_G.setting.title}{/if}-锦尚中国淘客系统</title>
 <link href="/favicon.ico" type="image/x-icon" rel=icon />
-<meta name="author" content="uz-system.com 7x24 service d_cms@qq.com"/>
-<meta name="system_info" content="by uz-system version {$_G.version}"/>
 <meta name="keywords" content="{$_G.keywords}"/>
 <meta name="description" content="{$_G.description}"/>
 
