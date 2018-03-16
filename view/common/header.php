@@ -11,7 +11,7 @@
 <meta name="get" content="{$query_text}"/>
     <meta name="set" content="{$global_str}"/>
     <script type="text/javascript" src="/assets/global/js/jquery-1.8.3.min.js"></script>
-    <script type="text/javascript" src="/assets/simpler/js/materialize.js"></script>
+    <script type="text/javascript" src="/assets/simpler/js/materialize.min.js"></script>
     <script type="text/javascript" src="http://a.alimama.cn/tkapi.js"></script>
     <script type="text/javascript" src="/assets/global/js/global.js"></script>
 <link rel="stylesheet" type="text/css" href="/assets/global/css/global.css" media="all" />
