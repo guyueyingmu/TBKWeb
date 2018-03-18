@@ -6,7 +6,6 @@ define('CURSCRIPT', reset($basename));
 include ROOT_PATH.'inc/class/application.class.php';
 
 error_reporting( E_ALL & ~E_NOTICE );
-
 application::init();
 application::run();
 

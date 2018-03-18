@@ -17,7 +17,6 @@
 
 -------------------------
 <header class="cl">
-    echo "=============>".{$JSDIR};
     <div class="container wp" style="margin-top: 0;">
 
 

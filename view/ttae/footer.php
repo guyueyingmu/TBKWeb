@@ -44,25 +44,95 @@
 </div>
 
 
-
 <!--右边栏-->
 
-<div class="rightnfixd">
-    <span>
-    <a href="#" class="rfixedico rightnfixda1"></a>
-    <a class="rfixedico rightnfixda2"></a>
-    <a href="javascript:;"  class="rfixedico rightnfixda3 _addfavorite"></a>
-    </span>
-    <i class="rfixedico rightnfixdspan1"><img src="{$IMGDIR}/wt.png"  /></i>
-</div>
+
+<div id="sidebar">
+
+    <div class="side-tab side-tab-top side-tab-cart side-tab-top0">
+        <div class="tab-icon cart-icon"></div>
+        <div class="tab-text">购物车</div>
+        <div class="tab-sup">
+            <div class="tab-sup-bg">
+                <div class="tab-sup-bd">0</div>
+            </div>
+        </div>
+        <a href="#" target="_blank" add_params="utm_content=right_bar">购物车</a>
+    </div>
+    <div class="side-tab side-tab-top side-tab-order side-tab-top1">
+        <div class="tab-icon order-icon">
+            <a href="//shop.zhe800.com/my/orders" target="_blank" add_params="utm_content=right_bar"></a>
+        </div>
+        <div class="tab-tip" style="display: none;">
+            <a href="//shop.zhe800.com/my/orders" target="_blank" add_params="utm_content=right_bar">我的订单</a>
+        </div>
+    </div>
+    <div class="side-tab side-tab-top side-tab-coupons side-tab-top2">
+        <div class="tab-icon coupons-icon">
+            <a href="//shop.zhe800.com/my/coupons" target="_blank" add_params="utm_content=right_bar"></a>
+        </div>
+        <div class="tab-tip" style="display: none;"><a href="//shop.zhe800.com/my/coupons" target="_blank" add_params="utm_content=right_bar">我的优惠券</a>
+        </div>
+    </div>
+    <div class="side-tab side-tab-top side-tab-myFavorites side-tab-top3">
+        <div class="tab-icon myFavorites-icon">
+            <a href="//www.zhe800.com/profile/my_favorites/all" target="_blank" add_params="utm_content=right_bar"></a>
+        </div>
+        <div class="tab-tip" style="display: none;">
+            <a href="//www.zhe800.com/profile/my_favorites/all" target="_blank" add_params="utm_content=right_bar">我的收藏</a>
+        </div>
+    </div>
+    <div class="side-tab side-tab-top side-tab-imMessage side-tab-top4">
+        <div class="tab-icon imMessage-icon"></div>
+        <div class="tab-tip" style="display: none;">
+            <a class="message_text">卖家消息</a>
+        </div>
+    </div>
+    <div class="side-tab side-tab-bottom side-tab-checkin side-tab-bottom4">
+        <div class="tab-icon checkin-icon"></div>
+        <div class="tab-tip signTips" style="display: none;">
+            <div class="tab-ckcontent"><table class="tab-cktips"><tbody><tr><td><div>想领钱，先签到<br>积分抵现又换礼</div></td></tr></tbody></table></div>
+        </div>
+    </div>
+    <!-- <div class="side-tab side-tab-bottom side-tab-gender"> -->
+    <!--填充代码-->
+    <!-- </div> -->
+    <div class="side-tab side-tab-bottom side-tab-qrcode side-tab-bottom3">
+        <div class="tab-icon qrcode-icon">
+            <a href="//www.zhe800.com/app" target="_blank" add_params="utm_content=right_bar"></a>
+        </div>
+        <div class="tab-tip" style="display: none;">
+            <a href="//www.zhe800.com/app" target="_blank" add_params="utm_content=right_bar"></a>
+        </div>
+    </div>
+    <div class="side-tab side-tab-bottom side-tab-faq side-tab-bottom2">
+        <div class="tab-icon faq-icon">
+            <a href="{$URL}m=article&id=6" target="_blank" add_params="utm_content=right_bar"></a>
+        </div>
+        <div class="tab-tip" style="display: none;">
+            <a href="{$URL}m=article&id=6" target="_blank" add_params="utm_content=right_bar">常见问题</a>
+        </div>
+    </div>
+    <div class="side-tab side-tab-bottom side-tab-feedback feedback_popup_handler side-tab-bottom1">
+        <div class="tab-icon feedback-icon"></div>
+        <div class="tab-tip" style="display: none;">
+            意见反馈
+        </div>
+    </div>
+    <div class="side-tab side-tab-bottom side-tab-totop thide side-tab-bottom0" id="goTop">
+        <div class="tab-icon totop-icon"></div>
+        <div class="tab-tip">
+            返回顶部
+        </div>
+    </div>
 
 {if $_G.setting.left_bar ==1}
-{if $CM=='index' || $CM=='channel'}
-<!--悬浮框-->
+{if ($CM=='index' && $CURACTION != 'main') || $CM=='channel'}
+<!--悬浮2222框-->
 <div class="menufixd" style="{if $CURMODULE == 'home'}display:none;{/if}">
     <h3 class="menufixedlog" style="display: block;"></h3>
     <span></span>
-    <h1>商品分类</h1>	
+    <h1>商品分类</h1>
         <ul class="fixedmenu1 cl">
  	  <li class="indexajaxlink" ><a href="{$_G.siteurl}" class="{if $_G.fid ==0}fixedselect{/if}">全部</a></li>
         {foreach from = $_G.channels item=v name= a}
@@ -70,19 +140,19 @@
          <li><a href="{$URL}fid={$v.fid}" class="{if $_G.fid == $v.fid }fixedselect{/if}">{$v.name}</a></li>
          {/if}
          {/foreach}
-         
+
         <li><a class="" href="{$URL}a=tomorrow">预告</a></li>
         <li ><a  href="{$URL}a=over">即将结束</a></li>
     </ul>
     <ul class="fixedmenu2_1 cl">
-    
+
 {foreach $_G.nav item=v}
 {if $v.type =="3"}
 <li><a href="{$v.url}" class="iconfont  {$v.classname}" {if $v.target=="1"} target="_blank"{/if}>{$v.name}</a></li>
 {/if}
 {/foreach}
-       
-         
+
+
     </ul>
 
 </div>
@@ -116,4 +186,6 @@
 <div class="_share" data-style="2" data-more="0" data-count="0"></div></div>
 </div>-->
 
+
+</div>
 {include file="../common/footer.php"}

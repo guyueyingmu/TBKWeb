@@ -1,6 +1,4 @@
 {include file="../header.php"}
-
-
 {if $CA=='main' && $CM=='channel'}
     {if $channel.picurl}
         <div class="_auto_ad" data-picurl="{$channel.picurl}" data-url="{$cate.org_url}"></div>
