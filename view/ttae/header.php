@@ -72,7 +72,7 @@
                          </ul>
                         
                     </div>
-     			  <input placeholder="搜&quot;精品女装&quot;试试" type="text" class="so_kw" data-type="kw" name="kw" value="{if $_GET.kw}{$_GET.kw}{/if}" autocomplete="off" accesskey="s" aria-expanded="true" />
+     			  <input placeholder="请输入商品名字/商品链接/淘口令" type="text" class="so_kw" data-type="kw" name="kw" value="{if $_GET.kw}{$_GET.kw}{/if}" autocomplete="off" accesskey="s" aria-expanded="true" />
                 </div>
                 <input type="submit" class="srh-sub so_web _check_form" url="{$URL}a=search" value="搜本站" >
                 <input type="hidden" value="{$_G.setting.pid}" name="pid">

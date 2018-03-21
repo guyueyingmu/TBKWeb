@@ -8,7 +8,6 @@
 {/if}
 
 
-
 <div class="kt_box cl ">
     	<ul>
         {foreach from=$img item=v key=k}
