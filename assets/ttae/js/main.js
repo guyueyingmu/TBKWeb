@@ -130,10 +130,26 @@ var modue_list = {
 						$(".rightnfixdspan1").hide();
 				});
 
+				click('#serarch_button',function(){
+					var content = $("#search_form input[name='kw']").val();
+					var id = GetUrlParamter(content,'id');
+					if(id != 0){
+						console.log("c超链接");
+						return;
+					}else if(content.indexOf("￥") >= 0 && content.indexOf("￥") && content.indexOf("￥") != content.lastIndexOf("￥") ){
+						console.log("淘口令");
+						return;
+					}
+					return;
+				});
 
+		function GetUrlParamter(uri,name){
+			var reg = new RegExp("(^|\\?|&)"+ name +"=([^&]*)(\\s|&|$)", "i");
+			if (reg.test(uri)) return unescape(RegExp.$2.replace(/\+/g, ""))
+			return 0;
+		}
 
-
-				click('.a_logout',function(){
+		click('.a_logout',function(){
 					return confirm('您确定退出登录吗?');
 				});
 
