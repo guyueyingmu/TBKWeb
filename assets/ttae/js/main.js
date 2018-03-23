@@ -132,14 +132,18 @@ var modue_list = {
 
 				click('#serarch_button',function(){
 					var content = $("#search_form input[name='kw']").val();
-					var id = GetUrlParamter(content,'id');
-					if(id != 0){
-						console.log("c超链接");
-						return;
-					}else if(content.indexOf("￥") >= 0 && content.indexOf("￥") && content.indexOf("￥") != content.lastIndexOf("￥") ){
+					var search_value = 0;
+					if(/^((https|http)?:\/\/)+[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&_~`@[\]\':+!]*([^<>\"\"])*$/.test(content)){
+                        content = GetUrlParamter(content,'id');
+                        search_value = 1;
+					}else if(content.indexOf("￥") >= 0 && content.indexOf("￥") != content.lastIndexOf("￥") ){
 						console.log("淘口令");
-						return;
+                        search_value = 2;
 					}
+
+                    $("#search_form input[name='search_type']").val(search_value);
+                    $("#search_form input[name='search_type_value']").val(content);
+                    $("#search_form").submit();
 					return;
 				});
 
