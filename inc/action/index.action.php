@@ -327,8 +327,16 @@ class index extends app{
             if(empty($ret)){
                 return null;
             }
-            $paratems = parse_url_param(geturl($ret->url));
-            $goods = top('tbk',"get_info",$paratems[id]);
+            $searchId = parse_url_param($ret->url)[id];
+            if(!$searchId){
+                $paratems = parse_url_param(geturl($ret->url));
+                $searchId = $paratems[id];
+            }
+
+            if(!$searchId){
+                return null;
+            }
+            $goods = top('tbk',"get_info",$searchId);
             if(empty($goods)){
                 return null;
             }
