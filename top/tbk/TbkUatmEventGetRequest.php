@@ -1,11 +1,11 @@
 <?php
 /**
- * TOP API: taobao.tbk.uatm.favorites.get request
+ * TOP API: taobao.tbk.uatm.event.get request
  * 
  * @author auto create
- * @since 1.0, 2018.01.19
+ * @since 1.0, 2016.04.29
  */
-class TbkUatmFavoritesGetRequest
+class TbkUatmEventGetRequest
 {
 	/** 
 	 * 需要返回的字段列表，不能为空，字段名之间使用逗号分隔
@@ -13,19 +13,14 @@ class TbkUatmFavoritesGetRequest
 	private $fields;
 	
 	/** 
-	 * 第几页，从1开始计数
+	 * 默认1，第几页，从1开始计数
 	 **/
 	private $pageNo;
 	
 	/** 
-	 * 默认20，页大小，即每一页的活动个数
+	 * 默认20,  页大小，即每一页的活动个数
 	 **/
 	private $pageSize;
-	
-	/** 
-	 * 默认值-1；选品库类型，1：普通选品组，2：高佣选品组，-1，同时输出所有类型的选品组
-	 **/
-	private $type;
 	
 	private $apiParas = array();
 	
@@ -62,20 +57,9 @@ class TbkUatmFavoritesGetRequest
 		return $this->pageSize;
 	}
 
-	public function setType($type)
-	{
-		$this->type = $type;
-		$this->apiParas["type"] = $type;
-	}
-
-	public function getType()
-	{
-		return $this->type;
-	}
-
 	public function getApiMethodName()
 	{
-		return "taobao.tbk.uatm.favorites.get";
+		return "taobao.tbk.uatm.event.get";
 	}
 	
 	public function getApiParas()

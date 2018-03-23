@@ -76,6 +76,8 @@
                 </div>
                 <input type="button" class="srh-sub so_web _check_form" id="serarch_button" url="{$URL}a=search" value="搜本站" >
                 <input type="hidden" value="{$_G.setting.pid}" name="pid">
+                <input type="hidden" value="0" name="search_type">
+                <input type="hidden" value="0" name="search_type_value">
 
                 
             </form>

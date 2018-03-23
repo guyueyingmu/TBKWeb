@@ -3,7 +3,7 @@ if(!defined('IN_TTAE')) exit('Access Denied');
 
 
 function top($name,$method,$data,$data1){
-	global $_G;
+		global $_G;
 
 	if($_G['TOP']	== NULL ){
 		include_once	(ROOT_PATH.'top/TopClient.php');

@@ -96,7 +96,18 @@ class api_tbk  extends apiBase{
     }
 	
 	
-	
+	function get_shop_by_taokouling($taokouiling){
+        global $_G;
+
+        include_once(ROOT_PATH . 'top/tbk/WirelessShareTpwdQueryRequest.php');
+        $req = new WirelessShareTpwdQueryRequest();
+        $req->setPasswordContent($taokouiling);
+
+        $resp = $_G['TOP']->execute($req);
+
+        top_check_error($resp, $this->show_error);
+        return $resp;
+    }
 	
 
 

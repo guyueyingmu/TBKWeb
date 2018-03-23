@@ -42,10 +42,12 @@
     {$_G.setting.copyright}  {$_G.runtime}
     
 </div>
-
+<!--悬浮2222框-->
+<!--
 {if $_G.setting.left_bar ==1}
 {if ($CM=='index' && $CURACTION != 'main') || $CM=='channel'}
-<!--悬浮2222框-->
+
+
 <div class="menufixd" style="{if $CURMODULE == 'home'}display:none;{/if}">
     <h3 class="menufixedlog" style="display: block;"></h3>
     <span></span>
@@ -75,6 +77,7 @@
 </div>
 {/if}	
 {/if}
+-->
 <div class="share_box_menu" style="display:none">
  <table cellpadding="0" cellspacing="0" class="fwin">
     <tbody>

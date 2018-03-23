@@ -1,21 +1,21 @@
 <?php
 /**
- * TOP API: taobao.tbk.uatm.favorites.item.get request
+ * TOP API: taobao.tbk.uatm.event.item.get request
  * 
  * @author auto create
- * @since 1.0, 2017.07.26
+ * @since 1.0, 2016.04.29
  */
-class TbkUatmFavoritesItemGetRequest
+class TbkUatmEventItemGetRequest
 {
 	/** 
-	 * 推广位id，需要在淘宝联盟后台创建；且属于appkey备案的媒体id（siteid），如何获取adzoneid，请参考，http://club.alimama.com/read-htm-tid-6333967.html?spm=0.0.0.0.msZnx5
+	 * 推广位id，需要在淘宝联盟后台创建；且属于appkey对应的备案媒体id（siteid），如何获取adzoneid，请参考：http://club.alimama.com/read-htm-tid-6333967.html?spm=0.0.0.0.msZnx5
 	 **/
 	private $adzoneId;
 	
 	/** 
-	 * 选品库的id
+	 * 招商活动id
 	 **/
-	private $favoritesId;
+	private $eventId;
 	
 	/** 
 	 * 需要输出则字段列表，逗号分隔
@@ -23,7 +23,7 @@ class TbkUatmFavoritesItemGetRequest
 	private $fields;
 	
 	/** 
-	 * 第几页，默认：1，从1开始计数
+	 * 第几页，默认：１，从1开始计数
 	 **/
 	private $pageNo;
 	
@@ -55,15 +55,15 @@ class TbkUatmFavoritesItemGetRequest
 		return $this->adzoneId;
 	}
 
-	public function setFavoritesId($favoritesId)
+	public function setEventId($eventId)
 	{
-		$this->favoritesId = $favoritesId;
-		$this->apiParas["favorites_id"] = $favoritesId;
+		$this->eventId = $eventId;
+		$this->apiParas["event_id"] = $eventId;
 	}
 
-	public function getFavoritesId()
+	public function getEventId()
 	{
-		return $this->favoritesId;
+		return $this->eventId;
 	}
 
 	public function setFields($fields)
@@ -123,7 +123,7 @@ class TbkUatmFavoritesItemGetRequest
 
 	public function getApiMethodName()
 	{
-		return "taobao.tbk.uatm.favorites.item.get";
+		return "taobao.tbk.uatm.event.item.get";
 	}
 	
 	public function getApiParas()
@@ -135,7 +135,7 @@ class TbkUatmFavoritesItemGetRequest
 	{
 		
 		RequestCheckUtil::checkNotNull($this->adzoneId,"adzoneId");
-		RequestCheckUtil::checkNotNull($this->favoritesId,"favoritesId");
+		RequestCheckUtil::checkNotNull($this->eventId,"eventId");
 		RequestCheckUtil::checkNotNull($this->fields,"fields");
 	}
 	

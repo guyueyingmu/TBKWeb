@@ -1,5 +1,4 @@
 {include file="../header.php"}
-
 <div class="container wp">
   <div class="slider">
     <ul class="slides">

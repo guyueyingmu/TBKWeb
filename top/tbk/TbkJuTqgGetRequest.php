@@ -1,46 +1,41 @@
 <?php
 /**
- * TOP API: taobao.tbk.uatm.favorites.item.get request
+ * TOP API: taobao.tbk.ju.tqg.get request
  * 
  * @author auto create
- * @since 1.0, 2017.07.26
+ * @since 1.0, 2017.06.17
  */
-class TbkUatmFavoritesItemGetRequest
+class TbkJuTqgGetRequest
 {
 	/** 
-	 * 推广位id，需要在淘宝联盟后台创建；且属于appkey备案的媒体id（siteid），如何获取adzoneid，请参考，http://club.alimama.com/read-htm-tid-6333967.html?spm=0.0.0.0.msZnx5
+	 * 推广位id（推广位申请方式：http://club.alimama.com/read.php?spm=0.0.0.0.npQdST&tid=6306396&ds=1&page=1&toread=1）
 	 **/
 	private $adzoneId;
 	
 	/** 
-	 * 选品库的id
+	 * 最晚开团时间
 	 **/
-	private $favoritesId;
+	private $endTime;
 	
 	/** 
-	 * 需要输出则字段列表，逗号分隔
+	 * 需返回的字段列表
 	 **/
 	private $fields;
 	
 	/** 
-	 * 第几页，默认：1，从1开始计数
+	 * 第几页，默认1，1~100
 	 **/
 	private $pageNo;
 	
 	/** 
-	 * 页大小，默认20，1~100
+	 * 页大小，默认40，1~40
 	 **/
 	private $pageSize;
 	
 	/** 
-	 * 链接形式：1：PC，2：无线，默认：１
+	 * 最早开团时间
 	 **/
-	private $platform;
-	
-	/** 
-	 * 自定义输入串，英文和数字组成，长度不能大于12个字符，区分不同的推广渠道
-	 **/
-	private $unid;
+	private $startTime;
 	
 	private $apiParas = array();
 	
@@ -55,15 +50,15 @@ class TbkUatmFavoritesItemGetRequest
 		return $this->adzoneId;
 	}
 
-	public function setFavoritesId($favoritesId)
+	public function setEndTime($endTime)
 	{
-		$this->favoritesId = $favoritesId;
-		$this->apiParas["favorites_id"] = $favoritesId;
+		$this->endTime = $endTime;
+		$this->apiParas["end_time"] = $endTime;
 	}
 
-	public function getFavoritesId()
+	public function getEndTime()
 	{
-		return $this->favoritesId;
+		return $this->endTime;
 	}
 
 	public function setFields($fields)
@@ -99,31 +94,20 @@ class TbkUatmFavoritesItemGetRequest
 		return $this->pageSize;
 	}
 
-	public function setPlatform($platform)
+	public function setStartTime($startTime)
 	{
-		$this->platform = $platform;
-		$this->apiParas["platform"] = $platform;
+		$this->startTime = $startTime;
+		$this->apiParas["start_time"] = $startTime;
 	}
 
-	public function getPlatform()
+	public function getStartTime()
 	{
-		return $this->platform;
-	}
-
-	public function setUnid($unid)
-	{
-		$this->unid = $unid;
-		$this->apiParas["unid"] = $unid;
-	}
-
-	public function getUnid()
-	{
-		return $this->unid;
+		return $this->startTime;
 	}
 
 	public function getApiMethodName()
 	{
-		return "taobao.tbk.uatm.favorites.item.get";
+		return "taobao.tbk.ju.tqg.get";
 	}
 	
 	public function getApiParas()
@@ -135,8 +119,9 @@ class TbkUatmFavoritesItemGetRequest
 	{
 		
 		RequestCheckUtil::checkNotNull($this->adzoneId,"adzoneId");
-		RequestCheckUtil::checkNotNull($this->favoritesId,"favoritesId");
+		RequestCheckUtil::checkNotNull($this->endTime,"endTime");
 		RequestCheckUtil::checkNotNull($this->fields,"fields");
+		RequestCheckUtil::checkNotNull($this->startTime,"startTime");
 	}
 	
 	public function putOtherTextParam($key, $value) {
