@@ -375,7 +375,6 @@ class application {
 					include_once libfile('class/database');
 					require_once libfile('class/cate');
 
-
 					$_config = $_G['_config'];
 					if(TAE) {
 						include ROOT_PATH .'inc/config/tae.config.php';
