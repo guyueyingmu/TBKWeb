@@ -41,7 +41,7 @@ class index extends app{
 				
 				$url = URL.'a=all';
 				$sql = make_sql();
-				$size = $_G[setting][cate_page] ? $_G[setting][cate_page] : 120;	
+				$size = $_G[setting][cate_page] ? $_G[setting][cate_page] : 30;
 				
 				$title = '全部商品';
 				$name = 'all';
@@ -126,7 +126,7 @@ class index extends app{
 					$and=" AND end_time > ".TIMESTAMP;
 					$url = URL.'a=over';
 					$sql = make_sql();	
-					$size = $_G[setting][cate_page] ? $_G[setting][cate_page] : 120;	
+					$size = $_G[setting][cate_page] ? $_G[setting][cate_page] : 30;
 					
 				
 					$rs = D(array('and'=>$and .$sql['and'],'all'=>true,'order'=>' end_time ASC '),
@@ -250,7 +250,7 @@ class index extends app{
             $_GET[kw] =$string;
             $url .="&kw=".urlencode_utf8($string);
 
-            $size =60;
+            $size =30;
             $rt = top('tbk',"get",Array("keyword"=>$string,"page_no"=>$_G[page],"page_size"=>$size));
             if(empty($rt)){
                 return null;
@@ -260,7 +260,7 @@ class index extends app{
             return array('goods'=>$rt[goods],'showpage'=>$showPage);
         }else if($_GET['price1'] && $_GET['price2']){
             $sql = make_sql();
-            $size =60;
+            $size =30;
             return D(array('and'=>$and .$sql['and'],'all'=>true,'order'=>$sql[order],'key'=>'search'),
                 array('url'=>$url.$sql[url],'size'=>$size));
         }
@@ -297,12 +297,12 @@ class index extends app{
                 }
 
                 $sql = make_sql();
-                $size =60;
+                $size =30;
 
                 return D(array('and'=>$and .$sql['and'],'order'=>$sql[order]),array('url'=>$url.$sql[url],'size'=>$size));
             }else if($_GET['price1'] && $_GET['price2']){
                 $sql = make_sql();
-                $size =60;
+                $size =30;
                 return D(array('and'=>$and .$sql['and'],'all'=>true,'order'=>$sql[order],'key'=>'search'),
                     array('url'=>$url.$sql[url],'size'=>$size));
             }
