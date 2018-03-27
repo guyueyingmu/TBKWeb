@@ -42,7 +42,7 @@ class index extends app{
 				$url = URL.'a=all';
 				$sql = make_sql();
 				$size = $_G[setting][cate_page] ? $_G[setting][cate_page] : 30;
-				
+				echo "==>".$size;
 				$title = '全部商品';
 				$name = 'all';
 				if(isset($_GET['price']) && ($_GET['price'] == '10' || $_GET['price'] == '10_20')){
@@ -65,10 +65,6 @@ class index extends app{
 				ajaxoutput($rs['goods']);				
 				$this->add($rs);
 				$this->show();
-				
-				
-				
-				
 		}
 			
 		function cate(){
