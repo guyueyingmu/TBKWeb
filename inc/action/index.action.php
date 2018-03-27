@@ -297,7 +297,7 @@ class index extends app{
                 return D(array('and'=>$and .$sql['and'],'order'=>$sql[order]),array('url'=>$url.$sql[url],'size'=>$size));
             }else if($_GET['price1'] && $_GET['price2']){
                 $sql = make_sql();
-                $size =30;
+                $size =24;
                 return D(array('and'=>$and .$sql['and'],'all'=>true,'order'=>$sql[order],'key'=>'search'),
                     array('url'=>$url.$sql[url],'size'=>$size));
             }
