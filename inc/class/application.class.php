@@ -597,7 +597,7 @@ class application {
 							}
 
 							$_G['menu'] = $menu;
-							seo('后台管理          www.baidu.com');
+							seo('后台管理');
 							include_once (ROOT_PATH."inc/admin_action/".$m.".action.php");
 
 					}else{
