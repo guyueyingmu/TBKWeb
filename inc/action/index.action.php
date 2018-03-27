@@ -252,7 +252,7 @@ class index extends app{
             }
             $showPage = multi($rt[count],$size,$_G[page],$url);
 
-            return array('goods'=>$rt[goods],'showpage'=>$showPage);
+            return array('goods'=>parseArray($rt[goods]),'showpage'=>$showPage);
         }else if($_GET['price1'] && $_GET['price2']){
             $sql = make_sql();
             $size =24;

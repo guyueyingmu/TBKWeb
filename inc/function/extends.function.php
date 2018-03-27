@@ -377,7 +377,13 @@ function parse($table="",$value="",$f1="",$f2="",$f3=""){
 }
 
 
+function parseArray($array){
+	foreach($array as $k=>$v){
+		$array[$k] = parse("goods",$v);
+	}
 
+	return $array;
+}
 
 
 function L($msg){
