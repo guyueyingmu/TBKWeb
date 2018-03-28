@@ -965,7 +965,6 @@ function showmessage($message, $alert='right',$url = '',$ext_msg='') {
 
 }
 function msg($message="",$status="error",$url="",$ext_msg=""){
-	logString($message);
 	global $_G;
 	define('ERROR',true);
 	if(!$status) $status = 'error';
