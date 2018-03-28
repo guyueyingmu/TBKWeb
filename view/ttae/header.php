@@ -74,7 +74,7 @@
                     </div>
      			  <input placeholder="试试搜索精品女装" type="text" class="so_kw" data-type="kw" name="kw" value="{if $_GET.kw}{$_GET.kw}{/if}" autocomplete="off" accesskey="s" aria-expanded="true" />
                 </div>
-                <input type="button" class="srh-sub so_web _check_form" id="serarch_button" url="{$URL}a=search" value="搜本站" >
+                <input type="button" class="srh-sub so_web _check_form" id="serarch_button" url="{$URL}a=search" value="开始搜索" >
                 <input type="hidden" value="{$_G.setting.pid}" name="pid">
                 <input type="hidden" value="0" name="search_type">
                 <input type="hidden" value="0" name="search_type_value">
