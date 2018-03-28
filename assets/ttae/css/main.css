@@ -212,11 +212,11 @@ border-right: 1px solid #eee;}
 
 
 
-.fixedmenu2_1 {     border: 1px solid #eee; border-top: none; }
-.fixedmenu2_1 li {height: 33px; border-top: 1px solid #eee; background-color: #fff; }
-.fixedmenu2_1 li a { display: block; width: 78px; height: 33px; float: left;
-padding-left: 58px; line-height: 33px; color: #666; }
-.fixedmenu2_1 li.current a, .fixedmenu2_1 li a:hover { background-color: #E32014; color: #fff; text-decoration: none; }
+.fixedmenu2_1 {    border-top: none; }
+.fixedmenu2_1 li {height: 33px; background-color: #fff; color: #666;}
+.fixedmenu2_1 li a { display: block; height: 33px; float: left;
+margin-left: 52px; line-height: 33px;  }
+.fixedmenu2_1 li.current a, .fixedmenu2_1 li:hover { background-color: #E32014; color: #fff; text-decoration: none; }
 .fixednico1 { background-position: 21px -413px; }
 .current .fixednico1, .fixednico1:hover { background-position: -92px -413px; }
 .fixednico2 { background-position: 21px -447px; }
