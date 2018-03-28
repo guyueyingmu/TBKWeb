@@ -378,7 +378,7 @@ padding-left: 58px; line-height: 33px; color: #666; }
 .shop_desc .ppTitle .ppInfor a b { font-weight: normal; font-family: "宋体" }
 .shop_desc .ppTitle .ppName p { color: #666; line-height: 20px; text-align: left;margin-left: 1px }
 
-.daddfavorite{width:16px;height:16px;background:#fff url(../images/fav.png) no-repeat 50% 50%;display:block; position:absolute;top:10px;right:10px;border-radius:50%;display:none;padding:5px;}
+.daddfavorite{width:25px;height:25px;background:url(../images/fav.png) no-repeat 50% 50%;display:block; position:absolute;top:10px;right:10px;border-radius:50%;display:none;padding:5px;}
 .daddfavorite.on {background-image:url(../images/fav_on.png);}
 .i2_goodsd:hover .daddfavorite, .i2_goodsd .daddfavorite.on{display:block;}
 .bt_item{padding: 0 5px;}
