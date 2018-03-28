@@ -34,7 +34,11 @@ class api_tbk  extends apiBase{
 		if($arr['keyword'])$req->setQ($arr['keyword']);
 		if($arr['cid'])$req->setCat($arr['cid']);
 		$req->setItemloc($arr['area']);
-		//$req->setSort($arr['sort']);
+        if($arr['sort']){
+            $req->setSort($arr['sort']);
+        }else{
+            $req->setSort("total_sales_des");
+        }
 		$req->setIsTmall($arr['mall_item']);
 		if($arr['start_price'])$req->setStartPrice($arr['start_price']);
 		if($arr['end_price'])$req->setEndPrice($arr['end_price']);

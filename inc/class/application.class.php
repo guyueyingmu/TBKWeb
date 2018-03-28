@@ -65,7 +65,7 @@ class application {
 						}
 					}
 
-					self::_init_tae();
+                    self::_init_tae();
 					self::_init_rewrite();
 
 					foreach($_GET as $k=>$v){
