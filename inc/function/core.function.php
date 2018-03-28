@@ -69,8 +69,10 @@ function checkrobot($useragent = '') {
 function checkmobile($useragent) {
 	global $_G;
 
+	echo "===instr:useragent".$useragent."<br/>";
 	$useragent = $useragent ?  $useragent:$_SERVER['HTTP_USER_AGENT'] ;
 	$useragent= strtolower($useragent) ;
+
 	$mobile = array();
 	$touchbrowser_list =array('iphone', 'android', 'phone', 'mobile', 'wap', 'netfront', 'java', 'opera mobi', 'opera mini',
 				'ucweb', 'windows ce', 'symbian', 'series', 'webos', 'sony', 'blackberry', 'dopod', 'nokia', 'samsung',
@@ -87,6 +89,8 @@ function checkmobile($useragent) {
 	if($_G[setting][mobile_host] && $_G[setting][mobile_host] == 'http://'.$_G[host]){
 		$_G['mobile'] = true;
 	}
+
+	echo "===instr:useragent:".$useragent."<br/>"."    mobile:".$_G['mobile']."<br/>";
 	return $_G['mobile'];
 }
 
