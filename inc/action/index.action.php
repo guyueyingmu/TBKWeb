@@ -237,9 +237,10 @@ class index extends app{
         if($_GET['kw']){
             $string  = trim_html(stripsearchkey($_GET['kw']));
 
-            if(preg_match("/^%+$|^_+$|^\*+$/is",$string)) {
+            $string = preg_replace("/[^\x{4e00}-\x{9fa5}^0-9^A-Z^a-z]+/u", '', $string);
+         /*   if(preg_match("/^%+$|^_+$|^\*+$/is",$string)) {
                 msg('非法搜索关键字');
-            }
+            }*/
             $string = safe_output($string);
             if(dstrlen($string)<2){
                 msg('要搜索的关键字长度不能小于2');
