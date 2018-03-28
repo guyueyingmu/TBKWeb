@@ -244,8 +244,8 @@ class index extends app{
             $string = safe_output($string);
             if(dstrlen($string)<2){
                 msg('要搜索的关键字长度不能小于2');
-            }else if(dstrlen($string)>100){
-                msg('要搜索的关键字长度不能大于100');
+            }else if(dstrlen($string)>300){
+                msg('要搜索的关键字长度不能大于300');
             }
 
             $_GET[kw] =$string;
