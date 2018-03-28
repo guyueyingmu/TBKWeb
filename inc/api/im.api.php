@@ -12,8 +12,7 @@ class api_im extends apiBase{
 		}
 	    function add($member= array(),$bat = false){
 			global $_G;
-			$this->use_baichuan();
-			if(!class_exists('OpenimUsersAddRequest'))include_once	(ROOT_PATH.'/top/im/OpenimUsersAddRequest.php');	
+			if(!class_exists('OpenimUsersAddRequest'))include_once	(ROOT_PATH.'/top/im/OpenimUsersAddRequest.php');
 			
 			if(!$bat){
 				$user = $this->cover_user($member);
@@ -93,7 +92,11 @@ private		function cover_user($member){
 		function bat_add_user(){
 			global $_G;
 			
-			$this->use_baichuan();
+            if( $_G['TOP']->appkey && $_G['TOP']->secretKey){
+            }else{
+                msg('非法操作');
+            }
+
 			if(!class_exists('OpenimUsersAddRequest'))include_once	(ROOT_PATH.'top/im/OpenimUsersAddRequest.php');	
 			$rs = DB::fetch_all("SELECT username,picurl,email,phone,uid FROM ".DB::table('member')." ORDER BY uid DESC");
 			$arr = array_chunk($rs,50);
@@ -118,7 +121,7 @@ private		function cover_user($member){
 			$user['username']     ='匿名用户';
 			$user['picurl'] ='https://img.alicdn.com/sns_logo/T1xEBCFnhXXXb1upjX.jpg_40x40.jpg';
 
-
+            echo "添加匿名用户";
 			return  $this->add($user);
 			
 		}
