@@ -965,6 +965,7 @@ function showmessage($message, $alert='right',$url = '',$ext_msg='') {
 
 }
 function msg($message="",$status="error",$url="",$ext_msg=""){
+	logString($message);
 	global $_G;
 	define('ERROR',true);
 	if(!$status) $status = 'error';
@@ -1910,5 +1911,16 @@ function getUrlParam($url){
 			$data[$tmp[0]] = $tmp[1];
 		}
 		return $data;
+	}
+
+	function logString($str=null){
+		if(!$str){
+			return;
+		}
+		global $_G;
+
+		if($_G[setting] && $_G[setting][log_path]){
+			error_log(date('Y-m-d h:i:sa').':'.$str."\r\n",3,$_G[setting][log_path].date('Y-m-d')."log");
+		}
 	}
 ?>

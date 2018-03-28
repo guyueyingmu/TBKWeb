@@ -13,7 +13,7 @@ class api_im extends apiBase{
 	    function add($member= array(),$bat = false){
 			global $_G;
 			if(!class_exists('OpenimUsersAddRequest'))include_once	(ROOT_PATH.'/top/im/OpenimUsersAddRequest.php');
-			
+
 			if(!$bat){
 				$user = $this->cover_user($member);
 			}else{

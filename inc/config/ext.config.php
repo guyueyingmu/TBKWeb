@@ -25,6 +25,7 @@ $ext['avatar_type'] = 2;	//用户头像
 $ext['favorite_jf'] = 1;	//收藏增加积分
 $ext['like_jf'] = 1;		//喜欢商品增加积分
 $ext['api'] = 0;
+$ext['log_path'] = 'D:/phperror.log';
 
 $ext['ajax_goods_list'] = true;
 $ext['ajax_goods_field'] = 'aid,fid,num_iid,title,nick,picurl,url,price,start_time,end_time,yh_price,like,shop_type,sum,zk,status_text,status,over,new,id_url,juan_price,juan_url';
