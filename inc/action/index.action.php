@@ -208,12 +208,17 @@ class index extends app{
 		
 		
 		function search(){
+                    global $_G;
                     if($_GET['search_type'] == 0){
                         $rs = $this->search_items_by_content();
                     }else  if($_GET['search_type'] == 1){
-                        $rs =$this->search_links();
+                        if($_G[groupid] ==11 || $_G[groupid] ==1){
+                            $rs =$this->search_links();
+                        }
                     }else{
-                        $rs = $this->search_taokouling();
+                        if($_G[groupid] ==11 || $_G[groupid] ==1){
+                            $rs = $this->search_taokouling();
+                        }
                     }
 
                     if($rs && is_array($rs) && $rs['goods']){

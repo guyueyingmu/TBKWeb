@@ -33,7 +33,7 @@
                     
               {if $_G.setting.reg_yzm ==1}
 
-                 <div class="cell" style="margin-bottom:10px;">
+                 <div class="cell" style="margin-bottom:30px;">
                          <input type="text" class="text" name="yzm" style="width:140px;margin-right:10px;float:left;"  placeholder="请输入验证码" data-type="yzm">
                            <img   height="40" src="{$URL}m=ajax&a=yzm" class="yzm_img yzm">
                             <a class="yzm" href="#" >刷新</a>

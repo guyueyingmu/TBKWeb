@@ -125,7 +125,7 @@
 		insert_find_box:function(){
 			var rs = '';
 			rs+='<div class="find_box ff cl">';
-			rs+='<input type="text" class="find_input" name="" id="" placeholder="请输入淘宝或天猫商品链接或商品id">';
+			rs+='<input type="text" class="find_input" name="" id="" placeholder="试试搜索精品女装">';
 			rs+='<input type="button" class="find_button" value="获取"></div>';
 			return rs;
 		},
