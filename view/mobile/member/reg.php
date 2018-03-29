@@ -8,10 +8,9 @@
 
             <input type="hidden" name="reg_submit" value="1">
             <ul>
-                <li><input name="username" class="loginname" type="text" value="" placeholder="用户名/手机号"></li>
+                <li><input name="email" class="loginname" type="text" value=""  placeholder="邮箱"/></li>
                 <li><input name="password" class="loginname" type="password" value="" placeholder="密码（6-16字符）"></li>
                 <li><input name="password2" class="loginname" type="password" value="" placeholder="确认密码"></li>
-                <li><input name="email" class="loginname" type="text" value=""  placeholder="邮箱"/></li>
                  {if $_G.setting.reg_yzm ==1}
                 <li>
                       <input type="text" name="yzm"  class="loginname " placeholder="验证码" style="width:100px;border-bottom:1px solid #ccc;margin-left:0;">

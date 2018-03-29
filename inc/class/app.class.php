@@ -170,7 +170,6 @@ class app{
 						}
 					}
 					try{
-
 						$smarty->display($show_tpl);
 						$obj = DB::$db;
 						if($_G[adminid] ==1 && isset($_GET['debug'])){

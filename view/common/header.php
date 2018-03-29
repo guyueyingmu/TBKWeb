@@ -6,7 +6,7 @@
 <link href="/favicon.ico" type="image/x-icon" rel=icon />
 <meta name="keywords" content="{$_G.keywords}"/>
 <meta name="description" content="{$_G.description}"/>
-
+<meta name="tk" content="0|{$_G.setting.taodianjing_url}|{$_G.setting.tdj_type}"/>
 <meta name="get" content="{$query_text}"/>
     <meta name="set" content="{$global_str}"/>
     <link type="text/css" rel="stylesheet" href="/assets/global/css/bootstrap.min.css">

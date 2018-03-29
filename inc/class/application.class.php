@@ -605,7 +605,6 @@ class application {
 							include_once libfile("action/".$m);
 					}
 
-
 					if($m == 'list') {
 						$mm = '_'.$m;
 						if(!class_exists($mm)) system_error('system','Module not exists');
