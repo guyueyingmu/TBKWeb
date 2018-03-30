@@ -169,6 +169,7 @@ class app{
 							$show_tpl = $show_tpl2;
 						}
 					}
+
 					try{
 						$smarty->display($show_tpl);
 						$obj = DB::$db;

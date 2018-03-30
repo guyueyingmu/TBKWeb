@@ -57,6 +57,7 @@ class api_tbk  extends apiBase{
 		if($rt['count']==0) return array('count'=>0,'goods'=>array());
 		$rt['goods'] =  $this->parse($resp);
 
+		var_dump($req);
         return $rt;
     }
 	
