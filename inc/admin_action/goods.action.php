@@ -670,7 +670,7 @@ class goods extends app{
 					}
 
 					//防止无条件券,价格为负数
-					if($arr['yh_price'] - $arr['juan_price'] <0) continue;
+					if($arr['yh_price'] - $arr['juan_price'] <0) return;
 										
 					$arr['juan_url'] = $v[17];
 					$arr['start_time'] = dmktime($v[15]);
@@ -693,7 +693,7 @@ class goods extends app{
 						$arr['juan_price']    = str_replace('元无条件券','',$v[15]);
 					}
 					//防止无条件券,价格为负数
-					if($arr['yh_price'] - $arr['juan_price'] <0) continue;
+					if($arr['yh_price'] - $arr['juan_price'] <0) return;
 
 					$arr['juan_url'] = $v[18];
 					$arr['start_time'] = dmktime($v[16]);

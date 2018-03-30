@@ -216,9 +216,7 @@ class index extends app{
                             $rs =$this->search_links();
                         }
                     }else{
-                        if($_G[groupid] ==11 || $_G[groupid] ==1){
-                            $rs = $this->search_taokouling();
-                        }
+                        $rs = $this->search_taokouling();
                     }
 
                     if($rs && is_array($rs) && $rs['goods']){
