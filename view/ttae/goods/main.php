@@ -30,6 +30,19 @@
               <div  style="width:50px; height:80px;position: absolute;right: 150px;top: 10px;">
                   <div id="qrcode" rel="{$goods.juan_url}">
                   </div>
+                  <script type="text/javascript" src="/assets/global/js/qrcode.min.js"></script>
+                  <script type="text/javascript">
+                      var qrcode = new QRCode(document.getElementById("qrcode"), {
+                          width : 50,
+                          height : 50
+                      });
+                      function makeCode () {
+                          var elText = "baidu.com";
+
+                          qrcode.makeCode($("qrcode").attr("rel"));
+                      }
+                      makeCode();
+                  </script>
               </div>
         {/if}
 
@@ -67,6 +80,8 @@
 <li class="li4">
 <em>
 标签:
+
+    <a href="" target="_blank" title="">女装</a><a href="" target="_blank" title="">女装</a><a href="" target="_blank" title="">女装</a>
 {foreach from=$goods.tags item=v key=k name=a}
 <a href="{$URL}&a=search&kw={$k}" target="_blank" title="{$v}">{$v}</a>
 {/foreach}
@@ -85,7 +100,7 @@
                </div>
           </li>
         <li class="li6">
-            近30天销量<B>{$goods.sum+864}</B>
+                近30天销量<B>{$goods.sum+864}</B>
 
             {if $goods.shop_type ==1}天猫{else}淘宝集市{/if},发货城市为：{$goods.state}-{$goods.city},
             标签关键字:
@@ -114,19 +129,6 @@
       </ul>
 
    </div>
-    <script type="text/javascript" src="/assets/global/js/qrcode.min.js"></script>
-    <script type="text/javascript">
-        var qrcode = new QRCode(document.getElementById("qrcode"), {
-            width : 50,
-            height : 50
-        });
-        function makeCode () {
-            var elText = "baidu.com";
-
-            qrcode.makeCode($("qrcode").attr("rel"));
-        }
-        makeCode();
-    </script>
 
    <div class="bucuo_shop_info">
      <ul>
