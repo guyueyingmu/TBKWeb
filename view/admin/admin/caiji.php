@@ -15,7 +15,7 @@
           <input class="radio api_type" type="radio" name="postdb[api_type]" value="1" {if $_G.setting.api_type==1}checked="checked"{/if}>
             &nbsp;百川API
 
-            
+
             <div class="cl red" style="font-size: 16px;">
             <p>注意:如果选择了淘客API,就必须保证淘宝客APPKEY和淘宝客secretKey必须存在,且不能为空,不然会整站都打不开,后台也进不去</p>
             <p>注意:如果选择了百川API,就必须保证百川APPKEY和百川secretKey必须存在,且不能为空,不然会整站都打不开,后台也进不去</p>

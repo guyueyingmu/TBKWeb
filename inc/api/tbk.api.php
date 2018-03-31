@@ -57,7 +57,7 @@ class api_tbk  extends apiBase{
 		if($rt['count']==0) return array('count'=>0,'goods'=>array());
 		$rt['goods'] =  $this->parse($resp);
 
-		var_dump($req);
+		//var_dump($req);
         return $rt;
     }
 	
@@ -72,7 +72,7 @@ class api_tbk  extends apiBase{
 				
 				$num_iid = $arr['num_iid'] =		(string)$item->num_iid ;						//商品ID
 				$arr['title'] = 		trim_html($item->title,1);							//商品标题
-				
+                $arr['title'] = $arr['title'] .'['. $item->provcity.']';
 				$arr['picurl'] = 		$item->pict_url;						//商品缩略图
 				$arr['url'] = 			$item->item_url;						//商品链接地址
 				$arr['price'] =			fix($item->reserve_price,1);			//原价
@@ -210,6 +210,7 @@ class api_tbk  extends apiBase{
             $tmp['yh_price'] = $v->zk_final_price;
             $tmp['images'] = $v->small_images->string;
             $tmp['title'] = $v->title;
+            $tmp['title'] =  $v->title.'['. $v->provcity.']';
             $tmp['shop_type'] = $v->user_type == 1 ? 1 : 2;
             $tmp['sid'] = $v->seller_id."";
 

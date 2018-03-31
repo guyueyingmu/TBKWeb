@@ -100,9 +100,9 @@
     </tbody>
   </table>
 </div>
-<!--<div class="share_box hide">
+<div class="share_box hide">
 <div class="_share" data-style="2" data-more="0" data-count="0"></div></div>
-</div>-->
+</div>
 
 
 </div>

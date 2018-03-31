@@ -80,8 +80,6 @@
 <li class="li4">
 <em>
 标签:
-
-    <a href="" target="_blank" title="">女装</a><a href="" target="_blank" title="">女装</a><a href="" target="_blank" title="">女装</a>
 {foreach from=$goods.tags item=v key=k name=a}
 <a href="{$URL}&a=search&kw={$k}" target="_blank" title="{$v}">{$v}</a>
 {/foreach}
@@ -100,9 +98,8 @@
                </div>
           </li>
         <li class="li6">
-                近30天销量<B>{$goods.sum+864}</B>
+                近30天销量<B>{$goods.sum}</B>
 
-            {if $goods.shop_type ==1}天猫{else}淘宝集市{/if},发货城市为：{$goods.state}-{$goods.city},
             标签关键字:
             {foreach from=$goods.tags item=v key=k name=a}
             {$v},
