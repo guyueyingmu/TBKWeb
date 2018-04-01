@@ -272,12 +272,12 @@ var modue_list = {
 			$(".bucuo_detail_bmenu li").each(function(i){
 				$(this).attr('data-index',i);
 			});
-			$(".bucuo_detail_bmenu li").hover(function(){
+			/*$(".bucuo_detail_bmenu li").hover(function(){
 				var index = $(this).attr('data-index');
 				index = parseInt(index);
 				$(".index_contentul2").hide().eq(index).show();
 				$(".bucuo_detail_bmenu li").removeClass('bucuo_current').eq(index).addClass('bucuo_current');
-			});
+			});*/
 			$(".bucuo_detail_bmenu li").click(function(){
 				var index = $(this).attr('data-index');
 				index = parseInt(index);
