@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <script src="http://l.tbcdn.cn/apps/top/x/sdk.js?appkey='h/'"></script>
-</head>
 <body>
 <div data-type="4" data-plugin="aroundbox" data-plugin-aroundbox-fixed="1"></div>
 <a data-type="0" biz-itemid="548609841346" data-style="2" data-tmpl="230x312" target="_blank">
