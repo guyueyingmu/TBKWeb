@@ -11,11 +11,11 @@ setcookie("sign",$mysign);
 <html>
 
 <head>
-    <script src="http://l.tbcdn.cn/apps/top/x/sdk.js?appkey='http://localhost:8652/'"></script>
+    <script src="http://l.tbcdn.cn/apps/top/x/sdk.js?appkey='http://www.ntao.club/'"></script>
 </head>
 <body>
 <div data-type="4" data-plugin="aroundbox" data-plugin-aroundbox-fixed="1"></div>
-<a data-type="0" biz-itemid="44284984392" data-style="2" data-tmpl="230x312" target="_blank">
+<a data-type="0" biz-itemid="548609841346" data-style="2" data-tmpl="230x312" target="_blank">
     淘点金_单品_直接展示230x312
 </a>
 <a data-type="6" data-tmpl="573x66" data-border="0" data-tmplid="140" data-style="2" biz-s_logo="1" biz-s_hot="1" href="#">搜索框</a>
