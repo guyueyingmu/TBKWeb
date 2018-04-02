@@ -1,12 +1,3 @@
-<?php
-$app_key = '24823497';/*填写appkey */
-$secret='ed5a6ec9bd9906c0ebcde9ccc4f508e3';/*填入Appsecret'*/
-$timestamp=time()."000";
-$message = $secret.'app_key'.$app_key.'timestamp'.$timestamp.$secret;
-$mysign=strtoupper(hash_hmac("md5",$message,$secret));
-setcookie("timestamp",$timestamp);
-setcookie("sign",$mysign);
-?>x1x
 <!DOCTYPE html>
 <html>
 
