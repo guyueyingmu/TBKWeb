@@ -20,7 +20,7 @@
             h.insertBefore(s, h.firstChild);
         };
         var o = {
-            pid: "mm_97928704_43428463_322620247",/*推广单元ID，用于区分不同的推广渠道*/
+            pid: "mm_97928704_43898350_394648075",/*推广单元ID，用于区分不同的推广渠道*/
             appkey: "",/*通过TOP平台申请的appkey，设置后引导成交会关联appkey*/
             unid: "",/*自定义统计字段*/
             monitor: function(msg){
