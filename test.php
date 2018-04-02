@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <script src="http://l.tbcdn.cn/apps/top/x/sdk.js?appkey='http://www.ntao.club/'"></script>
+    <script src="http://l.tbcdn.cn/apps/top/x/sdk.js?appkey='h/'"></script>
 </head>
 <body>
 <div data-type="4" data-plugin="aroundbox" data-plugin-aroundbox-fixed="1"></div>
