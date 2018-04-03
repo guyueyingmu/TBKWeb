@@ -126,13 +126,14 @@
           &nbsp;
           <input type="hidden" name="ids[{$v.aid}]" value="{$v.aid}" />
            <input type="hidden" name="num_iid[{$v.aid}]" value="{$v.num_iid}" />
-          <a href="https://item.taobao.com/item.htm?id={$v.num_iid}" target="_blank" title="新窗口打开"> <img src="{$IMGDIR}/open.gif" ></a></td>
+          <a href="https://item.taobao.com/item.htm?id={$v.num_iid}" target="_blank" title="新窗口打开"> <img src="{$IMGDIR}/open.gif" ></a>
+        </td>
         <td title="{$v.num_iid}">{$v.aid}</td>
         <td >
         <!-- <a href="{$URL}m=goods&a=main&fid={$v.fid}">{$v.channel_name}</a> -->
 
 <select name="fids[{$v.aid}]" class="select" >
- <option value="0">----请选择栏目----</option>
+ <option value="0">选择栏目</option>
 <!--{foreach from=$_G.channels item=vv}-->
  <option value="{$vv.fid}" {if $v.fid==$vv.fid } selected="selected" class="on"  {/if}>&nbsp;&nbsp;&nbsp;&nbsp;{$vv.name}</option>
 <!--{if $vv.sub}-->
@@ -151,12 +152,12 @@
 
 
         </td>
-        <td class="_hover_img goods_title" style="width:500px">
+        <td class="_hover_img goods_title" style="width:180px">
        <a href="{$v.url}" target="_blank">{if $v.title}{$v.title}{/if}</a>
         {if $v.shop_type==1}(商城){elseif $v.shop_type==2}(集市){/if}&nbsp;
         {if $v.hide == 1} <span class="red">(下架)</span>{/if}
 
-        {if $v.juan_url && $v.juan_price} <a href="{$v.juan_url}" class="red" target="_blank">({$v.juan_price}元券)</a>{/if}
+        {if $v.juan_url && $v.juan_price}<a href="{$v.juan_url}" class="red" target="_blank">({$v.juan_price}元券)</a>{/if}
 
         <a href="{$v.picurl}" target="_blank"><img src="{$v.picurl}"  /></a>
         </td>
