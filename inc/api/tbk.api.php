@@ -57,7 +57,6 @@ class api_tbk  extends apiBase{
 		if($rt['count']==0) return array('count'=>0,'goods'=>array());
 		$rt['goods'] =  $this->parse($resp);
 
-		//var_dump($req);
         return $rt;
     }
 	
@@ -113,7 +112,27 @@ class api_tbk  extends apiBase{
         top_check_error($resp, $this->show_error);
         return $resp;
     }
-	
+
+
+    function getShortUrl($urlarray){
+        global $_G;
+
+        include_once(ROOT_PATH . 'top/tbk/TbkSpreadGetRequest.php');
+        $req = new TbkSpreadGetRequest;
+        $requests = new TbkSpreadGetRequest;
+        foreach ($urlarray as $k => $v) {
+            $arr = array();
+            $arr[url] = $v;
+            $requests->putOtherTextParam($k,$arr);
+        }
+
+        $req->setRequests(json_encode($requests->getApiParas()));
+        $resp = $_G['TOP']->execute($req);
+
+        top_check_error($resp, $this->show_error);
+        return $resp;
+    }
+
 
 
     /*

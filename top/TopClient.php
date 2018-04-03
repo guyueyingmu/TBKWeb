@@ -258,7 +258,15 @@ class TopClient
 		$apiParams = $request->getApiParas();
 
 
-		$sysParams["sign"] = $this->generateSign(array_merge($apiParams, $sysParams));
+        try
+        {
+            $sysParams["sign"] = $this->generateSign(array_merge($apiParams, $sysParams));
+        }
+        catch (Exception $e)
+        {
+            $this->logCommunicationError($sysParams["method"],$requestUrl,"HTTP_ERROR_" . $e->getCode(),$e->getMessage());
+            return;
+        }
 
 		$requestUrl = $this->gatewayUrl . "?";
 
@@ -281,7 +289,6 @@ class TopClient
 			if(TAE){
 			//	$resp = utf8_decode($resp);		
 			}
-           
 		}
 		catch (Exception $e)
 		{
