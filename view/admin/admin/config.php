@@ -88,10 +88,10 @@
 
     <tr class="noborder">
           <td class="td_l">开启前台侧边栏:</td>
-          <td class="vtop rowform"><input class="radio" type="radio" name="postdb[left_bar]" value="1" {if $_G.setting.left_bar==1}checked="checked"{/if}>
-            &nbsp;是
+          <td class="vtop rowform"><label class="radio-inline"><input class="radio" type="radio" name="postdb[left_bar]" value="1" {if $_G.setting.left_bar==1}checked="checked"{/if}>
+            &nbsp;是</label><label class="radio-inline">
             <input class="radio" type="radio" name="postdb[left_bar]" value="0" {if $_G.setting.left_bar==0}checked="checked"{/if}>
-            &nbsp;否 </td>
+            &nbsp;否</label> </td>
           <td class="vtop tips2">是否开启前台侧边栏</td>
         </tr>
 

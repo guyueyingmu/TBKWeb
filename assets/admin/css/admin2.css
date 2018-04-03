@@ -40,7 +40,7 @@ label,.pointer { cursor: pointer; }
 .right_bar ul li {float:left;padding:2px 5px;margin-right:5px;}
 .menutd_fixed .right_bar{margin-right:200px;}
 /* form */
-textarea,input,select,.html { padding:5px 2px; border: 1px solid; border-color: #666 #ccc #ccc #666; background: #F9F9F9; color: #333; }
+textarea,input,select,.html { border: 1px solid; border-color: #666 #ccc #ccc #666; background: #F9F9F9; color: #333; }
 input.dateline,select{padding:2px;}
 .txt, select, .vmiddle { vertical-align: middle; }
 .txt:hover, .txt:focus, textarea:hover, textarea:focus { border-color: #2997dd; background: #F5F9FD; border-radius:4px }
@@ -157,9 +157,6 @@ color: #E8594D; background: none!important; border: none!important; }
 .menutd_fixed .uz_system_debug{margin-left:160px;}
 .menutd_fixed .mask{ padding-left:160px;}
 .menutd_fixed .itemtitle{position: fixed;top: 0;left: 160px;width:100%;z-index:1;border-bottom: 3px solid #DDD;}
-
-.admin_main{padding-bottom:80px;}
-
 
 
 .posd_dp{ z-index:1;background:#fff;width:460px;padding:10px;}

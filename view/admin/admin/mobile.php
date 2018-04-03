@@ -7,10 +7,10 @@
       
        <tr class="noborder">
           <td class="td_l">是否开启手机版:</td>
-          <td class="vtop rowform"><input class="radio" type="radio" name="postdb[mobile_status]" value="1" {if $_G.setting.mobile_status==1}checked="checked"{/if}>
-            &nbsp;是
+          <td class="vtop rowform">  <label class="radio-inline"><input class="radio" type="radio" name="postdb[mobile_status]" value="1" {if $_G.setting.mobile_status==1}checked="checked"{/if}>
+            &nbsp;是</label>  <label class="radio-inline">
             <input class="radio" type="radio" name="postdb[mobile_status]" value="0" {if $_G.setting.mobile_status==0}checked="checked"{/if}>
-            &nbsp;否 </td>
+            &nbsp;否 </label></td>
           <td class="vtop tips2">开启前请确定您已开发了手机HTML5模板</td>
         </tr>
       
