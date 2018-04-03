@@ -43,8 +43,6 @@
       {foreach from=$ding item=v} <a href="{$v.url}" target="_blank"><img src="{$v.picurl}" width="235" height="290"></a> {/foreach} </div>
   </div>
 </div>
- {if !empty($showpage)}
- <div class="redpage cl" >{$showpage}</div>
- {/if}
+<div class="redpage cl">{$showpage}</div>
 {include file='../footer.php'}
 

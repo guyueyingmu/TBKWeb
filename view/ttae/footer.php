@@ -42,15 +42,27 @@
     {$_G.setting.copyright}  {$_G.runtime}
     
 </div>
-<!--悬浮2222框-->
+
+
+
+<!--右边栏-->
+
+<div class="rightnfixd">
+    <span>
+    <a href="#" class="rfixedico rightnfixda1"></a>
+    <a class="rfixedico rightnfixda2"></a>
+    <a href="javascript:;"  class="rfixedico rightnfixda3 _addfavorite"></a>
+    </span>
+    <i class="rfixedico rightnfixdspan1"><img src="{$IMGDIR}/wt.png"  /></i>
+</div>
+
 {if $_G.setting.left_bar ==1}
-{if ($CM=='index' && $CURACTION != 'main') || $CM=='channel'}
-
-
+{if $CM=='index' || $CM=='channel'}
+<!--悬浮框-->
 <div class="menufixd" style="{if $CURMODULE == 'home'}display:none;{/if}">
     <h3 class="menufixedlog" style="display: block;"></h3>
     <span></span>
-    <h1>商品分类</h1>
+    <h1>商品分类</h1>	
         <ul class="fixedmenu1 cl">
  	  <li class="indexajaxlink" ><a href="{$_G.siteurl}" class="{if $_G.fid ==0}fixedselect{/if}">全部</a></li>
         {foreach from = $_G.channels item=v name= a}
@@ -58,19 +70,19 @@
          <li><a href="{$URL}fid={$v.fid}" class="{if $_G.fid == $v.fid }fixedselect{/if}">{$v.name}</a></li>
          {/if}
          {/foreach}
-
+         
         <li><a class="" href="{$URL}a=tomorrow">预告</a></li>
         <li ><a  href="{$URL}a=over">即将结束</a></li>
     </ul>
     <ul class="fixedmenu2_1 cl">
-
+    
 {foreach $_G.nav item=v}
 {if $v.type =="3"}
 <li><a href="{$v.url}" class="iconfont  {$v.classname}" {if $v.target=="1"} target="_blank"{/if}>{$v.name}</a></li>
 {/if}
 {/foreach}
-
-
+       
+         
     </ul>
 
 </div>
@@ -100,10 +112,8 @@
     </tbody>
   </table>
 </div>
-<div class="share_box hide">
+<!--<div class="share_box hide">
 <div class="_share" data-style="2" data-more="0" data-count="0"></div></div>
-</div>
+</div>-->
 
-
-</div>
 {include file="../common/footer.php"}

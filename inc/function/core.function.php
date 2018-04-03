@@ -87,7 +87,6 @@ function checkmobile($useragent) {
 	if($_G[setting][mobile_host] && $_G[setting][mobile_host] == 'http://'.$_G[host]){
 		$_G['mobile'] = true;
 	}
-
 	return $_G['mobile'];
 }
 
@@ -1843,83 +1842,5 @@ function getUrlParam($url){
 	    return $params;
 	}
 
-	function geturl($clickurl){
-        $headers = get_headers($clickurl, TRUE);
-        $tu = $headers['Location'];
-        $eturl = unescape($tu);
-        $u = parse_url($eturl);
-        $param = $u['query'];
-        $ref = str_replace('tu=', '', $param);
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $ref);
-        curl_setopt($ch, CURLOPT_REFERER, $tu);
-        curl_setopt($ch, CURLOPT_HEADER, false);
-        curl_setopt($ch, CURLOPT_NOBODY,1);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION,true);
-        curl_setopt($ch, CURLOPT_MAXREDIRS,2);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        $out = curl_exec($ch);
-        if($out === false){
-            var_dump(curl_error($ch));
-		}
-        $dd =  curl_getinfo($ch);
-        curl_close($ch);
-        $item_url = $dd['url'];
-        return $item_url;
-    }
 
-	//unescape 转码
-	function unescape($str) {
-		$ret = '';
-		$len = strlen($str);
-		for ($i = 0; $i < $len; $i ++)
-		{
-			if ($str[$i] == '%' && $str[$i + 1] == 'u')
-			{
-				$val = hexdec(substr($str, $i + 2, 4));
-				if ($val < 0x7f)
-					$ret .= chr($val);
-				else
-					if ($val < 0x800)
-						$ret .= chr(0xc0 | ($val >> 6)) .
-							chr(0x80 | ($val & 0x3f));
-					else
-						$ret .= chr(0xe0 | ($val >> 12)) .
-							chr(0x80 | (($val >> 6) & 0x3f)) .
-							chr(0x80 | ($val & 0x3f));
-				$i += 5;
-			} else
-				if ($str[$i] == '%')
-				{
-					$ret .= urldecode(substr($str, $i, 3));
-					$i += 2;
-				} else
-					$ret .= $str[$i];
-		}
-		return $ret;
-	}
-	 function parse_url_param($str){
-		$data = array();
-		$arr=array();
-		$p=array();
-		$arr=explode('?', $str);
-		$p = explode('&', $arr[1]);
-		foreach ($p as $val) {
-			$tmp = explode('=', $val);
-			$data[$tmp[0]] = $tmp[1];
-		}
-		return $data;
-	}
-
-	function logString($str=null){
-		if(!$str){
-			return;
-		}
-		global $_G;
-
-		if($_G[setting] && $_G[setting][log_path]){
-			error_log(date('Y-m-d h:i:sa').':'.$str."\r\n",3,$_G[setting][log_path].date('Y-m-d')."log");
-		}
-	}
 ?>

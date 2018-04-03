@@ -25,8 +25,8 @@
 <br />
 </p>
         <p>Copyright © 2014</p>
-       <!-- <p><a target="_blank" href="#">xxx.com</a></p> -->
-        <p><a target="_blank" href="#">惠多多</a></p>
+        <p><a target="_blank" href="http://bbs.52jscn.com">bbs.52jscn.com</a></p>
+        <p><a target="_blank" href="http://bbs.52jscn.com/">锦尚中国</a></p>
         <p>版本: v{$_G.version} {$_G.update_time}</p>
         <p><a href="http://help.uz-system.com" target="_blank" class="red">帮助中心</a>
          </p>

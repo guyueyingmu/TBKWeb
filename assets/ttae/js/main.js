@@ -130,30 +130,10 @@ var modue_list = {
 						$(".rightnfixdspan1").hide();
 				});
 
-				click('#serarch_button',function(){
-					var content = $("#search_form input[name='kw']").val();
-					var search_value = 0;
-					if(/^((https|http)?:\/\/)+[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&_~`@[\]\':+!]*([^<>\"\"])*$/.test(content)){
-                        content = GetUrlParamter(content,'id');
-                        search_value = 1;
-					}else if(content.indexOf("￥") >= 0 && content.indexOf("￥") != content.lastIndexOf("￥") ){
-						console.log("淘口令");
-                        search_value = 2;
-					}
 
-                    $("#search_form input[name='search_type']").val(search_value);
-                    $("#search_form input[name='search_type_value']").val(content);
-                    $("#search_form").submit();
-					return;
-				});
 
-		function GetUrlParamter(uri,name){
-			var reg = new RegExp("(^|\\?|&)"+ name +"=([^&]*)(\\s|&|$)", "i");
-			if (reg.test(uri)) return unescape(RegExp.$2.replace(/\+/g, ""))
-			return 0;
-		}
 
-		click('.a_logout',function(){
+				click('.a_logout',function(){
 					return confirm('您确定退出登录吗?');
 				});
 
@@ -272,12 +252,12 @@ var modue_list = {
 			$(".bucuo_detail_bmenu li").each(function(i){
 				$(this).attr('data-index',i);
 			});
-			/*$(".bucuo_detail_bmenu li").hover(function(){
+			$(".bucuo_detail_bmenu li").hover(function(){
 				var index = $(this).attr('data-index');
 				index = parseInt(index);
 				$(".index_contentul2").hide().eq(index).show();
 				$(".bucuo_detail_bmenu li").removeClass('bucuo_current').eq(index).addClass('bucuo_current');
-			});*/
+			});
 			$(".bucuo_detail_bmenu li").click(function(){
 				var index = $(this).attr('data-index');
 				index = parseInt(index);

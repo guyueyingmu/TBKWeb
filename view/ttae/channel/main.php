@@ -23,7 +23,6 @@
 	 <div class="nav_position">
        <a href="{$URL}fid={$_G.fid}" class="on">分类</a> >
         {foreach from=$channel.sub item=v}
-         {$v.name}
 			<a href="{$v.url}" {if $_G.fid == $v.fid}class="on"{/if}>{$v.name}</a>
         {/foreach}
      </div>
@@ -45,9 +44,7 @@
 
   {include file="../goods_list.php"}
 
-{if !empty($showpage)}
-<div class="redpage cl" >{$showpage}</div>
-{/if}
+ <div class="redpage cl" >{$showpage}</div>
 
 
 

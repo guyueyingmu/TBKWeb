@@ -41,7 +41,8 @@ class index extends app{
 				
 				$url = URL.'a=all';
 				$sql = make_sql();
-				$size = $_G[setting][cate_page] ? $_G[setting][cate_page] : 24;
+				$size = $_G[setting][cate_page] ? $_G[setting][cate_page] : 120;	
+				
 				$title = '全部商品';
 				$name = 'all';
 				if(isset($_GET['price']) && ($_GET['price'] == '10' || $_GET['price'] == '10_20')){
@@ -64,6 +65,10 @@ class index extends app{
 				ajaxoutput($rs['goods']);				
 				$this->add($rs);
 				$this->show();
+				
+				
+				
+				
 		}
 			
 		function cate(){
@@ -121,7 +126,7 @@ class index extends app{
 					$and=" AND end_time > ".TIMESTAMP;
 					$url = URL.'a=over';
 					$sql = make_sql();	
-					$size = $_G[setting][cate_page] ? $_G[setting][cate_page] : 24;
+					$size = $_G[setting][cate_page] ? $_G[setting][cate_page] : 120;	
 					
 				
 					$rs = D(array('and'=>$and .$sql['and'],'all'=>true,'order'=>' end_time ASC '),
@@ -150,7 +155,7 @@ class index extends app{
 					$url = URL.'a=tomorrow';
 
 					$sql = make_sql();	
-					$size = $_G[setting][cate_page] ? $_G[setting][cate_page] : 24;
+					$size = $_G[setting][cate_page] ? $_G[setting][cate_page] : 120;	
 					
 					$rs = D(array('and'=>$and .$sql['and'],'all'=>true,'order'=>$sql[order],'key'=>'tomorrow'),
 						array('url'=>$url.$sql[url],'size'=>$size));	
@@ -170,7 +175,7 @@ class index extends app{
 
 					$url = URL.'a=history';
 					$sql = make_sql();	
-					$size = $_G[setting][cate_page] ? $_G[setting][cate_page] : 24;
+					$size = $_G[setting][cate_page] ? $_G[setting][cate_page] : 120;	
 					
 					$rs = D(array('and'=>$and.$sql['and'],'order'=>$sql[order],'all'=>true),
 						array('url'=>$url.$sql[url],'size'=>$size));
@@ -194,7 +199,7 @@ class index extends app{
 
 					$url = URL.'a=today';
 					$sql = make_sql();	
-					$size = $_G[setting][cate_page] ? $_G[setting][cate_page] : 24;
+					$size = $_G[setting][cate_page] ? $_G[setting][cate_page] : 120;	
 					
 					$rs = D(array('and'=>$and .$sql['and'],'all'=>true,'order'=>$sql[order],'key'=>'today','time'=>120),
 							array('url'=>URL.'a=today'.$sql[url],'size'=>$size));	
@@ -208,140 +213,56 @@ class index extends app{
 		
 		
 		function search(){
-                    global $_G;
-                    if($_GET['search_type'] == 0){
-                        $rs = $this->search_items_by_content();
-                    }else  if($_GET['search_type'] == 1){
-                        if($_G[groupid] ==11 || $_G[groupid] ==1){
-                            $rs =$this->search_links();
-                        }
-                    }else{
-                        $rs = $this->search_taokouling();
-                    }
+				global $_G;
+					$and ='';
+					$url = URL.'a=search';
+					
 
-                    if($rs && is_array($rs) && $rs['goods']){
-                        ajaxoutput($rs['goods']);
-                    }
+					
+					if($_GET['kw']){		
+							$string  = trim_html(stripsearchkey($_GET['kw']));
+							
+							if(preg_match("/^%+$|^_+$|^\*+$/is",$string)) {
+								msg('非法搜索关键字'); 
+							}
+							$string = safe_output($string);
+							if(dstrlen($string)<2){
+								msg('要搜索的关键字长度不能小于2'); 
+							}else if(dstrlen($string)>20){
+								msg('要搜索的关键字长度不能大于20');
+							}
+							
+							$_GET[kw] =$string;
+							$url .="&kw=".urlencode_utf8($string);
 
-					seo('商品搜索');
+							$rt = get_keywords($string,'',0);
+							if($rt){
+								$str = explode(',',$rt);
+								foreach ($str as $k => $v) {
+									$and .=" AND title like '%$v%' ";
+								}
+							}else{
+								$and .=" AND title like '%$string%' ";
+							}
+
+							$sql = make_sql();	
+							$size =60;
+							
+							$rs = D(array('and'=>$and .$sql['and'],'order'=>$sql[order]),array('url'=>$url.$sql[url],'size'=>$size));	
+					}else if($_GET['price1'] && $_GET['price2']){						
+							$sql = make_sql();	
+							$size =60;
+							$rs = D(array('and'=>$and .$sql['and'],'all'=>true,'order'=>$sql[order],'key'=>'search'),
+							array('url'=>$url.$sql[url],'size'=>$size));						
+					}
+					ajaxoutput($rs['goods']);
+					seo($string.' - 商品搜索');
 					$this->add($rs);
 					$this->show();
+
 		}
-
-    function search_items_by_content(){
-        global $_G;
-        $and ='';
-        $url = URL.'a=search';
-        if($_GET['kw']){
-            $string  = trim_html(stripsearchkey($_GET['kw']));
-
-            $string = preg_replace("/[^\x{4e00}-\x{9fa5}^0-9^A-Z^a-z]+/u", '', $string);
-         /*   if(preg_match("/^%+$|^_+$|^\*+$/is",$string)) {
-                msg('非法搜索关键字');
-            }*/
-            $string = safe_output($string);
-            if(dstrlen($string)<2){
-                msg('要搜索的关键字长度不能小于2');
-            }else if(dstrlen($string)>300){
-                msg('要搜索的关键字长度不能大于300');
-            }
-
-            $_GET[kw] =$string;
-            $url .="&kw=".urlencode_utf8($string);
-
-            $size =24;
-            $rt = top('tbk',"get",Array("keyword"=>$string,"page_no"=>$_G[page],"page_size"=>$size));
-            if(empty($rt)){
-                return null;
-            }
-            $showPage = multi($rt[count],$size,$_G[page],$url);
-
-            return array('goods'=>parseArray($rt[goods]),'showpage'=>$showPage);
-        }else if($_GET['price1'] && $_GET['price2']){
-            $sql = make_sql();
-            $size =24;
-            return D(array('and'=>$and .$sql['and'],'all'=>true,'order'=>$sql[order],'key'=>'search'),
-                array('url'=>$url.$sql[url],'size'=>$size));
-        }
-        return null;
-    }
-
-		function search_items_by_content_fromDB(){
-            $and ='';
-            $url = URL.'a=search';
-            if($_GET['kw']){
-                $string  = trim_html(stripsearchkey($_GET['kw']));
-
-                if(preg_match("/^%+$|^_+$|^\*+$/is",$string)) {
-                    msg('非法搜索关键字');
-                }
-                $string = safe_output($string);
-                if(dstrlen($string)<2){
-                    msg('要搜索的关键字长度不能小于2');
-                }else if(dstrlen($string)>100){
-                    msg('要搜索的关键字长度不能大于100');
-                }
-
-                $_GET[kw] =$string;
-                $url .="&kw=".urlencode_utf8($string);
-
-                $rt = get_keywords($string,'',0);
-                if($rt){
-                    $str = explode(',',$rt);
-                    foreach ($str as $k => $v) {
-                        $and .=" AND title like '%$v%' ";
-                    }
-                }else{
-                    $and .=" AND title like '%$string%' ";
-                }
-
-                $sql = make_sql();
-                $size =24;
-
-                return D(array('and'=>$and .$sql['and'],'order'=>$sql[order]),array('url'=>$url.$sql[url],'size'=>$size));
-            }else if($_GET['price1'] && $_GET['price2']){
-                $sql = make_sql();
-                $size =24;
-                return D(array('and'=>$and .$sql['and'],'all'=>true,'order'=>$sql[order],'key'=>'search'),
-                    array('url'=>$url.$sql[url],'size'=>$size));
-            }
-            return null;
-        }
-
-        function search_links(){
-            global $_G;
-            $url = URL.'a=search';
-            $id  = trim_html(stripsearchkey($_GET['search_type_value']));
-            $goods = top('tbk',"get_info",$id);
-            if(empty($goods)){
-                return null;
-            }
-            return array('goods'=>array(parse("goods",$goods)),'showpage'=>multi(1,1,$_G[page],$url),'count'=>0);
-        }
-
-        function search_taokouling(){
-            $taokouling  = trim_html(stripsearchkey($_GET['search_type_value']));
-            $url = URL.'a=search';
-            $ret = top('tbk',"get_shop_by_taokouling",$taokouling);
-            if(empty($ret)){
-                return null;
-            }
-            $searchId = parse_url_param($ret->url)[id];
-            if(!$searchId){
-                $paratems = parse_url_param(geturl($ret->url));
-                $searchId = $paratems[id];
-            }
-
-            if(!$searchId){
-                return null;
-            }
-            $goods = top('tbk',"get_info",$searchId);
-            if(empty($goods)){
-                return null;
-            }
-            return array('goods'=>array(parse("goods",$goods)),'showpage'=>multi(1,1,$_G[page],$url),'count'=>0);
-        }
-
+		
+		
 		function go_pay(){
 			global $_G;
 			$num_iid = ($_GET['num_iid']);
@@ -465,8 +386,9 @@ $rs ='<?xml version="1.0" ?>
 	<language>zh-cn</language>
 	<copyright>'.trim_html($_G[setting][copyright],1).'</copyright>
 	<lastBuildDate>'.gmstrftime(TIMESTAMP).'</lastBuildDate>
+	<generator>锦尚中国淘宝客系统'.TTAE_VERSION.' by d_cms@qq.com</generator>
 	<managingEditor>'.$_G[setting][admin_email].'</managingEditor>
-	<webMaster>xxx@qq.com</webMaster>
+	<webMaster>85914984@qq.com</webMaster>
 	<ttl>40</ttl>';
 
 foreach ($goods as $k=>$v){

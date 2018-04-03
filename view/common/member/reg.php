@@ -9,7 +9,10 @@
             <div class="Login-form">
                 <form class="Form" method="post">
                     <!--<p class="error" style="display:none">您输入的密码和账户名不匹配，请重新输入。</p>-->
-
+                    <div class="cell">
+                        <input type="text" name="username" id="js-mobile_ipt" class="text" placeholder="用户名" data-type="null" data-msg="用户名不能为空" >
+                    </div>
+                      
                     <div class="cell">
                         <input type="text" name="email" id="js-mobile_pwd_ipt" class="text" placeholder="邮箱" data-type="email">
                     </div>
@@ -23,19 +26,19 @@
                         <input type="password" name="password2" id="js-mobile_pwd_ipt" class="text" placeholder="确认密码" data-type="password" data-msg="确认密码不能为空">
                     </div>
                   
-<!--
+                    
                     <div class="cell">
                         <input type="text" name="phone" id="js-mobile_pwd_ipt" class="text" placeholder="手机号码" data-type="phone">
-                    </div>-->
-
+                    </div>
+                    
               {if $_G.setting.reg_yzm ==1}
 
                  <div class="cell" style="margin-bottom:10px;">
-                         <input type="text" class="text" name="yzm" style="width:140px;float:left;"  placeholder="请输入验证码" data-type="yzm">
-                        <a href="#" style="float:right;margin-left:2px;position: absolute" title="请点击刷新" ><img   height="32" src="{$URL}m=ajax&a=yzm"  class="yzm_img">
-                        </a>
+                         <input type="text" class="text" name="yzm" style="width:140px;margin-right:10px;float:left;"  placeholder="请输入验证码" data-type="yzm">
+                           <img   height="40" src="{$URL}m=ajax&a=yzm" class="yzm_img yzm">
+                            <a class="yzm" href="#" >刷新</a>
                     </div>
-
+                
                  {/if}
                  
                     

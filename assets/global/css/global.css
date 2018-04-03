@@ -8,6 +8,8 @@ html, body, div, section, article, aside, header, hgroup, footer, nav, h1, h2, h
 strong { margin: 0; padding: 0; border: 0; vertical-align: baseline; text-decoration: none; list-style: none }
 a, a:active, a:hover { outline: 0 }
 address, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, nav, menu, nav, section, summary { display: block }
+ 
+
 h1, h2,h3,h4,h5,h6 { font-size: 1em; font-weight:100;}
 ul li,.xl li { list-style: none; }
 

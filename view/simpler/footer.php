@@ -41,6 +41,11 @@
  <!--{/foreach}-->
 
 <!--程序免费使用,请自觉保留以下友情链接-->
+<a href="http://www.818zhekou.com/" target="_blank" title="卷皮折扣" class="grey-text text-lighten-3" >卷皮折扣</a>
+<a href="http://www.uz-system.com/" target="_blank" title="淘宝客APP" class="grey-text text-lighten-3">淘宝客APP</a>
+<a href="http://www.hbkfz.cn/" target="_blank" title="开发者" class="grey-text text-lighten-3">湖北开发者网络</a>
+<a href="http://www.shiqingchun.com" target="_blank" title="淘宝特卖商城" class="grey-text text-lighten-3">淘宝特卖商城</a>
+<a href="http://www.ddapei.com/" target="_blank" title="搭配网" class="grey-text text-lighten-3">搭配网</a>
           </p>
         </div>
         <div class="col l4 offset-l2 s12">

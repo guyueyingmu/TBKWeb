@@ -3,6 +3,7 @@
 <link rel="stylesheet" type="text/css" href="{$COMMONDIR}/member/main.css">
 
 
+
 <div class="login_box">
     <div class="container">
         <div class="Login-box">
@@ -18,7 +19,7 @@
                     </div>
                  {if $_G.setting.login_yzm ==1}
 
-                 <div class="cell" style="margin-bottom:30px;">
+                 <div class="cell" style="margin-bottom:10px;">
                          <input type="text" class="text" name="yzm" style="width:140px;margin-right:10px;float:left;"  placeholder="请输入验证码" data-type="yzm">
                            <img   height="45" src="{$URL}m=ajax&a=yzm" class="yzm_img yzm">
                             <a class="yzm" href="#" >刷新</a>

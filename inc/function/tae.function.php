@@ -3,7 +3,7 @@ if(!defined('IN_TTAE')) exit('Access Denied');
 
 
 function top($name,$method,$data,$data1){
-		global $_G;
+	global $_G;
 
 	if($_G['TOP']	== NULL ){
 		include_once	(ROOT_PATH.'top/TopClient.php');
@@ -82,10 +82,8 @@ function top_check_error($resp,$show=true){
 					$_G['error_msg'] = $msg;
 
 					if($show){
-						/*msg($msg,'error');
-						exit;*/
-						logString($msg);
-						return false;
+						msg($msg,'error');
+						exit;
 					}else{
 						L($msg);
 						return false;

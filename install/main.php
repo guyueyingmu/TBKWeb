@@ -2,8 +2,10 @@
 <html  class="taeapp {if $TAE==1}tae{else}web{/if} _{$CM}_{$CA}">
 <head>
 <meta charset="utf-8">
-<title>系统安装</title>
+<title>锦尚中国淘宝客系统安装</title>
 <link href="/favicon.ico" type="image/x-icon" rel=icon />
+<meta name="author" content="uz-system.com 7x24 service d_cms@qq.om"/>
+<meta name="system_info" content="by uz-system version {$version}"/>
 <meta name="keywords" content="{$_G.keywords}"/>
 <meta name="description" content="{$_G.description}"/>
 <meta name="tk" content="{$_G.setting.pid}|{$_G.setting.taodianjing_url}|1"/>
@@ -148,7 +150,7 @@
         <div class="ft cl ac">
         <p>当前版本{$version},更新时间:{$updatetime}</p>
         <p>
-        Copyright © 2014
+        Copyright © 2014 <a href="http://www.52jscn.com/taoke" target="_blank">锦尚中国淘客系统</a> 
         版权所有
         </p>
         </div>

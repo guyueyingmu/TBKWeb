@@ -248,4 +248,9 @@ $menu['tools'] = array(
 			array('name'=>'更新站内商品',			'a'=>'update_goods','type'=>9),
 	)
 );
+
+
+
+
+
 ?>

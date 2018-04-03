@@ -72,12 +72,11 @@
                          </ul>
                         
                     </div>
-     			  <input placeholder="试试淘口令" type="text" class="so_kw" data-type="kw" name="kw" value="{if $_GET.kw}{$_GET.kw}{/if}" autocomplete="off" accesskey="s" aria-expanded="true" />
+     			  <input placeholder="搜&quot;精品女装&quot;试试" type="text" class="so_kw" data-type="kw" name="kw" value="{if $_GET.kw}{$_GET.kw}{/if}" autocomplete="off" accesskey="s" aria-expanded="true" />
                 </div>
-                <input type="button" class="srh-sub so_web _check_form" id="serarch_button" url="{$URL}a=search" value="开始搜索" >
+                <input type="submit" class="srh-sub so_web _check_form" url="{$URL}a=search" value="搜本站" >
+                <input type="submit" class="srh-sub so_tb _check_form" url="http://ai.taobao.com/search/index.htm" value="搜淘宝">
                 <input type="hidden" value="{$_G.setting.pid}" name="pid">
-                <input type="hidden" value="0" name="search_type">
-                <input type="hidden" value="0" name="search_type_value">
 
                 
             </form>
@@ -89,13 +88,15 @@
         <a href="{$URL}m=ad&id=1" class="head_gg2"><img width="180" height="65" src="{$IMGDIR}/nav2.png" ></a>
 
 </div>
+
 <div class="hpz_menubk">
     <div class="hpzmenu">
         <ul>
 
+
 {foreach $_G.nav item=v}
 {if $v.type =="1"}
-<li class="{$v.classname}  {if  $_GET['_itemId'] === $v.id} on{/if}"><a class="is_color is_bold" href="{$v.url}&_itemId={$v.id}" {if $v.target=="1"} target="_blank"{/if}>{$v.name}</a></li>
+<li class="{$v.classname}"><a class="is_color is_bold" href="{$v.url}" {if $v.target=="1"} target="_blank"{/if}>{$v.name}</a></li>
 {/if}
 {/foreach}
 
@@ -153,12 +154,13 @@
 {if $CM !='shop' && $CM !='home'}
 <div class="score_nav cl">
     <ul class="score_nav_ul">
-        <!--
+    
+    
 {foreach $_G.nav item=v}
 {if $v.type =="2"}
 <li class="{$v.classname}"><a href="{$v.url}" {if $v.target=="1"} target="_blank"{/if}>{$v.name}</a></li>
 {/if}
-{/foreach}-->
+{/foreach}
         <!--<li><a href="{$URL}a=all" style="{if $CA == 'all' }color:#E32014;{/if}">全部</a></li>
         {foreach from = $_G.channels item=v name= a}
         {if $v.hide ==0}
@@ -176,7 +178,7 @@
           {/if}
          {/foreach}
          {/if}
-
+         -->
         {if $CM=='index' || $CM=='channel'}
         <span class="y">
          <li><a href="{$URL}m=index&a=all{if $_G.fid}&fid={$_G.fid}{/if}{if $_G.id}&id={$_G.id}{/if}" style="{if !$_GET.order}color:#E32014;{/if}">默认</a></li>
@@ -186,7 +188,6 @@
 		{/if}
         
          </span>
-           -->
     </ul>
 </div>
 {/if}

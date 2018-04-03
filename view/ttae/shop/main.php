@@ -70,9 +70,7 @@
 {include file="../goods_list.php"}
 
 </div>
-    {if !empty($showpage)}
-    <div class="redpage cl" >{$showpage}</div>
-    {/if}
+ <div class="redpage cl" >{$showpage}</div>
 </div>
 
 

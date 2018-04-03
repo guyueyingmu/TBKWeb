@@ -15,7 +15,7 @@
     </div>
    <div class="bucuo_de_goodsd">
       <ul>
-          <li class="li1">
+          <li class="li1" style="width:670px;">
 		  <b class="bucuo_de_bkico bucuo_icosource{$goods.shop_type}"></b>
               <span><a href="{$goods.url}" target="_blank" rel="nofollow" isconvert="1" data-itemid= "{$v.num_iid}">{if $goods.baoyou ==1}[包邮]{/if}{$goods.title}</a></span>
           </li>
@@ -26,26 +26,8 @@
 
           {if $goods.juan_url}
                <div class="goods_juan_url shadow"><a href="{$goods.juan_url}" target="_blank">领{if $goods.juan_price}{$goods.juan_price}元{/if}优惠券</a></div>
-
-              <div  style="width:50px; height:80px;position: absolute;right: 150px;top: 10px;">
-                  <div id="qrcode" rel="{$goods.juan_url}">
-                  </div>
-                  <script type="text/javascript" src="/assets/global/js/qrcode.min.js"></script>
-                  <script type="text/javascript">
-                      var qrcode = new QRCode(document.getElementById("qrcode"), {
-                          width : 50,
-                          height : 50
-                      });
-                      function makeCode () {
-                          var elText = "baidu.com";
-
-                          qrcode.makeCode($("qrcode").attr("rel"));
-                      }
-                      makeCode();
-                  </script>
-              </div>
         {/if}
-
+        
               <a href="{$goods.url}" class="go_btn" target="_blank" rel="nofollow" title="{$goods.title}" isconvert="1" data-itemid= "{$goods.num_iid}"></a>
           </li>
           <li class="li3">
@@ -86,6 +68,7 @@
 
 </em>
 					<!--<span class="ai_bucuobtw1">{$goods.state}-{$goods.city}</span>-->
+					<span class="ai_bucuobtw2">现价{$goods.yh_price}元</span>
          </li>
           <li class="li5">
                <div class="bucuo_de_fxd">
@@ -97,32 +80,16 @@
 
                </div>
           </li>
-        <li class="li6">
-                近30天销量<B>{$goods.sum}</B>
-
-            标签关键字:
-            {foreach from=$goods.tags item=v key=k name=a}
-            {$v},
-            {/foreach}
-            {if $goods.baoyou==1}
-                <B>包邮</B>
-            {/if}
-           <br/>
-            详情请点击商家
-            <a href="{$goods.url}" style="text-decoration:none;" class="go_btn" target="_blank" rel="nofollow"  isconvert="1" data-itemid= "{$goods.num_iid}">
-                <B> {$goods.nick}</B>
-            </a>
-            <br/>
-            更多特惠活动尽在{$_G.setting.title}
-            <div style="display: none">{$goods.num_iid}</div>
-            {if $goods.start_time != 0}
-            <span class="_dgmdate" data-time="{$goods.start_time}">1122{$goods.start_time}</span>
-            {/if}
-
-            {if $goods.end_time != 0}
-            <span class="_dgmdate" data-time="{$goods.end_time}">111{$goods.start_time}</span>
-            {/if}
-         </li>
+        <li class="li6">{$_G.title} 在 <span class="_dgmdate" data-time="{$goods.start_time}"></span>进行特惠折扣减价促销活动,原价{$goods.price}现价{$goods.yh_price},开始时间<span class="_dgmdate" data-time="{$goods.start_time}"></span>结束时间<span class="_dgmdate" data-time="{$goods.end_time}"></span>,过后恢复原价.
+当前商品来自：{if $goods.shop_type ==1}天猫{else}淘宝集市{/if},发货城市为：{$goods.state}-{$goods.city},
+标签关键字:
+{foreach from=$goods.tags item=v key=k name=a}
+{$v},
+{/foreach}
+卖家{if $goods.baoyou==1}已{else}未{/if}包邮,商品近30天销量{$goods.sum+864},报名商家为{$goods.username},
+请具体参看商家{$goods.nick}的活动信息,点
+击可立即进入卖家{$goods.nick}商铺查看最新特惠活动.一切尽在{$_G.setting.title}
+本商品关键为{$goods.keywords},商品ID为{$goods.num_iid}</li>
       </ul>
 
    </div>

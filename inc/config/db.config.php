@@ -20,15 +20,14 @@ $_config['cache_type']='auto';	// auto || memcache || baichuan || fileServer || 
 
 
 
-
-$_config['authkey'] = 'mjM20MfmrH';
+$_config['authkey'] = '96L0w7qJD5';
 $_config['db']=array (
   'dbhost' => 'localhost',
   'dbport' => 3306,
   'dbuser' => 'root',
-  'dbpw' => '123456',
+  'dbpw' => '52jscn.com',
   'dbcharset' => 'utf8',
-  'dbname' => 'tbk_test',
+  'dbname' => 'demo',
   'pconnect' => 0,
   'tablepre' => 'ttae_',
 );

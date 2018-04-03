@@ -1,55 +1,14 @@
 {include file="../header.php"}
  <link type="text/css" rel="stylesheet" href="{$CSSDIR}/index.css">
 
-
-
-<!--slider-script   1000X350-->
-<script src="/assets/global/js/responsiveslides.min.js"></script>
-<script>
-    $(function () {
-        $("#slider1").responsiveSlides({
-            auto: true,
-            speed: 500,
-            namespace: "callbacks",
-            pager: true,
-        });
-    });
-</script>
-
-<!--//slider-script-->
-<div class="banner-mat">
-    <div class="container">
-        <div class="banner">
-            <div class="slider">
-                <ul class="rslides" id="slider1">
-
-                    {foreach from=$_G.pics.k33 item=v}
-                    <li>
-                        <a {if $v.url} href="{$v.url}" target="_blank"{/if}><img src="{$v.picurl}" /></a>
-                    </li>
-                    {/foreach}
-                </ul>
-            </div>
-
-            <div class="banner-bottom">
-                <div class="banner-matter">
-                    <p>惠多多欢迎您</p>
-                </div>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--
 {if $_G.ad.k2}
 <div class="ad cl">
-    {$_G.ad.k2.show_html}
+ {$_G.ad.k2.show_html}
 </div>
 {/if}
--->
 
-<!--
+
+
 <div class="kt_box cl ">
     	<ul>
         {foreach from=$img item=v key=k}
@@ -69,38 +28,40 @@
 
 </div>
 
--->
 
 
 <div class="index2_contend cl">
 
 {include file="../goods_list.php"}
-    {if !empty($showpage)}
-        <div class="redpage cl" >{$showpage}</div>
-    {/if}
+
+ <div class="redpage cl" >{$showpage}</div>
 </div>
 
 
-<!--
+
 <div class="howcomed">
     <a href="{$URL}a=desktop"></a>
 </div>
--->
 
-<!--
+
+
 <div class="foot">
     <div class="links cl"> <span>友情链接：</span>
       <div class="links_list_box">
         <ul class="links_list" style="margin-top: 0px;">
           <li>
-                {foreach from= $_G.friend_link item = v name=a}
-                 	{if $v.hide == 0}
+<!--{foreach from= $_G.friend_link item = v name=a}-->
+                 	<!--{if $v.hide == 0}-->
 
                     <a href="{$v.url}" target="_blank">{$v.name}</a>
-                    {/if}
-                    {/foreach}
+                    <!--{/if}-->
+ <!--{/foreach}-->
 
-                <a href="http://www.ddapei.com/" target="_blank" title="搭配网">搭配网</a>
+<!--锦尚中国程序免费使用,请自觉保留以下友情链接-->
+<a href="http://idc.52jscn.com/" target="_blank" title="淘宝客专用主机" >淘宝客专用主机</a>
+<a href="http://www.uz-system.com/" target="_blank" title="淘宝客APP" >淘宝客APP</a>
+<a href="http://www.hbkfz.cn/" target="_blank" title="开发者">湖北开发者网络</a>
+<a href="http://www.ddapei.com/" target="_blank" title="搭配网">搭配网</a>
 
          </li>
         </ul>
@@ -112,7 +73,7 @@
        {/if}
 </div>
 </div>
--->
+
 {include file="../footer.php"}
 
 

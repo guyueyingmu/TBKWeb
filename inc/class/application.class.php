@@ -32,6 +32,7 @@ class application {
 						exit;
 					}
 
+
 					if(isset($_GET['debug']) && function_exists('xhprof_enable')){
 						xhprof_enable(XHPROF_FLAGS_CPU + XHPROF_FLAGS_MEMORY);
 					}
@@ -65,7 +66,7 @@ class application {
 						}
 					}
 
-                    self::_init_tae();
+					self::_init_tae();
 					self::_init_rewrite();
 
 					foreach($_GET as $k=>$v){
@@ -375,6 +376,7 @@ class application {
 					include_once libfile('class/database');
 					require_once libfile('class/cate');
 
+
 					$_config = $_G['_config'];
 					if(TAE) {
 						include ROOT_PATH .'inc/config/tae.config.php';
@@ -597,13 +599,14 @@ class application {
 							}
 
 							$_G['menu'] = $menu;
-							seo('后台管理');
+							seo('锦尚中国淘客系统后台管理          power by bbs.52jscn.com');
 							include_once (ROOT_PATH."inc/admin_action/".$m.".action.php");
 
 					}else{
 
 							include_once libfile("action/".$m);
 					}
+
 
 					if($m == 'list') {
 						$mm = '_'.$m;
