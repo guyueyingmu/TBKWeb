@@ -160,8 +160,8 @@ class fetch extends app{
 			}
 		}else if($get_type ==0){
 			//get	初级包,少
-			//$arr  = top('tbk','get',$rs["value"]);//暂时全取优惠券
-			$arr  = top('tbk','getHaoQuanQingDan',$rs["value"]);
+			$arr  = top('tbk','get',$rs["value"]);//暂时全取优惠券
+			//$arr  = top('tbk','getHaoQuanQingDan',$rs["value"]);
 		}else {
 			msg('请先在采集设置中设置采集接口');
 		}
