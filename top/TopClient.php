@@ -278,10 +278,6 @@ class TopClient
 		}
 		$requestUrl = substr($requestUrl, 0, -1);
 
-
-       
-
-
 		try
 		{
 			$resp = ($this->curl($requestUrl, $apiParams));

@@ -18,6 +18,16 @@
           <li class="li1">
 		  <b class="bucuo_de_bkico bucuo_icosource{$goods.shop_type}"></b>
               <span><a href="{$goods.url}" target="_blank" rel="nofollow" isconvert="1" data-itemid= "{$v.num_iid}">{if $goods.baoyou ==1}[包邮]{/if}{$goods.title}</a></span>
+
+              {if $goods.tags|@count > 0}
+                <br/>
+                  <em>
+                      标签:
+                      {foreach from=$goods.tags item=v key=k name=a}
+                      <a href="{$URL}&a=search&kw={$k}" target="_blank" title="{$v}">{$v}</a>
+                      {/foreach}
+                  </em>
+              {/if}
           </li>
           <li class="bucuo_de_bkico li2 lic{if $goods.status ==2 || $goods.status ==4}2{elseif $goods.status ==3}3{else}1{/if}">
 
@@ -26,24 +36,6 @@
 
           {if $goods.juan_url}
                <div class="goods_juan_url shadow"><a href="{$goods.juan_url}" target="_blank">领{if $goods.juan_price}{$goods.juan_price}元{/if}优惠券</a></div>
-
-              <div  style="width:50px; height:80px;position: absolute;right: 150px;top: 10px;">
-                  <div id="qrcode" rel="{$goods.juan_url}">
-                  </div>
-                  <script type="text/javascript" src="/assets/global/js/qrcode.min.js"></script>
-                  <script type="text/javascript">
-                      var qrcode = new QRCode(document.getElementById("qrcode"), {
-                          width : 50,
-                          height : 50
-                      });
-                      function makeCode () {
-                          var elText = "baidu.com";
-
-                          qrcode.makeCode($("qrcode").attr("rel"));
-                      }
-                      makeCode();
-                  </script>
-              </div>
         {/if}
 
               <a href="{$goods.url}" class="go_btn" target="_blank" rel="nofollow" title="{$goods.title}" isconvert="1" data-itemid= "{$goods.num_iid}"></a>
@@ -77,16 +69,6 @@
               </span>
 
           </li>
-<li class="li4">
-<em>
-标签:
-{foreach from=$goods.tags item=v key=k name=a}
-<a href="{$URL}&a=search&kw={$k}" target="_blank" title="{$v}">{$v}</a>
-{/foreach}
-
-</em>
-					<!--<span class="ai_bucuobtw1">{$goods.state}-{$goods.city}</span>-->
-         </li>
           <li class="li5">
                <div class="bucuo_de_fxd">
 
@@ -95,26 +77,27 @@
                   <a href="#" class="show_share_box" style="margin-left:0px;">分享</a></b>
 				  <i class="bucuo_de_bkico" style="background-position:-270px -35px;"></i><a href="javascript:;">投诉</a>
 
+                   {if $goods.juan_url}
+                       <div id="qrcode" rel="{$goods.juan_url}" style="float: right;margin-right: 13px;text-align: center">
+                           扫码购买
+                       </div>
+                       <script type="text/javascript" src="/assets/global/js/qrcode.min.js"></script>
+                       <script type="text/javascript">
+                           var qrcode = new QRCode(document.getElementById("qrcode"), {
+                               width : 88,
+                               height : 88
+                           });
+                           function makeCode () {
+                               qrcode.makeCode($("#qrcode").attr("rel"));
+                           }
+                           makeCode();
+                       </script>
+                   {/if}
+
                </div>
+
           </li>
         <li class="li6">
-                近30天销量<B>{$goods.sum}</B>
-
-            标签关键字:
-            {foreach from=$goods.tags item=v key=k name=a}
-            {$v},
-            {/foreach}
-            {if $goods.baoyou==1}
-                <B>包邮</B>
-            {/if}
-           <br/>
-            详情请点击商家
-            <a href="{$goods.url}" style="text-decoration:none;" class="go_btn" target="_blank" rel="nofollow"  isconvert="1" data-itemid= "{$goods.num_iid}">
-                <B> {$goods.nick}</B>
-            </a>
-            <br/>
-            更多特惠活动尽在{$_G.setting.title}
-            <div style="display: none">{$goods.num_iid}</div>
             {if $goods.start_time != 0}
             <span class="_dgmdate" data-time="{$goods.start_time}">1122{$goods.start_time}</span>
             {/if}
@@ -122,6 +105,7 @@
             {if $goods.end_time != 0}
             <span class="_dgmdate" data-time="{$goods.end_time}">111{$goods.start_time}</span>
             {/if}
+
          </li>
       </ul>
 
