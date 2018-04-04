@@ -147,14 +147,11 @@
   <div class="index_bucuozhekou " style="overflow:hidden;">
 
   {if $goods.message}
-   <ul class="index_contentul2 id-itemlist" style="padding:10px;">
-   {$goods.message}
-   </ul>
-
+       <ul class="index_contentul2 id-itemlist" style="padding:10px;">
+       {$goods.message}
+       </ul>
   {/if}
     <ul class="index_contentul2 other_goods id-itemlist {if $goods.message}hide{/if}">
-
-
 {foreach from=$tuijuan  item=v}
 	 <li>
             <div class="ai_bucuowk">

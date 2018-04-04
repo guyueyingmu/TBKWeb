@@ -34,13 +34,6 @@ var modue_list = {
 					if(val)_count.add(9,val);
 				});
 
-				hover(".rightnfixda2",function(){
-					$(".rightnfixdspan1").show();
-				},function(){
-					$(".rightnfixdspan1").hide();
-				});
-
-
 				_scroll(function(top){
 					if(top>810){
 						$(".i2_cagmenud_m").addClass('index_fixed');
@@ -122,7 +115,6 @@ var modue_list = {
 						})
 					}
 					qiandao();
-
 
 				hover(".rightnfixda2",function(){
 					 $(".rightnfixdspan1").show();
@@ -272,6 +264,8 @@ var modue_list = {
 			$(".bucuo_detail_bmenu li").each(function(i){
 				$(this).attr('data-index',i);
 			});
+
+
 			/*$(".bucuo_detail_bmenu li").hover(function(){
 				var index = $(this).attr('data-index');
 				index = parseInt(index);
@@ -281,7 +275,7 @@ var modue_list = {
 			$(".bucuo_detail_bmenu li").click(function(){
 				var index = $(this).attr('data-index');
 				index = parseInt(index);
-				$(".index_contentul2").hide().eq(index).show();
+				$(".index_contentul2").hide().eq(index).show().removeClass("hide");
 				$(".bucuo_detail_bmenu li").removeClass('bucuo_current').eq(index).addClass('bucuo_current');
 			});
 
@@ -304,14 +298,16 @@ var modue_list = {
 			if(url && url.indexOf('a=go_pay')>-1 && goods_juan_url && goods_juan_url.indexOf('uland.taobao.com')>-1){
 				$('.go_btn').attr('href',goods_juan_url).removeAttr('isconvert data-itemid');
 			}
-
 			appendscript("/assets/global/js/tdj.js",function(){
+
 					tdj.get_comment(id,function(list){
 						var str = '';
 						for (var i = 0; i < list.length; i++) {
 
 							str += make_html(list[i]);
 						}
+
+					//	console.log("----->"+str);
 						$(".bucuo_detail_bmenu li a span").text( list.length+'+');
 						$("._comment_list").append(str);
 					});

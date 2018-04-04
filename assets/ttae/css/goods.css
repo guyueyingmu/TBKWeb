@@ -143,7 +143,7 @@ font-size: 14px;border-radius: 2px;display:block;position: absolute;right: 10px;
 .pl-box p { background: url(/assets/ttae/images/pinglun.gif) no-repeat; width: 279px; height: 27px; margin: 0 auto; text-align: center; line-height: 27px; color: #666; }
 
 .comment-title span { font-size: 12px; color: #999; }
-.com-big .user-info-r li{ padding: 17px 0; border-bottom:1px dotted #f1f1f1;}
+.com-big .user-info-r li{ padding: 5px 0; border-bottom:1px dotted #f1f1f1;}
 .rate-user .user-name{ font-family: "微软雅黑";}
 .rate-user-grade .tm-icon{ display: inline-block; vertical-align: -4px; background: url(/assets/ttae/images/tmall-vip.gif) no-repeat; margin-right: 3px;}
 .rate-user-grade .t1{ width: 18px; height: 18px; background-position: 0 0;}

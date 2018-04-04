@@ -178,7 +178,9 @@ class data_api {
 						$tuijuan = D(array('and'=>$and." AND fid = ".$fid,'limit'=>$len,'key'=>'goods_main_b'));
 					}
 			}else{
-				$tuijuan = D(array('and'=>$and,'limit'=>$len,'key'=>'goods_main_c'));
+
+				$tbk = new api_tbk;
+				$tuijuan = $tbk->get_recommend(1,$assign[goods][num_iid]);
 			}
 
 

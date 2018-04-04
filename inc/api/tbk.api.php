@@ -56,12 +56,35 @@ class api_tbk  extends apiBase{
 		
 		if($rt['count']==0) return array('count'=>0,'goods'=>array());
 		$rt['goods'] =  $this->parse($resp);
+        return $rt;
+    }
+
+    function getHaoQuanQingDan($arr) {
+        global $_G;
+
+        include_once(ROOT_PATH . 'top/tbk/TbkDgItemCouponGetRequest.php');
+        $req = new TbkDgItemCouponGetRequest;
+        $id = substr(strrchr($_G[setting][pid], '_'),1);
+        $req->setAdzoneId($id);
+        if($arr['keyword'])$req->setQ($arr['keyword']);
+        if($arr['cid'])$req->setCat($arr['cid']);
+
+        $req->setPageNo($arr['page_no']);
+        $req->setPageSize($arr['page_size']);
+
+        $resp = $_G['TOP']->execute($req);
+
+        top_check_error($resp, $this->show_error);
+        $rt = array();
+        $rt['count'] = $resp->total_results;
+
+        if($rt['count']==0) return array('count'=>0,'goods'=>array());
+        $rt['goods'] =  $this->parse($resp);
 
         return $rt;
     }
-	
-	
-	
+
+
     function parse($resp) {
         $items=$resp->results->n_tbk_item;
 		$goods_list = array();
@@ -137,13 +160,7 @@ class api_tbk  extends apiBase{
 
     /*
      * 淘宝客商品关联推荐查询
-     * @paremt relate_type 推荐类型，
      * 1:同类商品推荐，
-     * 2:异类商品推荐，
-     * 3:同店商品推荐，此时必须输入num_iid;
-     * 4:店铺热门推荐，此时必须输入user_id，这里的user_id得通过taobao.tbk.shop.get这个接口去获取user_id字段;
-     * 5:类目热门推荐，此时必须输入cid
-     *
      * */
 
  	function get_shop($uid,$nick,$size =20) {
@@ -258,21 +275,14 @@ class api_tbk  extends apiBase{
      *
      * */
 
-    function get_recommend($relate_type, $id,$size =20) {
+    function get_recommend($relate_type, $id,$size =24) {
         global $_G;
 
         include_once(ROOT_PATH . 'top/tbk/TbkItemRecommendGetRequest.php');
         $req = new TbkItemRecommendGetRequest;
         $req->setFields("num_iid,title,pict_url,small_images,reserve_price,zk_final_price,user_type,provcity,item_url");
-        $req->setRelateType($relate_type);
 
-        if ($relate_type == 4) {
-            $req->setUserId($id);
-        } else if ($relate_type == 5) {
-            $req->setCat($id);
-        }else{
-            $req->setNumIid($id);
-        }
+        $req->setNumIid($id);
         $req->setCount($size);
         $req->setPlatform(1);
         $resp = $_G['TOP']->execute($req);

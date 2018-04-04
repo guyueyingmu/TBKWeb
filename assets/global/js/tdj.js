@@ -118,6 +118,7 @@ var tdj  ={
 					this.focus_tdj = true;
 					this.get(iid,function(s){
 
+
 								var uid = s.sid;
 								var iid = s.num_iid;
 								var url ='https://rate.tmall.com/list_detail_rate.htm?itemId='+iid+'&spuId=&sellerId='+uid;
@@ -127,7 +128,6 @@ var tdj  ={
 									data :'',
 									dataType : "jsonp",
 									success : function(s, textStatus) {
-
 										var count = 0;
 										try {
 											count = s.rateDetail.rateCount.total;
