@@ -87,6 +87,9 @@ class api_tbk  extends apiBase{
 
     function parse($resp) {
         $items=$resp->results->n_tbk_item;
+        if(!$items){
+            $items=$resp->results->tbk_coupon;
+        }
 		$goods_list = array();
 	
 		foreach($items as $k=>$item){
@@ -102,7 +105,17 @@ class api_tbk  extends apiBase{
 				$arr['images'] =	$item->small_images->string;
 				$arr['shop_type'] =		$item->user_type ==1 ?'1':'2';	
 				$arr['sid'] =		$item->seller_id."";	
-				
+			    $arr['juan_url'] = $item->coupon_click_url;
+                if($arr['juan_url'] && strlen($arr['juan_url'])>50){
+                    $re = $this->getShortUrl(Array($arr['juan_url']));
+                    $re = $re->results->tbk_spread;
+                    if(strcasecmp(current($re)->err_msg,"ok" ) == 0){
+                        $arr['juan_url'] = current($re)->content;
+                    }else{
+                        logString($arr['juan_url']."cant get shorturl","shortUrlError");
+                    }
+                }
+
 				//所有淘客API不返回这些字段
 				 $arr['nick'] =      $item->nick;    
                 $arr['sum'] =       $item->volume;  
@@ -112,12 +125,6 @@ class api_tbk  extends apiBase{
 			$goods_list[$num_iid] = $arr;
 		}
 
-		//if(!$this->get_ext)return $goods_list;
-
-		foreach($data as $k=>$v){
-			$iid = $v['num_iid'];
-			$goods_list[$iid] = array_merge($goods_list[$iid],$v);
-		}
 		return $goods_list;
 
     }
@@ -143,10 +150,18 @@ class api_tbk  extends apiBase{
         include_once(ROOT_PATH . 'top/tbk/TbkSpreadGetRequest.php');
         $req = new TbkSpreadGetRequest;
         $requests = new TbkSpreadGetRequest;
-        foreach ($urlarray as $k => $v) {
+
+        if(is_array($urlarray)){
+
+            foreach ($urlarray as $k => $v) {
+                $arr = array();
+                $arr[url] = $v;
+                $requests->putOtherTextParam($k,$arr);
+            }
+        }else{
             $arr = array();
-            $arr[url] = $v;
-            $requests->putOtherTextParam($k,$arr);
+            $arr[url] = $urlarray;
+            $requests->putOtherTextParam(0,$arr);
         }
 
         $req->setRequests(json_encode($requests->getApiParas()));

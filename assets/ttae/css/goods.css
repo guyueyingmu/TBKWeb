@@ -170,5 +170,5 @@ font-size: 14px;border-radius: 2px;display:block;position: absolute;right: 10px;
 .comment-title span { font-size: 12px; color: #999; }
 
 .more { font-family: "宋体"; font-size: 12px; font-weight: normal; float: right; display: inline; margin-right: 10px; padding: 0 6px; display: block; height: 20px; color: #08c; line-height: 23px; float: right }
-.goods_juan_url { height: 30px; background: #00BCD4; padding: 5px 10px; line-height: 30px; font-size: 16px; margin-top: 16px; border-radius: 6px; float: left; margin-left: 150px }
+.goods_juan_url { background: #00BCD4; padding: 5px 10px; line-height: 30px; font-size: 16px; margin-top: 16px; border-radius: 6px; float: left; margin-left: 150px }
 .goods_juan_url a { color: #fff }
