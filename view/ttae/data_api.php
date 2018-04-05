@@ -179,6 +179,9 @@ class data_api {
 					}
 			}else{
 
+				if(!class_exists("api_tbk")){
+					require_once "inc/api/tbk.api.php";
+				}
 				$tbk = new api_tbk;
 				$tuijuan = $tbk->get_recommend(1,$assign[goods][num_iid]);
 			}
