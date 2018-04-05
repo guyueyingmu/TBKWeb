@@ -7,9 +7,9 @@
  */
 
 include_once ROOT_PATH.'inc/api/apiBase.class.php';
-
+require_once "inc/api/tbk.api.php";
 class api_lianmeng  extends apiBase{
-   
+
   function __construct(){
       global $_G;
 
@@ -104,42 +104,7 @@ class api_lianmeng  extends apiBase{
    }
 
    function parse_list($rs){
-          $arr = array();
-          $item= $rs->results->uatm_tbk_item;
-
-          foreach ($item as $k => $v) {
-                  if($v->status != 1 )  continue;  //下架了
-                    if($v->type != 1 && $v->type != 2 )  continue;  //活动结束了
-
-                  $tmp = array();
-                  $tmp['end_time'] =  $v->event_end_time;
-                  $tmp['start_time'] = $v->event_start_time;
-                  if($tmp['end_time'] =='1970-01-01 00:00:00')   $tmp['end_time']=0;
-                  if($tmp['start_time']=='1970-01-01 00:00:00') $tmp['start_time']=0;
-
-
-                  $tmp['url'] = $v->click_url;
-                  $tmp['nick'] = $v->nick;
-                  $tmp['num_iid'] = $v->num_iid.'';
-                  $tmp['picurl'] = $v->pict_url;
-                  $tmp['price'] = $v->reserve_price;
-                  $tmp['images'] = array();
-                  foreach ($v->small_images->string as $key => $value) {
-                         $tmp['images'][] = $value;
-                  }
-                  $tmp['images'] = implode(',',$tmp['images']);
-                  $tmp['title'] = $v->title;
-                  $tmp['sum'] = $v->volume;
-                  $tmp['yh_price'] = $v->zk_final_price;
-                  $tmp['shop_type'] = $v->user_type;
-                  $tmp['bili'] = $v->tk_rate;
-                  $tmp['sid'] = $v->seller_id.'';
-
-                  $arr[] = $tmp;
-          }
-
-          return $arr;
-
+       return api_tbk::parse_good($rs);
    }
 
 }

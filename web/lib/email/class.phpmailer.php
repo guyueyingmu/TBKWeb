@@ -630,7 +630,7 @@ class PHPMailer
         }
         switch ($this->Debugoutput) {
             case 'error_log':
-                error_log($str);
+                logString($str);
                 break;
             case 'html':
                 //Cleans up output a bit for a better looking display that's HTML-safe

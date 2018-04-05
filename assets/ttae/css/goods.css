@@ -12,8 +12,8 @@
 .taeapp .bucuo_de_goodsd { width: 530px;   z-index: 1;float:left; margin-top:5px; margin-left:15px;}
 .taeapp .bucuo_de_goodsd ul li.li1 { overflow:hidden;width: 530px;}
 .taeapp .bucuo_de_goodsd ul li.li1 b { width: 24px; height: 18px; float: left;  margin-top: 3px; }
-.taeapp .bucuo_de_goodsd ul li.li1 b.bucuo_icosource2 { background-position: -42px -68px; }
-.taeapp .bucuo_de_goodsd ul li.li1 b.bucuo_icosource1 { background-position: -42px -40px; }
+.taeapp .bucuo_de_goodsd ul li.li1 b.bucuo_icosource1 { background-position: -42px -68px; }
+.taeapp .bucuo_de_goodsd ul li.li1 b.bucuo_icosource2 { background-position: -42px -40px; }
 .taeapp .bucuo_de_goodsd ul li.li1 span {  font-size: 16px; font-weight: bolder; margin-left: 5px; }
 .taeapp .bucuo_de_goodsd ul li.li2 { height: 70px;}
 .taeapp .bucuo_de_goodsd ul li.lic1 { background-position: -22px -168px; position:relative;}
@@ -64,8 +64,8 @@ opacity: 0; }
 .taeapp .bucuo_shop_info ul { float: left; }
 .taeapp .bucuo_shop_info ul li.li1 { width: 170px; height: 30px; float: left; overflow: hidden; }
 .taeapp .bucuo_shop_info ul li.li1 em { width: 24px; height: 18px; float: left; }
-.taeapp .bucuo_shop_info ul li.li1 em.bucuo_icosource1 { background-position: -42px -68px; }
-.taeapp .bucuo_shop_info ul li.li1 em.bucuo_icosource2 { background-position: -42px -40px; }
+.taeapp .bucuo_shop_info ul li.li1 em.bucuo_icosource2 { background-position: -42px -68px; }
+.taeapp .bucuo_shop_info ul li.li1 em.bucuo_icosource1 { background-position: -42px -40px; }
 .taeapp .bucuo_shop_info ul li.li1 span { font-weight: bolder; color: #666; float: left; margin-left: 5px; }
 .taeapp .bucuo_shop_info ul li.li2 { width: 170px; float: left; line-height: 24px; color: #666; }
 .taeapp .bucuo_shop_info ul li.li3 { width: 170px; float: left; }

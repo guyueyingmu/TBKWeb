@@ -1,14 +1,14 @@
 <?php
 /**
- * TOP API: taobao.tbk.sc.material.optional request
+ * TOP API: taobao.tbk.dg.material.optional request
  * 
  * @author auto create
  * @since 1.0, 2018.04.02
  */
-class TbkScMaterialOptionalRequest
+class TbkDgMaterialOptionalRequest
 {
 	/** 
-	 * adzone_id
+	 * mm_xxx_xxx_xxx的第三位
 	 **/
 	private $adzoneId;
 	
@@ -66,11 +66,6 @@ class TbkScMaterialOptionalRequest
 	 * 查询词
 	 **/
 	private $q;
-	
-	/** 
-	 * site_id
-	 **/
-	private $siteId;
 	
 	/** 
 	 * 排序_des（降序），排序_asc（升序），销量（total_sales），淘客佣金比率（tk_rate）， 累计推广量（tk_total_sales），总支出佣金（tk_total_commi），价格（price）
@@ -226,17 +221,6 @@ class TbkScMaterialOptionalRequest
 		return $this->q;
 	}
 
-	public function setSiteId($siteId)
-	{
-		$this->siteId = $siteId;
-		$this->apiParas["site_id"] = $siteId;
-	}
-
-	public function getSiteId()
-	{
-		return $this->siteId;
-	}
-
 	public function setSort($sort)
 	{
 		$this->sort = $sort;
@@ -283,7 +267,7 @@ class TbkScMaterialOptionalRequest
 
 	public function getApiMethodName()
 	{
-		return "taobao.tbk.sc.material.optional";
+		return "taobao.tbk.dg.material.optional";
 	}
 	
 	public function getApiParas()
@@ -295,7 +279,6 @@ class TbkScMaterialOptionalRequest
 	{
 		
 		RequestCheckUtil::checkNotNull($this->adzoneId,"adzoneId");
-		RequestCheckUtil::checkNotNull($this->siteId,"siteId");
 		RequestCheckUtil::checkMaxValue($this->startDsr,50000,"startDsr");
 	}
 	

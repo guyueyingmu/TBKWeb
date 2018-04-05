@@ -87,10 +87,10 @@ outline: none; padding-left: 5px; color: #808080; border: 2px solid #e32014; bor
 .head_menu ul li i { width: 18px; height: 15px; float: left; }
 .head_menu ul li a { float: left; }
 .head_gg1 { width: 200px; height: 50px; position: absolute; z-index: 20; margin-left: 800px; margin-top: 35px; }
-.hpz_menubk { width: 100%; height: 50px; background-color: #fff; }
+.hpz_menubk { width: 100%; height: 50px; background-color: #FFF; }
 .hpzmenu { width: 1080px; height: 50px; margin: 0 auto; }
-.hpzmenu ul { height: 50px; float: left; border-left: 1px solid #fff; }
-.hpzmenu ul li { width: 89px; height: 50px; float: left; text-align: center; line-height: 50px; font-size: 16px; font-family: "Microsoft YaHei"; color: #696969; border-left: 1px solid #fff; border-right: 1px solid #fff; cursor: pointer; }
+.hpzmenu ul { height: 50px; float: left; }
+.hpzmenu ul li { width: 89px; height: 50px; float: left; text-align: center; line-height: 50px; font-size: 16px; font-family: "Microsoft YaHei"; color: #696969; cursor: pointer; }
 .hpzmenu ul li a {display: block;text-decoration:none; }
 .hpzmenu ul li a:hover {border-bottom: 2px solid #ec1611; box-shadow: 5px 0 10px #ddd, -5px 0 10px #ddd;}
 .hpzmenu ul li.on a, .hpzmenu ul li.on a:hover{background: #e60044;  color: #FFF;border-bottom:none;text-decoration:none; }

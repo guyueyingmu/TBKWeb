@@ -1,5 +1,4 @@
 <?php
-if(!defined('IN_TTAE')) exit('Access Denied FROM UZ-SYSTEM');
 
 //post提交数据检查...
 function check(){
@@ -1687,6 +1686,9 @@ function get_text($html_dom,$length){
 function fix($price,$len =2 ){
 	//$price  = $price+ 10005423.2541236;
 	//$price =number_format($price,$len,'.','');
+	if(!$price){
+		return 0;
+	}
 
 	$price =sprintf("%.".$len."f",$price);
 
@@ -1921,9 +1923,8 @@ function getUrlParam($url){
 		}
 
 		global $_G;
-
-		if($_G[setting] && $_G[setting][log_path]){
-			error_log(date('Y-m-d h:i:sa').':'.$str."\r\n",3,$_G[setting][log_path]."/".$fileName.date('Y-m-d').".log");
+		if($_G[_config] && $_G[_config][log_path]){
+			error_log(date('Y-m-d h:i:sa').':'.$str."\r\n",3,$_G[_config][log_path]."/".$fileName.date('Y-m-d').".log");
 		}
 	}
 ?>

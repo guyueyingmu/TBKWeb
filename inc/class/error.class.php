@@ -128,7 +128,6 @@ $str='<!doctype html>
 				}
 		}
 		
-
 		error_log($message, 3, $file);
 	}
 

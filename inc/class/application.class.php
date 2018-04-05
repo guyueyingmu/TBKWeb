@@ -18,14 +18,13 @@ class application {
 					if(!defined('URL'))define('URL','/'.CURSCRIPT.'.php?');
 					header('Content-Type: text/html; charset='.CHARSET);
 					if(CURSCRIPT == 'index'){
-						if(CURSCRIPT == 'index' &&  ($_SERVER['QUERY_STRING'] == '' || ( !empty($_SERVER['REDIRECT_URL']) && $_SERVER['REDIRECT_URL'] =='index.html'  ))){
+						if(CURSCRIPT == 'index' &&  (!isset($_SERVER['QUERY_STRING']) || $_SERVER['QUERY_STRING'] == '' || ( !empty($_SERVER['REDIRECT_URL']) && $_SERVER['REDIRECT_URL'] =='index.html'  ))){
 							if(is_file(ROOT_PATH.'index.html')){
 								echo file_get_contents(ROOT_PATH.'index.html');
 								exit;
 							}
 						}
 					}
-
 
 					$method = strtolower($_SERVER['REQUEST_METHOD']);
 					if($method != 'get' && $method != 'post' ) {

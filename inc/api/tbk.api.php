@@ -59,7 +59,7 @@ class api_tbk  extends apiBase{
         return $rt;
     }
 
-    function getHaoQuanQingDan($arr) {
+    function getHaoJuanQingDan($arr) {
         global $_G;
 
         include_once(ROOT_PATH . 'top/tbk/TbkDgItemCouponGetRequest.php');
@@ -85,48 +85,50 @@ class api_tbk  extends apiBase{
     }
 
 
-    function parse($resp) {
-        $items=$resp->results->n_tbk_item;
-        if(!$items){
-            $items=$resp->results->tbk_coupon;
+    function getTongYongWuLiaoDaoGou($arr) {
+        global $_G;
+
+        include_once(ROOT_PATH . 'top/tbk/TbkDgMaterialOptionalRequest.php');
+        $req = new TbkDgMaterialOptionalRequest;
+        if(!$arr['keyword'] && !$arr['cid']){
+            return array('count'=>0,'goods'=>array());
         }
-		$goods_list = array();
-	
-		foreach($items as $k=>$item){
-				$arr = array();
-				
-				$num_iid = $arr['num_iid'] =		(string)$item->num_iid ;						//商品ID
-				$arr['title'] = 		trim_html($item->title,1);							//商品标题
-                $arr['title'] = $arr['title'] .'['. $item->provcity.']';
-				$arr['picurl'] = 		$item->pict_url;						//商品缩略图
-				$arr['url'] = 			$item->item_url;						//商品链接地址
-				$arr['price'] =			fix($item->reserve_price,1);			//原价
-				$arr['yh_price'] =			fix($item->zk_final_price,1);			//原价
-				$arr['images'] =	$item->small_images->string;
-				$arr['shop_type'] =		$item->user_type ==1 ?'1':'2';	
-				$arr['sid'] =		$item->seller_id."";	
-			    $arr['juan_url'] = $item->coupon_click_url;
-                if($arr['juan_url'] && strlen($arr['juan_url'])>50){
-                    $re = $this->getShortUrl(Array($arr['juan_url']));
-                    $re = $re->results->tbk_spread;
-                    if(strcasecmp(current($re)->err_msg,"ok" ) == 0){
-                        $arr['juan_url'] = current($re)->content;
-                    }else{
-                        logString($arr['juan_url']."cant get shorturl","shortUrlError");
-                    }
-                }
 
-				//所有淘客API不返回这些字段
-				 $arr['nick'] =      $item->nick;    
-                $arr['sum'] =       $item->volume;  
-                $arr['bili']  = '';
-				
-							
-			$goods_list[$num_iid] = $arr;
-		}
+        if($arr['keyword'])$req->setQ($arr['keyword']);
+        if($arr['cid'])$req->setCat($arr['cid']);
+        $req->setItemloc($arr['area']);
+        if($arr['sort']){
+            $req->setSort($arr['sort']);
+        }else{
+            $req->setSort("total_sales_des");
+        }
+        $req->setIsTmall($arr['mall_item']);
+        if($arr['start_price'])$req->setStartPrice($arr['start_price']);
+        if($arr['end_price'])$req->setEndPrice($arr['end_price']);
+        if($arr['start_commission_rate'])$req->setStartTkRate($arr['start_commission_rate']*100);
+        if($arr['end_commission_rate'])$req->setEndTkRate($arr['end_commission_rate'] * 100);
+        if($arr['start_dsr'])$req->setStartDsr($arr['start_dsr']);
+        if($arr['has_coupon'])$req->setHasCoupon($arr['has_coupon']);
 
-		return $goods_list;
+        $req->setPageNo($arr['page_no']);
+        $req->setPageSize($arr['page_size']);
 
+        $pid = $_G['setting']['pid'];
+        $pid = explode('_',$pid);
+        $req->setAdzoneId($pid[3]);
+        $resp = $_G['TOP']->execute($req);
+
+        top_check_error($resp, $this->show_error);
+        $rt = array();
+        $rt['count'] = $resp->total_results;
+
+        if($rt['count']==0) return array('count'=>0,'goods'=>array());
+        $rt['goods'] =  $this->parse($resp);
+        return $rt;
+    }
+
+    function parse($resp) {
+		return $this->parse_good($resp);
     }
 	
 	
@@ -182,7 +184,7 @@ class api_tbk  extends apiBase{
         global $_G;
 
         include_once(ROOT_PATH . 'top/tbk/TbkShopsDetailGetRequest.php');
-        $req = new TbkShopsDetailGetRequest;
+        $req = new TbkShopsDetailGetRequetaobao.tbk.shops.detailst;
         $req->setFields("user_id,seller_nick,shop_title,pic_url,shop_url");
 		if($uid)$req->setSids($uid);
 		if($nick)$req->setSellerNicks($nick);
@@ -205,16 +207,11 @@ class api_tbk  extends apiBase{
 		$shop['sid'] = $item['user_id'].'';
 		
 		return $shop;
-		
 	}
-
 
 	function get_goods($num_iid){
 			return $this->get_info($num_iid);
-			
 	}
-
-
 	 /*
      * 淘宝客商品详情（简版）
      * taobao.tbk.item.info.get
@@ -246,38 +243,8 @@ class api_tbk  extends apiBase{
     }
 
     function parse_info($resp) {
-        $item = $resp->results->n_tbk_item;
-        $arr = array();
-
-        foreach ($item as $k => $v) {
-            $tmp = array();
-            $tmp['url'] = $v->item_url;
-			$tmp['nick'] = $v->nick;
-			$tmp['sum'] = $v->volume;	//30天销量
-            $num_iid = $tmp['num_iid'] =''. $v->num_iid;
-            $tmp['picurl'] = $v->pict_url;
-
-            $tmp['price'] = $v->reserve_price;
-            $tmp['yh_price'] = $v->zk_final_price;
-            $tmp['images'] = $v->small_images->string;
-            $tmp['title'] = $v->title;
-            $tmp['title'] =  $v->title.'['. $v->provcity.']';
-            $tmp['shop_type'] = $v->user_type == 1 ? 1 : 2;
-            $tmp['sid'] = $v->seller_id."";
-
-            //if( $tmp['yh_price'] != $tmp['price'] ) {
-              //  $tmp['zk']	= sprintf("%.1f",($tmp['yh_price']/$tmp['price']*10));
-              //  $tmp['zk']	= 	str_replace('.0','',$tmp['zk']);
-            //}
-            $arr[$num_iid] = $tmp;
-        }
-
-        return $arr;
+        return $this->parse_good($resp);
     }
-
-
-
-
 
     /*
      * 淘宝客商品关联推荐查询
@@ -354,5 +321,103 @@ public    function tkl($url,$text,$logo_url,$user_id = 1,$ext=""){
     }
 
 
+    /**
+     * @param $resp
+     * @param int $from 0:商品查询,1:
+     * @return array|null
+     */
+    static function parse_good($resp,$from = 0) {
+        if(is_array($resp)){
+            $item = $resp;
+        }else{
+            $result= $resp->results;
+            if(!$result){
+                $result= $resp->result_list;
+            }
+
+            if(!$result){
+                return null;
+            }
+
+            $item = $result->n_tbk_item;
+            if(!$item){
+                $item = $result->tbk_coupon;
+            }
+
+            if(!$item){
+                $item = $result->uatm_tbk_item;
+            }
+            if(!$item){
+                $item = $result->map_data;
+            }
+        }
+
+        if(count($item) == 0){
+            return null;
+        }
+
+        $arr = array();
+
+        foreach ($item as $k => $v) {
+            if(isset($v->status) && $v->status != 1 ){
+                continue;
+            }
+
+            $tmp = array();
+            $tmp['num_iid'] =''. $v->num_iid;
+            $tmp['title'] = $v->title;
+            $tmp['provcity'] = $v->provcity? $v->provcity:"";
+            $tmp['url'] = $v->click_url?$v->click_url:$v->item_url;//商品链接地址(淘客地址优先)
+            $tmp['picurl'] = $v->pict_url;
+            $tmp['nick'] = $v->nick;
+            $tmp['sum'] = $v->volume;	//30天销量
+            $tmp['price'] = fix($v->reserve_price,1);//原价
+            $tmp['yh_price'] = fix($v->zk_final_price,1);//折扣价(有可能不存在)
+            $tmp['images'] = $v->small_images->string;
+            $tmp['shop_type'] = $v->user_type? $v->user_type:-1;
+            $tmp['sid'] = $v->seller_id."";
+            if($v->small_images){
+                $tmp['images'] = $v->small_images->string;
+            }
+            $tmp['end_time'] =  $v->coupon_start_time?$v->coupon_start_time:$v->event_end_time;
+            $tmp['start_time'] = $v->coupon_end_time?$v->coupon_end_time:$v->event_start_time;
+            if($tmp['end_time'] =='1970-01-01 00:00:00')   $tmp['end_time']=0;
+            if($tmp['start_time']=='1970-01-01 00:00:00') $tmp['start_time']=0;
+            $coupon_info = $v->coupon_info?$v->coupon_info:$v->juan_price;
+            if($coupon_info){
+                $patterns = "/\d+/";
+                preg_match_all($patterns,$coupon_info,$arrt);
+                $coupon_info = end($arrt[0]);
+                $tmp['juan_price'] = $coupon_info;
+            }
+            if($coupon_info && isset($v->coupon_remain_count) && $v->coupon_remain_count == 0){
+                continue;
+            }
+
+            if(isset($v->coupon_click_url)){
+                $tmp['juan_url'] = $v->coupon_click_url;
+            }else if(isset($v->coupon_id) && $v->coupon_id != ""){
+                $tmp['juan_url'] = self::parse_juan_url($v->coupon_click_url,$tmp['sid']);
+            }
+
+           /* if($tmp['juan_url'] && strlen($tmp['juan_url'])>50){
+                $re = $this->getShortUrl(Array($tmp['juan_url']));
+                if(strcasecmp(current($re->results->tbk_spread)->err_msg,"ok" ) == 0){
+                    $arr['juan_url'] = current($re)->content;
+                }else{
+                    logString($arr['juan_url']."cant get shorturl:returnData".json_decode($re),"shortUrlError");
+                }
+            }*/
+
+            $arr[] = $tmp;
+        }
+
+        return $arr;
+    }
+
+    static function parse_juan_url($juanId,$sellerId){
+        global $_G;
+        return "http://uland.taobao.com/quan/detail?activityId=".$juanId."&sellerId=".$sellerId."&pid=".$_G[setting][pid];
+    }
 
 }

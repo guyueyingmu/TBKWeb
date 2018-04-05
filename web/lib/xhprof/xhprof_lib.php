@@ -20,7 +20,7 @@
 //
 
 function xhprof_error($message) {
-  error_log($message);
+    logString($message,"xhprof_error");
 }
 
 /*
