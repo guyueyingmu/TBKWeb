@@ -1916,15 +1916,14 @@ function getUrlParam($url){
 		if(!$str){
 			return;
 		}
-		if($fileName){
-			error_log(date('Y-m-d h:i:sa').':'.$str."\r\n",3,$fileName.date('Y-m-d')."log");
-			return;
+		if(!$fileName){
+			$fileName = "phpinfo";
 		}
 
 		global $_G;
 
 		if($_G[setting] && $_G[setting][log_path]){
-			error_log(date('Y-m-d h:i:sa').':'.$str."\r\n",3,$_G[setting][log_path].date('Y-m-d')."log");
+			error_log(date('Y-m-d h:i:sa').':'.$str."\r\n",3,$_G[setting][log_path]."/".$fileName.date('Y-m-d').".log");
 		}
 	}
 ?>

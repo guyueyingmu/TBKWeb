@@ -567,7 +567,6 @@ class application {
 						return false;
 					}
 
-
 					if(!preg_match("/^[a-z_]+$/is",$a)){
 						system_error('system','Action String Error');
 					}
@@ -575,8 +574,6 @@ class application {
 						login();
 					}
 					$jump_url = '';
-
-
 
 					if(defined('IN_ADMIN')){
 							include libfile('config/admin');
