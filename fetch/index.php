@@ -1,4 +1,6 @@
 <?php
+defined('BASEPATH') OR header("Location:".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT']."/404.html");
+
 define('ROOT_PATH','../');
 define('CURSCRIPT','fetch');
 define('FETCH',true);
