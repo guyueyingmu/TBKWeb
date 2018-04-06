@@ -189,9 +189,9 @@
 
         <li class="uc_zlli1">
 
-        <label>佣金比例：</label>
+        <label>佣金：</label>
 
-         <input class="uinfo uc_zlli1text text" name="postdb[bili]"  type="text" value="{$goods.bili}">%
+         <input class="uinfo uc_zlli1text text" name="postdb[bili]"  type="text" value="{$goods.bili}">
          
 
       </li>

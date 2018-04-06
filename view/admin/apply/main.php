@@ -68,7 +68,7 @@
         <td> <input type="text" name="yh_prices[{$v.id}]" class="text w90" value="{$v.yh_price}" /></td>
         <td> <input type="text" name="sums[{$v.id}]" class="text w90" value="{$v.sum}" /></td>
 
-        <td>{if $v.bili == "-1"} <span class="red">无佣金</span> {elseif $v.bili>0} {$v.bili}%{/if}&nbsp;</td>
+        <td>{if $v.bili == "-1"} <span class="red">无佣金</span> {elseif $v.bili>0} {$v.bili}{/if}&nbsp;</td>
 
         <td>
 

@@ -31,7 +31,7 @@
 				<span>活动价：<b>{$v.yh_price}</b>元</span>
 			</li>
 			<li>  
-				<span>佣金比例：{$v.bili}%</span>
+				<span>佣金：{$v.bili}</span>
 				<span>上线时间：<i  class="_dgmdate" data-time="{$v.start_time}"></i> - <i  class="_dgmdate" data-time="{$v.end_time}"></i></span>
 			</li>
 		</ul>

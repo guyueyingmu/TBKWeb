@@ -1,7 +1,7 @@
 <?php
 if(!defined('IN_TTAE')) exit('Access Denied');
  //UZ-SYSTEM! cache file, DO NOT modify me!
-//Identify: bf5900b3c4a299adceaaa504d501ed27
+//Identify: 60049b28dcee3117850dd62b18702e81
 
  return array (
   'ad' => 
@@ -937,6 +937,10 @@ if(!defined('IN_TTAE')) exit('Access Denied');
     'brand_id' => 
     array (
       'type' => 'int',
+    ),
+    'provcity' => 
+    array (
+      'type' => 'varchar',
     ),
   ),
   'group' => 

@@ -343,9 +343,9 @@
 
          <tr class="noborder" >
 
-          <td  class="td_l">佣金比例:</td>
+          <td  class="td_l">佣金:</td>
 
-          <td class="vtop rowform"><input name="postdb[bili]" value="{$goods.bili}" type="text" class="txt">%</td>
+          <td class="vtop rowform"><input name="postdb[bili]" value="{$goods.bili}" type="text" class="txt"></td>
 
           <td class="vtop tips2" >5%以上!关系到审核通过的条件之一,填写不实则商品会直接删除或审核不通过</td>
 

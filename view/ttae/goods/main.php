@@ -99,11 +99,11 @@
           </li>
         <li class="li6">
             {if $goods.start_time != 0}
-            <span class="_dgmdate" data-time="{$goods.start_time}">1122{$goods.start_time}</span>
+            {dgmdate($goods.start_time,'u')}
             {/if}
-
+            -
             {if $goods.end_time != 0}
-            <span class="_dgmdate" data-time="{$goods.end_time}">111{$goods.start_time}</span>
+             {dgmdate($goods.end_time,'u')}
             {/if}
 
          </li>

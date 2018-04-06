@@ -214,8 +214,6 @@ class goods extends app{
 					$order = ' aid DESC ';
 				}
 
-
-
 				$rs = D(array('and'=>$and,'all'=>true,'order'=>$order),array('url'=>URL."m=goods&a=main".$url,'size'=>40));
 				foreach($rs['goods'] as $k=>$v){
 						$rs['goods'][$k][title] = cutstr($v[title],'60','');

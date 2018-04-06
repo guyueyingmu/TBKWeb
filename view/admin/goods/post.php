@@ -322,10 +322,10 @@
         <td class="vtop tips2" >优惠价,最多一位小数</td>
       </tr>
       <tr class="noborder" >
-          <td  class="td_l">佣金比例:</td>
+          <td  class="td_l">佣金:</td>
           <td class="vtop rowform">
-          <input name="postdb[bili]" value="{$goods.bili}" type="text"  class="txt w90"> %{if $goods.yongjin}&nbsp;&nbsp;= &nbsp;{$goods.yongjin} 元{/if}</td>
-          <td class="vtop tips2" >佣金比例,如果自动查询的是为-1,则说明当前商品不是淘宝客商品,无佣金的</td>
+          <input name="postdb[bili]" value="{$goods.bili}" type="text"  class="txt w90"> {if $goods.yongjin}&nbsp;&nbsp;= &nbsp;{$goods.yongjin} 元{/if}</td>
+          <td class="vtop tips2" >佣金,如果自动查询的是为-1,则说明当前商品不是淘宝客商品,无佣金的</td>
 	</tr>
 
     <tr class="noborder" >

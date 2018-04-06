@@ -379,8 +379,8 @@ public    function tkl($url,$text,$logo_url,$user_id = 1,$ext=""){
             if($v->small_images){
                 $tmp['images'] = $v->small_images->string;
             }
-            $tmp['end_time'] =  $v->coupon_start_time?$v->coupon_start_time:$v->event_end_time;
-            $tmp['start_time'] = $v->coupon_end_time?$v->coupon_end_time:$v->event_start_time;
+            $tmp['start_time'] =  $v->coupon_start_time?$v->coupon_start_time:$v->event_start_time;
+            $tmp['end_time'] = $v->coupon_end_time?$v->coupon_end_time:$v->event_end_time;
             if($tmp['end_time'] =='1970-01-01 00:00:00')   $tmp['end_time']=0;
             if($tmp['start_time']=='1970-01-01 00:00:00') $tmp['start_time']=0;
             $coupon_info = $v->coupon_info?$v->coupon_info:$v->juan_price;
@@ -397,9 +397,12 @@ public    function tkl($url,$text,$logo_url,$user_id = 1,$ext=""){
             if(isset($v->coupon_click_url)){
                 $tmp['juan_url'] = $v->coupon_click_url;
             }else if(isset($v->coupon_id) && $v->coupon_id != ""){
-                $tmp['juan_url'] = self::parse_juan_url($v->coupon_click_url,$tmp['sid']);
+                $tmp['juan_url'] = self::parse_juan_url($v->coupon_id,$tmp['sid'], $tmp['num_iid']);
             }
 
+            if(isset($v->commission_rate)){
+                $tmp['bili'] = $v->commission_rate*$tmp['price']/10000;
+            }
            /* if($tmp['juan_url'] && strlen($tmp['juan_url'])>50){
                 $re = $this->getShortUrl(Array($tmp['juan_url']));
                 if(strcasecmp(current($re->results->tbk_spread)->err_msg,"ok" ) == 0){
@@ -415,9 +418,9 @@ public    function tkl($url,$text,$logo_url,$user_id = 1,$ext=""){
         return $arr;
     }
 
-    static function parse_juan_url($juanId,$sellerId){
+    static function parse_juan_url($juanId,$sellerId,$itemId){
         global $_G;
-        return "http://uland.taobao.com/quan/detail?activityId=".$juanId."&sellerId=".$sellerId."&pid=".$_G[setting][pid];
+        return "https://uland.taobao.com/coupon/edetail?activityId=".$juanId."&sellerId=".$sellerId."&pid=".$_G[setting][pid]."&itemId=".$itemId;
     }
 
 }
