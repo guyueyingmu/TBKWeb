@@ -124,14 +124,52 @@ class api_tbk  extends apiBase{
 
         if($rt['count']==0) return array('count'=>0,'goods'=>array());
         $rt['goods'] =  $this->parse($resp);
+
+        $rt['goods'] = $this->parseShortUrl($rt['goods']);
         return $rt;
     }
 
     function parse($resp) {
 		return $this->parse_good($resp);
     }
-	
-	
+
+    function parseShortUrl($goods) {
+        $array = Array();
+        $i = 0;
+        foreach($goods as $k=>$v){
+            if(isset($v[juan_url]) && $v[juan_url]!=""){
+                $array[$i] = $v[juan_url];
+            }
+            $i++;
+            if($i % 20  != 0){
+                continue;
+            }
+
+            $goods = $this->_parseShortUrl($goods,$array);
+            $array = Array();
+        }
+
+        if(count($array) != 0){
+            $goods = $this->_parseShortUrl($goods,$array);
+        }
+        return $goods;
+    }
+
+    function _parseShortUrl($goods,$array) {
+        $resources = $this->getShortUrl($array)->results->tbk_spread;
+        $i=0;
+        foreach($array as $kk=>$vv){
+            $v1 = $resources[$i];
+            if(strcasecmp($v1->err_msg,"ok")==0){
+                $goods[$kk][juan_url] = $v1->content;
+                logString($goods[$kk][juan_url],"shortUrlTurnError");
+            }else{
+                logString($goods[$kk][juan_url],"shortUrlTurnError");
+            }
+            $i++;
+        }
+        return $goods;
+    }
 	function get_shop_by_taokouling($taokouiling){
         global $_G;
 
@@ -155,10 +193,11 @@ class api_tbk  extends apiBase{
 
         if(is_array($urlarray)){
 
+            $i = 0;
             foreach ($urlarray as $k => $v) {
                 $arr = array();
                 $arr[url] = $v;
-                $requests->putOtherTextParam($k,$arr);
+                $requests->putOtherTextParam($i++,$arr);
             }
         }else{
             $arr = array();
