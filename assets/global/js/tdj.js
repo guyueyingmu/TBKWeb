@@ -61,7 +61,7 @@ var tdj  ={
 	},
 	get:function(num_iid,call){
 				this.init();
-
+				console.log("num_iid:"+num_iid);
 				if(this.config == null){
 					var tk = $("meta[name='tk']").attr('content').split('|');
 					if(tk[2] != 0  && !this.focus_tdj){
@@ -73,9 +73,13 @@ var tdj  ={
 				var rf = encodeURIComponent(this.config.url);
 				var data = 'pid='+this.config.pid+'&wt=0&ti=625&tl=230x45&rd=1&ct=itemid='+num_iid+'&st=s&rf='+rf+'&et='+this.config.et+'&pgid='+this.config.pgid+'&v=2.0';
 				var _this = this;
+		console.log("---");
+		console.log(data);
 				$.ajax({url: 'http://g.click.taobao.com/display?cb=?',type: 'GET',    dataType: 'jsonp',jsonp: 'cb',
 					data: data,
 					success: function(msg) {
+						console.log("msg:");
+						console.log(msg);
 
 						if(msg.code == 200 || msg.code == 201){
 							var tmp =msg.data.items[0];
