@@ -683,9 +683,6 @@ function appendscript(url, call) {
 	var tmp = url.split("/");
 	var id  = tmp[tmp.length-1].replace(/\./g,'_').replace(/\?(.*)$/,'');
 	var obj = document.getElementById(id);
-
-
-	console.log(obj);
 	if(obj) {
 		if(obj['_load_over'] === true){
 			 if(typeof call == 'function') call(obj);
@@ -699,7 +696,6 @@ function appendscript(url, call) {
 		}
 		return ;
 	}
-	console.log(url);
 
     var script = document.createElement("script");
     script.type = "text/javascript";

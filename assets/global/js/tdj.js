@@ -61,7 +61,6 @@ var tdj  ={
 	},
 	get:function(num_iid,call){
 				this.init();
-				console.log("num_iid:"+num_iid);
 				if(this.config == null){
 					var tk = $("meta[name='tk']").attr('content').split('|');
 					if(tk[2] != 0  && !this.focus_tdj){
@@ -70,6 +69,7 @@ var tdj  ={
 					}
 					this.init();
 				}
+				console.log('pid='+this.config.pid);
 				var rf = encodeURIComponent(this.config.url);
 				var data = 'pid='+this.config.pid+'&wt=0&ti=625&tl=230x45&rd=1&ct=itemid='+num_iid+'&st=s&rf='+rf+'&et='+this.config.et+'&pgid='+this.config.pgid+'&v=2.0';
 				var _this = this;
@@ -134,7 +134,7 @@ var tdj  ={
 										} catch (e) {
 											L(e);
 										}
-										if (count > 0 && call )call(s.rateDetail.rateList);
+										if (count > 0 && call )call(s.rateDetail.rateList,count);
 									},
 									error : function(s) {
 										L(s);

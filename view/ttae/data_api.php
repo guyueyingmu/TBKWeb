@@ -168,7 +168,7 @@ class data_api {
 			global $_G,$assign,$_page;
 
 			$fid = intval($_G[fid]);
-			$len = 28;
+			$len = 8;
 			if($fid>0)$and = " AND aid != ".$_G[aid];
 
 			if($fid){

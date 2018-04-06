@@ -298,15 +298,14 @@ var modue_list = {
 			}
 			appendscript("/assets/global/js/tdj.js",function(){
 
-					tdj.get_comment(id,function(list){
+					tdj.get_comment(id,function(list,count){
 						var str = '';
 						for (var i = 0; i < list.length; i++) {
 
 							str += make_html(list[i]);
 						}
 
-					//	console.log("----->"+str);
-						$(".bucuo_detail_bmenu li a span").text( list.length+'+');
+						$(".bucuo_detail_bmenu li a span").text(count);
 						$("._comment_list").append(str);
 					});
 			});

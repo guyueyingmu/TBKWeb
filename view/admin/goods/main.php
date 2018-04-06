@@ -165,7 +165,7 @@
         <td title="商品 {$v.status_text}" >{if $v.status==1}正常显示{else}<span class="red">{$v.status_text}</span>{/if}</td>
 
         <td><div class="price">{$v.yh_price}</div></td>
-         <td class="commission" title="{$v.yongjin}" data-iid="{$v.num_iid}">{$v.bili}%</td>
+         <td class="commission" title="{$v.yongjin}" data-iid="{$v.num_iid}">{$v.bili}</td>
 
            <td><select name="flags[{$v.aid}]">
             <!--{foreach from=$_G.setting.flag item=vv key=k}-->
