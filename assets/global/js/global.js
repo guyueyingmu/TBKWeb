@@ -685,7 +685,7 @@ function appendscript(url, call) {
 	var obj = document.getElementById(id);
 
 
-	console.log("appendscript"+url);
+	console.log(obj);
 	if(obj) {
 		if(obj['_load_over'] === true){
 			 if(typeof call == 'function') call(obj);
@@ -695,10 +695,12 @@ function appendscript(url, call) {
 					if(typeof call == 'function')call(obj);
 					clearInterval(check_timer);
 				}
-			},100);
+			},1000);
 		}
 		return ;
 	}
+	console.log(url);
+
     var script = document.createElement("script");
     script.type = "text/javascript";
 	script.id = id;

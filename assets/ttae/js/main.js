@@ -273,13 +273,11 @@ var modue_list = {
 				$(".bucuo_detail_bmenu li").removeClass('bucuo_current').eq(index).addClass('bucuo_current');
 			});*/
 			$(".bucuo_detail_bmenu li").click(function(){
-				console.log("---111111111115555-->");
 				var index = $(this).attr('data-index');
 				index = parseInt(index);
 				$(".index_contentul2").hide().eq(index).show().removeClass("hide");
 				$(".bucuo_detail_bmenu li").removeClass('bucuo_current').eq(index).addClass('bucuo_current');
 			});
-		console.log("---11dfddd111111111-->"+$('._comment_list').length);
 			if($('._comment_list').length==0) return false;
 			var id = $('._comment_list').attr('data-num_iid');
 			function make_html(obj){
@@ -293,7 +291,6 @@ var modue_list = {
 					rs+='</div></li>';
 					return rs;
 			}
-		console.log("---11111111111-->");
 			var goods_juan_url = $('.goods_juan_url a').attr('href');
 			var url = $('.go_btn').attr('href');
 			if(url && url.indexOf('a=go_pay')>-1 && goods_juan_url && goods_juan_url.indexOf('uland.taobao.com')>-1){

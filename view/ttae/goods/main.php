@@ -136,7 +136,7 @@
 <div class="shuaixuan2 ff">
 <div class="bucuo_detail_bmenu">
     <ul>
-     	{if $goods.message}<li class="bucuo_current"><a>商品详情2222222</a></li>{/if}
+     	{if $goods.message}<li class="bucuo_current"><a>商品详情</a></li>{/if}
         <li  {if !$goods.message} class="bucuo_current"{/if}><a>同类热销推荐</a></li>
         <li class=""><a>买过的人说<span></span></a></li>
         <li class=""><a>用户讨论区</a></li>
