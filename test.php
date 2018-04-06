@@ -1,33 +1,60 @@
-<!DOCTYPE html>
-<html>
+<?php
+class Total extends \Thread {
+    public $name = '';
+    private $total = 0;
+    private $startNum = 0;
+    private $endNum = 0;
 
-<body>
-<div data-type="4" data-plugin="aroundbox" data-plugin-aroundbox-fixed="1"></div>
-<a data-type="0" biz-itemid="548609841346" data-style="2" data-tmpl="230x312" target="_blank">
-    淘点金_单品_直接展示230x312
-</a>
-<a data-type="6" data-tmpl="573x66" data-border="0" data-tmplid="140" data-style="2" biz-s_logo="1" biz-s_hot="1" href="#">搜索框</a>
-<script type="text/javascript">
-    (function(win,doc){
-        var s = doc.createElement("script"), h = doc.getElementsByTagName("head")[0];
-        if (!win.alimamatk_show) {
-            s.charset = "gbk";
-            s.async = true;
-            s.src = "https://alimama.alicdn.com/tkapi.js";
-            h.insertBefore(s, h.firstChild);
-        };
-        var o = {
-            pid: "mm_97928704_43898350_394648075",/*推广单元ID，用于区分不同的推广渠道*/
-            appkey: "",/*通过TOP平台申请的appkey，设置后引导成交会关联appkey*/
-            unid: "",/*自定义统计字段*/
-            monitor: function(msg){
-                console.log(msg)
-            },
-        };
-        win.alimamatk_onload = win.alimamatk_onload || [];
-        win.alimamatk_onload.push(o);
-    })(window,document);
-</script>
+    public function __construct($name, $startNum, $endNum){
+        $this->name = $name;
+        $this->startNum = $startNum;
+        $this->endNum = $endNum;
+    }
+    public function run(){
+        for($ix = $this->startNum; $ix < $this->endNum; ++$ix) {
+            $this->total += $ix;
+        }
 
-</body>
-</html>
+        if($this->name%3 == 1){
+            echo "Thread {$this->name} slepp\r\n";
+           sleep(2);
+            echo "Thread {$this->name} slepp over\r\n";
+        }
+        echo "Thread {$this->name} total: {$this->total} \r\n";
+    }
+    public function getTotal() {
+        return $this->total;
+    }
+}
+
+$num = 10000000;
+$threadNum = 10;
+$setp = $num / $threadNum;
+$startNum = 0;
+
+$startTime = microtime(true);
+for($ix = 0; $ix < $threadNum; ++$ix) {
+    $endNum = $startNum + $setp;
+    $thread = new Total($ix, $startNum, $endNum);
+    $thread->start();
+    $startNum = $endNum;
+    $threads[] = $thread;
+}
+
+$total = 0;
+foreach($threads as $thread) {
+    $thread->join();
+    $total += $thread->getTotal();
+}
+
+$endTime = microtime(true);
+$time = $endTime - $startTime;
+
+echo "total : {$total} time : {$time} \r\n";
+
+
+$patterns = "/\d+/";
+$strs="30";
+preg_match_all($patterns,$strs,$arr);
+print_r($arr);
+echo end($arr[0]);
