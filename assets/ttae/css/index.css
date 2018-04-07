@@ -328,9 +328,9 @@ h1,h2,h3,h4,h5,h6,label,p{
 }
 .rslides img {
     display: block;
-    height: auto;
+    height: 371px;
     float: left;
-    width: 100%;
+    width: 1115px;
     border: 0;
 }
 .callbacks_tabs a:after {
