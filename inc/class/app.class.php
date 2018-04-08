@@ -170,6 +170,7 @@ class app{
 						}
 					}
 
+					logString("===>".$show_tpl);
 					try{
 						$smarty->display($show_tpl);
 						$obj = DB::$db;

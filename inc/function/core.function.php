@@ -493,6 +493,11 @@ function dgmdate($timestamp, $format = 'dt') {
 	}
 }
 
+function isBeforeToday($timestamp){
+
+	return false;
+}
+
 function dmktime($date,$time=true) {
 	global $_G;
 	if(!$date) return 0;

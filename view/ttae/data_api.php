@@ -19,10 +19,6 @@ class data_api {
 					
 					$index = D(array('and'=>$sql['and'],'order'=>$sql[order],'key'=>'index_goods'),array('url'=>$url.$sql[url],'size'=>$size));
 
-					$h = dmktime(dgmdate(TIMESTAMP,'H'));
-					$img = D(array('and'=>'','table'=>'img','order'=>'id DESC','limit'=>7,'key'=>'index_img'));
-
-					$index['img'] = $img;
 					return $index;
 
 		}
@@ -170,6 +166,9 @@ class data_api {
 			$fid = intval($_G[fid]);
 			$len = 8;
 			if($fid>0)$and = " AND aid != ".$_G[aid];
+			if($assign[goods]){
+				$and .= " AND num_iid != ".$assign[goods][num_iid];
+			}
 
 			if($fid){
 					if($_G[channels][$fid][fid_in]){
