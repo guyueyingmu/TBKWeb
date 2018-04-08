@@ -51,46 +51,6 @@ var modue_list = {
 
 	},
 
-	login_main:function(){
-
-		var is_stop = _load('close_pic');
-
-		if(is_stop != 1){
-			is_stop = 0;
-			var picurl = 'http://818zhekou.image.alimmdn.com/big_bg/';
-			var pic_arr = [];
-			var max = 25;
-			for(var i =0;i<5;i++){
-				var tmp = ranDom(0,max);
-				var pic = picurl+tmp+'.jpg';
-				if(in_array(pic,pic_arr)){
-					 tmp = ranDom(0,max);
-					 pic = picurl+tmp+'.jpg';
-				}
-				pic_arr.push(pic);
-			}
-
-			run_bg('body',pic_arr);
-
-			$(".close_pic").text('关闭动画');
-		}else{
-			$(".close_pic").text('开启动画');
-		}
-
-		//1=关闭,其它,开启
-
-		$(".close_pic").click(function(){
-			if(is_stop ==1){
-				_save('close_pic',0);
-			}else{
-				_save('close_pic',1);
-			}
-			location.reload();
-			$(this).remove();
-			return false;
-		});
-
-	},
 	admin_config:function(){
 		$(".select_upload").on('change',function(){
 			if(this.value == 'baichuan'){
@@ -639,34 +599,6 @@ var modue_list = {
 
 	},apps_gezi:function(){
 		this.apps_hdp('格子');
-	}
-	,apps_tpl:function(){
-		$(".select option").each(function(i){
-			var pic = $(this).data('pic');
-			if(pic==1){
-				pic = $(this).val();
-				pic = 'http://818zhekou.image.alimmdn.com/app_img/'+pic+'.jpg';
-				$(this).data('pic',pic);
-			}
-		});
-
-		var width = $(".select").eq(0).width()+5;
-		$(".select option").on('click',function() {
-			var pic = $(this).data('pic');
-			if(!pic) return true;
-			var off = fetchOffset(this,1);
-			off.left +=width;
-			off.position="absolute";
-			$(".app_pic").show().css(off).find('img').attr('src',pic);
-		});
-
-		$(".select").hover('',function(){
-			setTimeout(function(){
-				$(".app_pic").hide();
-			},300);
-			
-		})
-
 	}
 	,apps_nav:function(){
 			var html ='<tr class="noborder" > <td class="td_l" style="width:110px">新导航:</td>';
