@@ -23,12 +23,5 @@
 <input type="hidden" name="a" value="{$CURACTION}" />
     </form>
     <div class="tip">{$message}</div>
-    <div class="foot"><br />
-<br />
-<br />
-<br />
-
-	Copyright &copy; 2014.Company All rights reserved
-    </div>
 </div>
 {include file="../../common/footer.php"}
