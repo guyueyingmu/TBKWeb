@@ -12,7 +12,7 @@
         {if $v.new ==1}<i class="mb_ico goodsdpi gisnew1"></i>{/if}
         <span class="goodsisover1"></span>
     </a>
-    <h2><span><a class="_open"  data-url="{$v.juan_url?$v.juan_url:$v.url}">{$v.title}</a></span></h2>
+    <h2><span><a class="_open"  data-url="{$v.juan_url}">{$v.title}</a></span></h2>
     <aside>
  {if $v.juan_url}
 <a data-url="{$v.juan_url}"  rel="nofollow"  class="y juan_btn _open">领{if $v.juan_price}{$v.juan_price}元{/if}优惠券</a>
