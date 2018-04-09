@@ -16,7 +16,7 @@ function jump(url){
 		}
 }
 var URL = 	jump();
-var HOST = 'http://'+getHost(URL);
+var HOST = '//'+getHost(URL);
 
 (function (){
 	var set_obj = $("meta[name='set']");

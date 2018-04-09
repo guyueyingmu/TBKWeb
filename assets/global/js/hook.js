@@ -30,7 +30,7 @@ var _hook = {
 		this.ding();
 		this.one_key_share();
 		this.duoshuo();
-		this.baidu_share();
+		///this.baidu_share();
 		this.yzm();
 		
 		this.show_content();

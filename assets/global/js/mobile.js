@@ -452,7 +452,7 @@ var _hook = {
 				this.pupup();
 				this.img_onerror();
 				this.duoshuo();
-				this.baidu_share();
+			//	this.baidu_share();
 				this.start_time();
 				this.dgmdate();
 	},
