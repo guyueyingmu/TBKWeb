@@ -105,8 +105,9 @@ $(function(){
 		var btn = $(".go_pay").eq(0);
 		var num_iid = btn.attr('data-tao_num_iid');
 
-		var ua = navigator.userAgent.toLowerCase();
-		if(ua.indexOf('micromessenger') != -1){
+
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.indexOf('micromessenger') != -1){
 			var jumpurl = encodeURIComponent('/index.php?itemid='+num_iid);
 			location.href = '/assets/common/jump.html?jumpurl='+jumpurl;
 			//location.href = '/index.php?itemid='+num_iid+"&focus=1";
@@ -115,7 +116,7 @@ $(function(){
 
 				
 				var org_url = btn.attr('href');
-				var click_url = 'http://item.taobao.com/item.htm?id='+num_iid;
+			//	var click_url = 'http://item.taobao.com/item.htm?id='+num_iid;
 				var pid = btn.attr('data-tao_pid');
 				var wt = '0';
 				var ti = '625';

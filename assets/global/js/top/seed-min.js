@@ -2132,7 +2132,7 @@ KISSY.add("i18n", {
         }
     });
     if ("undefined" !== typeof location) {
-        var f = a.startsWith(location.href, "https") ? "https://s.tbcdn.cn/s/kissy/" : "http://a.tbcdn.cn/s/kissy/";
+        var f =  "//s.tbcdn.cn/s/kissy/";
         a.config({
             packages: {
                 gallery: {

@@ -135,7 +135,7 @@
             }
         }
         var d = t(a.api),
-            e = "http://" + (d ? d + "." : "") + (N.prefix ? N.prefix + "." : "") + (N.subDomain ? N.subDomain + "." : "") + N.mainDomain + "/h5/" + a.api.toLowerCase() + "/" + a.v.toLowerCase() + "/",
+            e = "//" + (d ? d + "." : "") + (N.prefix ? N.prefix + "." : "") + (N.subDomain ? N.subDomain + "." : "") + N.mainDomain + "/h5/" + a.api.toLowerCase() + "/" + a.v.toLowerCase() + "/",
             f = (new Date).getTime(),
             g = ["v", "api", "ttid", "sprefer", "appKey=" + h(), "t=" + f],
             i = ["data", "ua"];

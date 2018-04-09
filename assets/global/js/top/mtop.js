@@ -204,7 +204,7 @@ var mtop = {
             logo: seller.shopIcon,
             seller_id: seller.userId,
             shop_id: seller.shopId,
-            url: 'http://store.taobao.com/shop/view_shop.htm?user_number_id='+seller.userId,
+            url: '//store.taobao.com/shop/view_shop.htm?user_number_id='+seller.userId,
             title: seller.shopName,
             shop_type: seller.shopType == 'B' ? 1 : 2,
             item_count: seller.allItemCount,
@@ -220,7 +220,7 @@ var mtop = {
             s.baoyou = 1;
             s.nick = shop.nick;
             s.sid = shop.seller_id;
-            s.url = 'http://item.taobao.com/item.htm?id=' + rs.itemId;
+            s.url = '//item.taobao.com/item.htm?id=' + rs.itemId;
             s.shop_url = shop.url;
             s.sum = 999;
                  // var tmp = rs.ds_provcity.split(' ');
@@ -247,14 +247,14 @@ var mtop = {
         var rs = {
             title:data.description.substr(0,30),
             content:data.description,
-            picurl:'http:'+data.mainPic,
+            picurl:''+data.mainPic,
             like:data.like,
             images:[],
             keywords:data.tags
         }
 
         for (var i = 0; i < data.subPics.length; i++) {
-            rs.images.push('http:'+data.subPics[i]);
+            rs.images.push(''+data.subPics[i]);
         }
         var goods = [] ;
         for(var i=0;i<data.items.length;i++){

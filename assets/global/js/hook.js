@@ -137,7 +137,7 @@ var _hook = {
 				var el =  '._addfavorite';
 				if($(el).length == 0) return ;
 				click(el,function(){
-					var siteurl =  'http://'+getHost(URL);
+					var siteurl =  '//'+getHost(URL);
 					addFavorite(siteurl, document.title);
 					return false;
 				});
@@ -858,13 +858,13 @@ var _hook = {
 						nick = encodeURIComponent(nick);
 						var img = $(this).attr('data-img');
 						if(typeof img != 'string')img=1;
-						var url1 = 'http://www.taobao.com/webww/ww.php?ver=3&touid='+nick+'&siteid=cntaobao&status='+img+'&charset=utf-8';
+						var url1 = '//www.taobao.com/webww/ww.php?ver=3&touid='+nick+'&siteid=cntaobao&status='+img+'&charset=utf-8';
 						$(this).attr('href' ,url1);
 						$(this).attr('target','_blank');
 						$(this).attr('data-init',1);
 						if(img != '0'){
 							var url2 = '';
-								url2 ='http://amos.alicdn.com/realonline.aw?v=2&uid='+nick+'&site=cntaobao&s='+img+'&charset=utf-8';
+								url2 ='//amos.alicdn.com/realonline.aw?v=2&uid='+nick+'&site=cntaobao&s='+img+'&charset=utf-8';
 
 							$(this).html('<img src="'+url2+'"/>');
 						}
@@ -889,8 +889,8 @@ var _hook = {
 					if(!title) title = '点击立即联系我';
 					var s =1;
 					if(icon && icon>0) s=icon;
-					var url1 = 'http://wpa.qq.com/msgrd?v=3&uin='+qq+'&site=qq&menu=yes';
-					var url2 ='http://wpa.qq.com/pa?p=2:'+qq+':5'+s;
+					var url1 = '//wpa.qq.com/msgrd?v=3&uin='+qq+'&site=qq&menu=yes';
+					var url2 ='//wpa.qq.com/pa?p=2:'+qq+':5'+s;
 					$(this).attr('href' ,url1);
 					if(typeof $(this).attr('data-img')  != 'string')$(this).html('<img src="'+url2+'"/>');
 					$(this).attr('target','_blank');
@@ -1333,12 +1333,12 @@ var _hook = {
 				content = encodeURIComponent(content);
 				if(picurl)picurl = encodeURIComponent(picurl);
 
-				share.qzone = 'http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+url+'&title='+title+'&summary='+content+'&pic='+picurl+'&site=';
-				share.weibo = 'http://service.weibo.com/share/share.php?url='+url+'&title='+title+'&pic='+picurl;
-				share.t = 'http://share.v.t.qq.com/index.php?c=share&a=index&url='+url+'&title='+title+'&pic='+picurl;
-				share.renren = 'http://widget.renren.com/dialog/share?resourceUrl='+url+'&title='+title+'&pic='+picurl+'&description='+content;
-				share.kaixin = 'http://www.kaixin001.com/rest/records.php?url='+url+'&content='+content+'&pic='+picurl+'&style=11&stime=&sig=';
-				share.douban = 'http://www.douban.com/share/service?bm=&image=&href='+url+'name='+title+'&text='+content;
+				share.qzone = '//sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url='+url+'&title='+title+'&summary='+content+'&pic='+picurl+'&site=';
+				share.weibo = '//service.weibo.com/share/share.php?url='+url+'&title='+title+'&pic='+picurl;
+				share.t = '//share.v.t.qq.com/index.php?c=share&a=index&url='+url+'&title='+title+'&pic='+picurl;
+				share.renren = '//widget.renren.com/dialog/share?resourceUrl='+url+'&title='+title+'&pic='+picurl+'&description='+content;
+				share.kaixin = '//www.kaixin001.com/rest/records.php?url='+url+'&content='+content+'&pic='+picurl+'&style=11&stime=&sig=';
+				share.douban = '//www.douban.com/share/service?bm=&image=&href='+url+'name='+title+'&text='+content;
 
 				if(share[type]){
 					window.open(share[type]);
@@ -1359,7 +1359,7 @@ var _hook = {
 
 				$(el).addClass('ds-thread');
 				window.duoshuoQuery = {short_name:name};
-				appendscript('http://static.duoshuo.com/embed.js',function(){
+				appendscript('//static.duoshuo.com/embed.js',function(){
 
 				});
 
@@ -1483,7 +1483,7 @@ var _hook = {
 
 			var s = ~(-new Date()/36e5);
 			window._bd_share_config = share_config;
-			var url = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+s;
+			var url = '//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+s;
 			appendscript(url);
 
 
