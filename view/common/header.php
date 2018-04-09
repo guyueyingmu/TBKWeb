@@ -12,6 +12,7 @@
     <link type="text/css" rel="stylesheet" href="/assets/global/css/bootstrap.min.css">
     <script type="text/javascript" src="/assets/global/js/jquery-1.8.3.min.js"></script>
     <script type="text/javascript" src="/assets/simpler/js/materialize.min.js"></script>
+    <script type="text/javascript" src="//a.alimama.cn/tkapi.js"></script>
     <script type="text/javascript" src="/assets/global/js/global.js"></script>
     <link rel="stylesheet" type="text/css" href="/assets/global/css/global.css" media="all"/>
 </head>
