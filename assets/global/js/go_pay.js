@@ -133,7 +133,7 @@ $(function(){
 				
 				$(function(){
 					$.ajax({
-						url: 'http://g.click.taobao.com/display?cb=?',
+						url: '//g.click.taobao.com/display?cb=?',
 						type: 'GET',    
 						dataType: 'jsonp',
 						jsonp: 'cb', 

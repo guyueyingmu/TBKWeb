@@ -4,7 +4,7 @@ KISSY.use('node', function(S,Uri,Node){
             {
                 name : "app",
                 tag : "20.4.245",
-                path : "http://g.tbcdn.cn/mm/yellowstone/0.17.01",
+                path : "//g.tbcdn.cn/mm/yellowstone/0.17.01",
                 charset : "utf-8"
             }
 
