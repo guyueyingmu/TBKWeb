@@ -407,7 +407,7 @@ class application {
 					}
 					unset($ext);
 					if(!getcookie('pid')){
-						dsetcookie('pid',$_G['setting']['pid'],3600*24*30);
+						dsetcookie('pid',$_G['setting']['pid'],3600*24);
 					}
 
 					if(CURSCRIPT =='index' || defined('IN_ADMIN') || defined('APP'))top('check','check_all');
