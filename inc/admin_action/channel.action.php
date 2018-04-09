@@ -60,8 +60,11 @@ class channel extends app{
 							}
 							$fid = intval($_GET['fid']);
 							$url = '';
-							
-							
+
+                            if($_GET['postdb']['t_type']){
+                                $channel['t_type'] =$_GET['postdb']['t_type'];
+                            }
+
 							if($_GET['postdb']['cid']>0){
 								$channel['cid'] = intval($_GET['postdb']['cid']);
 							}else if($_GET['postdb']['fup_cid']>0){
