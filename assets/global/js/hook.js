@@ -1600,14 +1600,14 @@ var _hook = {
 					}
 			});
 	},baidu_push:function(){
-		var not = ['apps','home','member','comment','apply','ajax'];
+	/*	var not = ['apps','home','member','comment','apply','ajax'];
 		if(!in_array(CURMODULE,not)){
-			/*var url = location.protocol + '//push.zhanzhang.baidu.com/push.js';
+			/!*var url = location.protocol + '//push.zhanzhang.baidu.com/push.js';
 			try{
 				appendscript(url);
 			}catch(e){
 				L(e.message);
-			};*/
+			};*!/
 
 			var  r = window.location.href,
 			o = document.referrer;
@@ -1616,7 +1616,7 @@ var _hook = {
 			var t = new Image;
 			t.src = n;
 
-		}
+		}*/
 	},init_comment:function(){
 		if($("._comment").length>0){
 			$F('comment',function(){
