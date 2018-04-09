@@ -25,4 +25,6 @@
     }
     load();
 </script>
+<body>
+</body>
 </html>
