@@ -6052,7 +6052,7 @@ UM.plugins['link'] = function(){
         $.each(root.getNodesByTagName('a'),function(i,a){
             var _href = utils.html(a.getAttr('_href'));
             if(!/^(ftp|https?|\/|file)/.test(_href) && _href.charAt(0)!='#'){
-                _href = 'http://' + _href;
+                _href = '//' + _href;
             }
             a.setAttr('href', _href);
             a.setAttr('_href')
@@ -7307,7 +7307,7 @@ UM.plugins['video'] = function (){
                 ' src="' + me.options.UMEDITOR_HOME_URL+'themes/default/images/spacer.gif" style="background:url('+me.options.UMEDITOR_HOME_URL+'themes/default/images/videologo.gif) no-repeat center center; border:1px solid gray;'+(align ? 'float:' + align + ';': '')+'" />'
 
                 :
-                '<embed type="application/x-shockwave-flash" class="edui-faked-video" pluginspage="http://www.macromedia.com/go/getflashplayer"' +
+                '<embed type="application/x-shockwave-flash" class="edui-faked-video" pluginspage="//www.macromedia.com/go/getflashplayer"' +
                 ' src="' + url + '" width="' + width  + '" height="' + height  + '"'  + (align ? ' style="float:' + align + '"': '') +
                 ' wmode="transparent" play="true" loop="false" menu="false" allowscriptaccess="never" allowfullscreen="true" >';
     }
