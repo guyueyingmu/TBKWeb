@@ -9,16 +9,19 @@
     }
 
     function load(){
+        var url = "https://www.ntao.club/";
         var host = window.location.host;
         console.log("host:"+host);
-
         var ref = getReferer();
         console.log("ref:"+ref);
 
-      /*  var rl = document.createElement('a');
-        rl.href= "https://www.ntao.club/";
+        if(!ref && host.indexOf("admin.ntao.club")>=0){
+            url = "//admin.ntao.club/admin.php";
+        }
+
+       var rl = document.createElement('a');
+        rl.href=url;
         document.body.appendChild(rl);
-*/
     }
     load();
 </script>
