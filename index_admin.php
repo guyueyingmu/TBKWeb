@@ -21,9 +21,7 @@
             url = "//admin.ntao.club/admin.php";
         }
 
-        var rl = document.createElement('a');
-        rl.href=url;
-        document.body.appendChild(rl);
+        window.location.href = url;
     }
     load();
 </script>
