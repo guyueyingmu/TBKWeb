@@ -96,7 +96,7 @@ var _count = {
 				this.platform = platform;
 	},
 	add: function(action, lable) {
-
+		return;
 		if(this.id == 0) {
 			if(CNZZID && CNZZID>0){
 				this.id = ~~CNZZID;
@@ -215,7 +215,7 @@ var _count = {
 			url:geturl,
 			dataType:'html'
 		},'get',{'Referer':url},'',function(){
-			
+
 		});
 	}
 }
