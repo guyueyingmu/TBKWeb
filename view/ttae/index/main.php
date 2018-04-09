@@ -33,7 +33,7 @@
 
             <div class="banner-bottom">
                 <div class="banner-matter">
-                    <p>惠多多欢迎您</p>
+                    <p>{$_G.setting.seo_title}欢迎您</p>
                 </div>
                 <div class="clearfix"></div>
             </div>
