@@ -1,4 +1,6 @@
 <html>
+<body>
+</body>
 <script type="text/javascript">
     function getReferer(){
         if(document.referrer){
@@ -19,12 +21,10 @@
             url = "//admin.ntao.club/admin.php";
         }
 
-       var rl = document.createElement('a');
+        var rl = document.createElement('a');
         rl.href=url;
         document.body.appendChild(rl);
     }
     load();
 </script>
-<body>
-</body>
 </html>
