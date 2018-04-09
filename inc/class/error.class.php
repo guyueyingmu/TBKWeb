@@ -94,7 +94,11 @@ $str='<!doctype html>
 		$msg = trim_html($msg);
 		
 		$time = date('Y-m-d H:i:s',time());
-		$file = ROOT_PATH . 'web/log/' . date('Y.m.d') . '_errorlog.php';		
+		$file = ROOT_PATH . 'web/log/' . date('Y.m.d') . '_errorlog.php';
+        if($_G[_config] && $_G[_config][log_path]){
+            $file = $_G[_config][log_path]."/" . date('Y.m.d') . '_errorlog.php';
+        }
+
 		$dir = dirname($file);
 		if(!is_dir($dir)  && !TAE) dmkdir($dir);
 		if (!is_file($file))  file_put_contents($file,"<?php exit;?>\r\n");
