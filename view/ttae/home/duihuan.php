@@ -7,7 +7,7 @@
               <span style="float: right; font-size: 12px;"></span>
 
 </div>
-{if $goods|@count neq 0 }
+{if !$goods }
     {include file="./auth.php"}
 {else}
 

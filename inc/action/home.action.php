@@ -244,26 +244,43 @@ class home extends app{
 			$url = URL."m=home&a=duihuan";
 			$showpage ='';
 			$count = getcount('duihuan_apply',$and);
-			if($count>0){
-				$showpage = multi($count,$size,$_G[page],$url);
-				$goods = DB::fetch_all("SELECT b.*,a.status as _status,a.content as message,a.dateline,a.statustime FROM ".DB::table('duihuan_apply').
-							" as a , ".DB::table('duihuan')." as b  WHERE a.duihuan_id = b.id  $and ORDER BY id DESC LIMIT $start,$size");
 
-				foreach($goods as $k=>$v){
-					$v = parse('duihuan',$v);
-					$v[status_text] = $_G[setting][duihuan_status][$v[_status]];
-					$goods[$k]  = ($v);
+         	if($_G[member][order_number]){
+                if($count>0){
+                    $showpage = multi($count,$size,$_G[page],$url);
+                    $goods = DB::fetch_all("SELECT b.*,a.status as _status,a.content as message,a.dateline,a.statustime FROM ".DB::table('duihuan_apply').
+                        " as a , ".DB::table('duihuan')." as b  WHERE a.duihuan_id = b.id  $and ORDER BY id DESC LIMIT $start,$size");
 
-				}
+                    foreach($goods as $k=>$v){
+                        $v = parse('duihuan',$v);
+                        $v[status_text] = $_G[setting][duihuan_status][$v[_status]];
+                        $goods[$k]  = ($v);
 
+                    }
+
+                }
 			}
+
 		seo('兑换记录');
 			$this->add(array('goods'=>$goods,'count'=>$count,'showpage'=>$showpage));
 			$this->show();
 
 	}
 
+	function auth(){
+        global $_GET;
+        global $_G;
+		if($_GET[id_card] && $_GET[order_number] && strlen($_GET[order_number]) > 10){
+            $num = substr($_GET[order_number],-6);
+            $sessionKey = $_G[cookie][sek];
+            if(!$sessionKey){
+			}
 
+		}
+        $this->duihuan();
+
+
+    }
 
 	function favorite_list(){
 			global $_G;
