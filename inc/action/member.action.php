@@ -290,6 +290,8 @@ class member extends app{
 						if(!$rs) msg($_G['msg']);
 
 
+						logString($rs);
+
 						$info = json_decode ($rs,1);
 
 						// $psdata = array ('grant_type'=>"refresh_token",'client_id' => $_G[setting][taobao_appkey],'client_secret' => $_G[setting][taobao_appsecret],'refresh_token'=>$info['refresh_token']);
