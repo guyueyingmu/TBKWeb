@@ -312,6 +312,51 @@ class api_tbk  extends apiBase{
         return $rs;
     }
 
+    function get_open_id_by_orderId($arr) {
+        global $_G;
+
+        include_once(ROOT_PATH . 'top/tbk/OpenuidGetBytradeRequest.php');
+        $req = new OpenuidGetBytradeRequest;
+        $req->setTid($arr[orderId]);
+        $resp = $_G['TOP']->execute($req,$arr[session]);
+        top_check_error($resp,$this->show_error);
+        return $resp;
+    }
+
+    function get_open_id($session) {
+        global $_G;
+
+        include_once(ROOT_PATH . 'top/tbk/OpenuidGetRequest.php');
+        $req = new OpenuidGetRequest;
+        $resp = $_G['TOP']->execute($req,$session);
+        top_check_error($resp,$this->show_error);
+        return $resp;
+    }
+
+    function refreshAccessToke($key) {
+        global $_G;
+
+        include_once(ROOT_PATH . 'top/tbk/TopAuthTokenRefreshRequest.php');
+        $req = new TopAuthTokenRefreshRequest;
+        $req->setRefreshToken($key);
+        $resp = $_G['TOP']->execute($req);
+        top_check_error($resp,$this->show_error);
+        $info = json_decode ($resp,1);
+        return $info;
+    }
+
+    function createAccessToke($arr) {
+        global $_G;
+
+        include_once(ROOT_PATH . 'top/tbk/TopAuthTokenCreateRequest.php');
+        $req = new TopAuthTokenCreateRequest;
+        $req->setCode($arr[code]);
+        if($arr[uuid]) $req->setUuid($arr[uuid]);
+        $resp = $_G['TOP']->execute($req);
+        top_check_error($resp,$this->show_error);
+        return $resp;
+    }
+
 //http://open.taobao.com/doc2/apiDetail.htm?apiId=26520&scopeId=11998
 public    function tkl($url,$text,$logo_url,$user_id = 1,$ext=""){
                 global $_G;

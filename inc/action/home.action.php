@@ -274,12 +274,20 @@ class home extends app{
             $num = substr($_GET[order_number],-6);
             $sessionKey = $_G[cookie][sek];
             if(!$sessionKey){
+				header("Location: /index.php?m=member&a=taobao_login");
+				exit;
 			}
+			top("tbk","get_open_id",$sessionKey);
+			top("tbk","get_open_id_by_orderId",Array("session"=>$sessionKey,"orderId"=>$sessionKey));
 
+			logString("o1:".$open_uid+"  o2:".$open_uid);
+			//if($open_uid == $open_uid2){
+			//更新数据库
+			DB::update("member",Array("order_number"=>$num,"weixin"=>$_GET[id_card]),"uid=".$_G[member][uid]);
+			$_G[member][order_number] = $num;
+			//}
 		}
-        $this->duihuan();
-
-
+		header("Location: /index.php?m=home&a=duihuan");
     }
 
 	function favorite_list(){

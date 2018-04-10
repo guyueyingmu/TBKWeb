@@ -82,10 +82,8 @@ function top_check_error($resp,$show=true){
 					$_G['error_msg'] = $msg;
 
 					if($show){
-						/*msg($msg,'error');
-						exit;*/
-						logString($msg);
-						return false;
+						msg($msg,'error');
+						exit;
 					}else{
 						L($msg);
 						return false;
