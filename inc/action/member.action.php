@@ -289,7 +289,7 @@ class member extends app{
 						$rs = fetch($url,$postfields);
 						if(!$rs) msg($_G['msg']);
 
-						logString($rs);
+						logString("code:".$code."===>".$rs);
 
 						$info = json_decode ($rs,1);
 
