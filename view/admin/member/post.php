@@ -98,8 +98,8 @@
 
 {if $_G.setting.fanli ==1 }
 		<tr class="noborder">
-          <td class="td_l">淘宝订单后4位:</td>
-          <td class="vtop rowform"><input name="postdb[order_number]" value="{$member.order_number}" maxlength="4" type="text" class="txt"></td>
+          <td class="td_l">淘宝订单后6位:</td>
+          <td class="vtop rowform"><input name="postdb[order_number]" value="{$member.order_number}" maxlength="6" type="text" class="txt"></td>
           <td class="vtop tips2">一般是用户自行填写</td>
         </tr>
 {/if}

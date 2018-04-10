@@ -349,6 +349,26 @@ if($new == 1 && strpos($rs,'img_url') !==false && strpos($rs,"var resp = {}") ==
 }
 
 
+function dsetcookieEndTime($var, $value = '', $life = 0, $prefix = 1) {
+    global $_G;
+
+    $config =array('cookiepre'=>'ttae_','cookiedomain'=>'','cookiepath'=>'/');
+    $_G['cookie'][$var] = $value;
+    $var = ($prefix ? $config['cookiepre'] : '').$var;
+    $_COOKIE[$var] = $value;
+    if($value == '' || $life < 0) {
+        $value = '';
+        $life = -1;
+    }
+    if(defined('IN_MOBILE')) {
+        $httponly = false;
+    }
+    $life = $life > 0 ? $life :TIMESTAMP - 31536000 ;
+    $secure = $_SERVER['SERVER_PORT'] == 443 ? 1 : 0;
+
+    $rt = setcookie($var, $value, $life,$config['cookiepath'], $config['cookiedomain'],$secure);
+    return 	$rt;
+}
 
 function dsetcookie($var, $value = '', $life = 0, $prefix = 1) {
 	global $_G;
@@ -369,8 +389,8 @@ function dsetcookie($var, $value = '', $life = 0, $prefix = 1) {
 
 	$rt = setcookie($var, $value, $life,$config['cookiepath'], $config['cookiedomain'],$secure);
 	return 	$rt;
-
 }
+
 function return_bytes($val) {
     $val = trim($val);
     $last = strtolower($val{strlen($val)-1});

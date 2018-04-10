@@ -19,12 +19,10 @@
     <li class="uc_zlli3 _hover_img" style="position: relative;">
       <div class="cl">
         <label>头　　像：</label>
-        <div class="upload_img" data-name="postdb[picurl]">
           <input name="postdb[picurl]" value="{$_G.member.picurl}" type="text" class="txt pic_upload text" >
-          图片大小建议尺寸为：160*160 </div>
+          图片大小建议尺寸为：160*160
       </div>
       <div class="cl">
-        <label>&nbsp;</label>
         <a href="{$_G.member.picurl}" target="_blank" ><img src="{$_G.member.picurl}"  /></a>
         <input type="file" name="file" class="J_TCajaUploadImg upload_file_btn" data-url="/upload.php" />
       </div>
@@ -32,14 +30,6 @@
     <li class="uc_zlli1">
       <label>收货人姓名：</label>
       <input class="uinfo uc_zlli1text text" name="postdb[name]" type="text" value="{$_G.member.name}">
-    </li>
-    <li class="uc_zlli1">
-      <label>旺　　旺：</label>
-      <input class="uinfo uc_zlli1text text" name="postdb[wangwang]" type="text" value="{$_G.member.wangwang}">
-    </li>
-    <li class="uc_zlli1">
-      <label>q　　q：</label>
-      <input class="uinfo uc_zlli1text text" name="postdb[qq]" type="text" value="{$_G.member.qq}">
     </li>
     </li>
     <li class="uc_zlli1">
@@ -50,10 +40,6 @@
     <li class="uc_zlli1">
       <label>收货地址：</label>
       <input class="uinfo uc_zlli1text text" name="postdb[address]"  type="text" value="{$_G.member.address}">
-    </li>
-    <li class="uc_zlli6">
-      <label>个人简介：</label>
-      <textarea class="uinfo text" name="postdb[content]">{$_G.member.content}</textarea>
     </li>
     <li class="uc_zlli4">
       <label></label>

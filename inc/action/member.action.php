@@ -153,6 +153,9 @@ class member extends app{
 										$auth = authcode($user[login_name].'|'.$user[uid].'|'.$user[username],'encode','',86400 * 3);
 										DB::update('member',$update,"uid=".$user[uid]);
 										dsetcookie("auth",$auth,$this->login_time);
+                                		dsetcookieEndTime("ttae_rek",$arr['info']->refresh_token,$arr['info']->refresh_token_valid_time);
+                                		dsetcookie("ttae_sek",$arr['info']->access_token,$arr['info']->expires_in);
+
 										 $referer = $_GET['referer'] ? $_GET['referer'] : dreferer();
 											if(preg_match("/member/is",$referer))$referer = URL.'m=home';
 											$ext = '<script type="text/javascript">
@@ -288,9 +291,6 @@ class member extends app{
 						$url = 'https://oauth.taobao.com/token';					
 						$rs = fetch($url,$postfields);
 						if(!$rs) msg($_G['msg']);
-
-						logString("code:".$code."===>".$rs);
-
 						$info = json_decode ($rs,1);
 
 						// $psdata = array ('grant_type'=>"refresh_token",'client_id' => $_G[setting][taobao_appkey],'client_secret' => $_G[setting][taobao_appsecret],'refresh_token'=>$info['refresh_token']);
@@ -317,7 +317,8 @@ class member extends app{
 							'content'=>'',
 						'picurl'=>'',
 						'groupid'=>22,'login_name'=>'taobao',
-						'login_id'=>$login_id
+						'login_id'=>$login_id,
+							'info'=>$info
 						);
 						
 						$this->login_callback($member);
